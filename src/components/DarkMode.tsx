@@ -21,16 +21,6 @@ export default function DarkMode() {
 
   useEffect(setTheme, [darkMode]);
 
-  const darkTheme = {
-    font: "#EEEEEE",
-    bg: "#121212",
-    fontAccent: "#A0A0A0",
-    contrast: "#641ddf",
-    accent1: "#2f5270",
-    accent2: "#1e375a",
-    shadow: "#333",
-    row: "#1E1E1E",
-  };
 
   const lightTheme = {
     font: "#111827",
@@ -41,7 +31,22 @@ export default function DarkMode() {
     accent2: "#4f5d75",
     shadow: "#999",
     row: "#F9FAFB",
+    hr: "#F3F4F6",
   };
+  
+  const darkTheme = {
+    font: "#EEEEEE",
+    bg: "#121212",
+    fontAccent: "#A0A0A0",
+    contrast: "#641ddf",
+    accent1: "#2f5270",
+    accent2: "#1e375a",
+    shadow: "#333",
+    row: "#1E1E1E",
+    hr: "#2F2F2F",
+  };
+
+
 
   const colors = [
     "--clr-font",
@@ -61,6 +66,7 @@ export default function DarkMode() {
       root.style.setProperty("--clr-accent2", theme.accent2);
       root.style.setProperty("--clr-shadow", theme.shadow);
       root.style.setProperty("--clr-row", theme.row);
+      root.style.setProperty("--clr-hr", theme.hr);
 
   }
 

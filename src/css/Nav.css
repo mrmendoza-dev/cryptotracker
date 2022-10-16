@@ -1,4 +1,4 @@
-@import "index.css";
+
 
 .Nav {
   display: flex;
@@ -48,15 +48,81 @@
 
 
 .Header {
-  display: flex;
-  align-items: center;
-  padding: .5em 1em;
+  padding: 0 3em;
+  padding-top: 1em;
+  max-height: 15vh;
+
+  position: sticky;
+  top: 0;
 }
 
 .header-title {
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   font-weight: 600;
+  letter-spacing: -1.6px;
+  display: flex;
+  align-items: center;
+  gap: .2em;
+  text-shadow: 0 0 25px #fc8e06;
+  color: #ffffff;
+  user-select: none;
+}
+.header-title img {
+  width: 40px;
+    /* box-shadow: 0 0 25px #fc8e06; */
+    border-radius: 50%;
+
 }
 
 
+
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+.sub-header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1.4em;
+  padding-top: .5em;
+  padding-bottom: 1em;
+  flex-wrap: wrap;
+
+}
+.crypto-dominance {
+  display: flex;
+  gap: .5em;
+}
+
+.market-change {
+  display: flex;
+  gap: .4em;
+;}
+
+
+.Pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1em 0;
+}
+.page-btn {
+  background-color: inherit;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--clr-font);
+  border: 1px solid var(--clr-fontAccent);
+  padding: .5em .8em;
+}
+
+.current-page {
+  background-color: var(--clr-hr);
+}
+
+.page-btn:hover {
+  background-color: var(--clr-hr);
+}
 
