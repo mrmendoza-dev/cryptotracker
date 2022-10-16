@@ -13,4 +13,5 @@
 - Simple filters
 
 ## Resources
+- [Coingecko](https://www.coingecko.com/)
 - [Coingecko API](https://www.coingecko.com/api/documentations/v3)
