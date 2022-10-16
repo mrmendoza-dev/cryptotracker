@@ -80,7 +80,6 @@ function App() {
   }
 
 
-
   function nextPage() {
     setPageNum(prevPage => prevPage+1)
   }

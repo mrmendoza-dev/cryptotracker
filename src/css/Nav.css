@@ -66,12 +66,13 @@
   text-shadow: 0 0 25px #fc8e06;
   color: #ffffff;
   user-select: none;
+  text-shadow: 0 0 25px #f18f1e, -1px 1px 0 rgb(229, 229, 229), 1px 1px 0 rgb(170, 168, 168);
+
 }
 .header-title img {
   width: 40px;
     /* box-shadow: 0 0 25px #fc8e06; */
     border-radius: 50%;
-
 }
 
 
@@ -116,6 +117,8 @@
   color: var(--clr-font);
   border: 1px solid var(--clr-fontAccent);
   padding: .5em .8em;
+  transition: all 100ms;
+
 }
 
 .current-page {

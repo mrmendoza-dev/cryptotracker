@@ -24,7 +24,6 @@
 }
 
 
-
 * {
   box-sizing: border-box;
   margin: 0;
@@ -121,6 +120,8 @@ button {
   background-color: inherit;
   border: none;
   font-size: 1rem;
+  transition: all 100ms;
+
 }
 
 .star-btn:hover {
@@ -153,6 +154,7 @@ tbody {
   border-bottom: 1px solid var(--clr-hr);
   font-size: 1rem;
   color: var(--clr-fontAccent);
+  transition: all 100ms;
 
 }
 .crypto-row:hover {
@@ -168,6 +170,6 @@ tbody {
 .Cryptos {
   max-height: 85vh;
   overflow-y:scroll;
-    border-bottom: 1px solid var(--clr-fontAccent);
+  border-bottom: 1px solid var(--clr-fontAccent);
 
 }
