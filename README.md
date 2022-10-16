@@ -11,3 +11,6 @@
 - Clean up code
 - Sorting functions on table
 - Simple filters
+
+## Resources
+- [Coingecko API](https://www.coingecko.com/api/documentations/v3)
