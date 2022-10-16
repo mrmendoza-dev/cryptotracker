@@ -9,3 +9,9 @@
   - Load default
   - Update when API is call completed
 - Clean up code
+- Sorting functions on table
+- Simple filters
+
+## Resources
+- [Coingecko](https://www.coingecko.com/)
+- [Coingecko API](https://www.coingecko.com/api/documentations/v3)
