@@ -1,4 +1,4 @@
-# Cryptotracker
+# CryptoTracker
 ## Price tracker for the top cryptocurrencies using the Coingecko API.
 ### Cryptocurrency data for over 10,000 cryptocurrencies 
 
