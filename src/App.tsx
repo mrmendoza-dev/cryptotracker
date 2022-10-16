@@ -1,6 +1,5 @@
 import { nanoid } from "nanoid";
 import { useEffect, useState } from "react";
-import Header from "./components/Header";
 import "./css/App.css";
 import { defaultGlobalData, defaultCryptoData } from "./defaultData";
 import DarkMode from "./components/DarkMode";
@@ -100,7 +99,6 @@ function App() {
     }
     setFavorites(fav);
     localStorage.setItem("favorites", JSON.stringify(fav));
-    console.log("test")
   }
    
   function renderPagination() {
@@ -120,9 +118,7 @@ function App() {
         </button>
     )})
     return pageEl;
-
   }
-
 
 
   return (
