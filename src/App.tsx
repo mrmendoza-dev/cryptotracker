@@ -18,14 +18,31 @@ function App() {
     total_volume: { usd: 0 },
     market_cap_percentage: { btc: 0, eth: 0 },
   });
-  const [favorites, setFavorites] = useState(['bitcoin', 'ethereum', 'dogecoin', 'uniswap'])
+  const [favorites, setFavorites] = useState(loadFavorites);
+
+
+  function loadFavorites() {
+    let saved: any = JSON.parse(
+      localStorage.getItem("favorites") || "[]"
+    );
+    if (saved != undefined) {
+      return saved;
+    } else {
+      localStorage.setItem("favorites", JSON.stringify([]));
+      return false;
+    }
+  }
+
+  useEffect(getCryptoData, [pageNum]);
+  useEffect(getGlobalData, []);
+
 
 
   const coingeckoUrl = "https://www.coingecko.com/en/coins/";
   const baseUrl = "https://api.coingecko.com/api/v3/";
   const currency = "usd";
   const order = "market_cap_desc";
-  const perPage = "250";
+  const perPage = "100";
   const sparkline = "true";
   const pricePercentage = "1h%2C24h%2C7d%2C14d%2C30d%2C200d%2C1y";
 
@@ -47,8 +64,7 @@ function App() {
         setGlobalData(data.data);
       });
   }
-  useEffect(getCryptoData, [pageNum]);
-  useEffect(getGlobalData, []);
+
 
 
   function nextPage() {
@@ -60,6 +76,21 @@ function App() {
     }
   }
 
+  function favoriteCrypto(crypto: any) {
+    const fav = favorites.slice();
+    if (fav.includes(crypto)) {
+      var index = fav.indexOf(crypto);
+      if (index !== -1) {
+        fav.splice(index, 1);
+      }
+    } else {
+      fav.push(crypto);
+    }
+    setFavorites(fav);
+    localStorage.setItem("favorites", JSON.stringify(fav));
+    console.log(fav);
+  }
+   
 
   function renderPagination() {
     const maxPage = pageNum + 5;
@@ -84,7 +115,7 @@ function App() {
           <p>Exchanges: {globalData.markets.toLocaleString()}</p>
           <div className="market-change">
             <p>
-              Market Cap:
+              Market Cap: $
               {globalData.total_market_cap.usd.toLocaleString(undefined, {
                 maximumFractionDigits: 0,
               })}
@@ -97,7 +128,7 @@ function App() {
           </div>
 
           <p>
-            24h Vol:
+            24h Vol: $
             {Number(globalData.total_volume.usd).toLocaleString(undefined, {
               maximumFractionDigits: 0,
             })}
@@ -131,7 +162,12 @@ function App() {
               <tr key={nanoid()} className="crypto-row">
                 <td className="">
                   <p>
-                    <button className="star-btn">
+                    <button
+                      className="star-btn"
+                      onClick={() => {
+                        favoriteCrypto(crypto.id);
+                      }}
+                    >
                       {favorites.includes(crypto.id) ? (
                         <i className="starred fa-solid fa-star"></i>
                       ) : (
@@ -213,6 +249,7 @@ function App() {
         <button className="page-btn" onClick={prevPage}>
           <i className="fa-solid fa-angle-left"></i>Back
         </button>
+
         <button className="page-btn current-page">{pageNum}</button>
 
         <button className="page-btn" onClick={nextPage}>
