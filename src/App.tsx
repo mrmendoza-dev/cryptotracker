@@ -184,7 +184,7 @@ function App() {
               <th className="right">7d</th>
               <th className="center">24h Volume</th>
               <th className="center">Market Cap</th>
-              <th className="center">Sparkline</th>
+              <th className="center">Last 7 Days</th>
             </tr>
           </thead>
           <tbody>
