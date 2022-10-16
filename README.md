@@ -9,3 +9,5 @@
   - Load default
   - Update when API is call completed
 - Clean up code
+- Sorting functions on table
+- Simple filters
