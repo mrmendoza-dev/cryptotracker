@@ -8,11 +8,14 @@ import styled from "styled-components";
 import { Sparklines, SparklinesLine, SparklinesSpots } from "react-sparklines";
 
 
-const Percent = styled.p`
-  color: ${(props) =>
-    props.value === 0
+
+
+
+const Percent = styled.p<{ data: number }>`
+  color: ${(props: any) =>
+    props.data === 0
       ? "var(--clr-fontAccent)"
-      : props.value > 0
+      : props.data > 0
       ? "var(--clr-gain)"
       : "var(--clr-loss)"};
 `;
@@ -86,14 +89,14 @@ function App() {
       setPageNum((prevPage) => prevPage - 1);
     }
   }
-  function goToPage(page) {
+  function goToPage(page: any) {
     setPageNum(page);
   }
 
   function favoriteCrypto(crypto: any) {
     let fav = favorites.slice();
     if (fav.includes(crypto)) {
-      fav = fav.filter((e) => e !== crypto);
+      fav = fav.filter((e: any) => e !== crypto);
     } else {
       fav.push(crypto);
     }
@@ -144,7 +147,7 @@ function App() {
                 maximumFractionDigits: 0,
               })}
             </p>
-            <Percent value={globalData.market_cap_change_percentage_24h_usd}>
+            <Percent data={globalData.market_cap_change_percentage_24h_usd}>
               {globalData.market_cap_change_percentage_24h_usd.toFixed(2)}%
               {globalData.market_cap_change_percentage_24h_usd > 0 ? (
                 <i className="fa-solid fa-caret-up"></i>
@@ -230,7 +233,7 @@ function App() {
 
                 <td>
                   <Percent
-                    value={crypto.price_change_percentage_1h_in_currency}
+                    data={crypto.price_change_percentage_1h_in_currency}
                     className="right"
                   >
                     {Number(
@@ -242,7 +245,7 @@ function App() {
 
                 <td>
                   <Percent
-                    value={crypto.price_change_percentage_24h_in_currency}
+                    data={crypto.price_change_percentage_24h_in_currency}
                     className="right"
                   >
                     {Number(
@@ -254,7 +257,7 @@ function App() {
 
                 <td>
                   <Percent
-                    value={crypto.price_change_percentage_7d_in_currency}
+                    data={crypto.price_change_percentage_7d_in_currency}
                     className="right"
                   >
                     {Number(
