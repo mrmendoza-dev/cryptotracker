@@ -1,0 +1,62 @@
+@import "index.css";
+
+.Nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background-color: var(--clr-accent2);
+  color: #fff;
+  padding: 1.2em 1em;
+}
+
+.nav-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+.nav-logo {
+  height: 40px;
+}
+.nav-list {
+  display: flex;
+  gap: 2em;
+  justify-content: center;
+  align-items: center;
+}
+.nav-item {
+  list-style: none;
+  font-size: 1.2rem;
+}
+.nav-link {
+  text-decoration: none;
+  color: inherit;
+  font-weight: bold;
+}
+
+.theme-btn {
+  background-color: inherit;
+  border: none;
+  color: black;
+  font-size: 1.6rem;
+  width: 40px;
+  transition: text-shadow 0.2s;
+  cursor: pointer;
+}
+.theme-btn:hover {
+  text-shadow: 0 0 15px white;
+}
+
+
+.Header {
+  display: flex;
+  align-items: center;
+  padding: .5em 1em;
+}
+
+.header-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+
+

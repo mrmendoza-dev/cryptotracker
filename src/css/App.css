@@ -1,0 +1,139 @@
+:root {
+  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+
+  --clr-contrast: #fe5f55;
+  --clr-accent1: #1962a1;
+  --clr-accent2: #577399;
+  --clr-bg: #f7f7ff;
+  --clr-font: #242424;
+  --clr-fontAccent: #6B7280;
+  --clr-shadow: #808080;
+  --clr-row: #F9FAFB;
+
+}
+
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  background-color: black;
+  height: 100vh;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.App {
+  background-color: var(--clr-bg);
+  color: var(--clr-font);
+}
+
+
+.crypto-row {
+  align-items: center;
+  gap: 1em;
+}
+
+
+.crypto-img {
+  width: 24px;
+}
+.crypto-symbol {
+  text-transform: uppercase;
+}
+
+.coin-data {
+  display: flex;
+  gap: .8em;
+  align-items: center;
+}
+
+
+.Cryptos {
+  padding: 0 1em;
+  width: 90%;
+    margin: 0 auto;
+
+}
+
+.right {
+  text-align: right;
+}
+.left {
+  text-align: left;
+}
+.center {
+  text-align: center;
+}
+
+.crypto-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--clr-font);
+
+}
+
+.crypto-symbol {
+  font-size: .8rem;
+  font-weight: 400;
+}
+
+
+.crypto-star {
+  color: var(--clr-fontAccent);
+  cursor: pointer;
+}
+.crypto-star:hover {
+  color: #FFCC66;
+}
+
+
+.flex {
+  display: flex;
+  justify-content: center;
+  gap: .5em;
+}
+
+
+table {
+  width: 100%;
+  border-collapse:collapse;
+
+}
+  
+
+
+.crypto-row {
+  height: 3em;
+  border-bottom: 1px solid #242424;
+  font-size: .9rem;
+  color: var(--clr-fontAccent);
+
+}
+.crypto-row:hover {
+  background-color: var(--clr-row);
+}
+.table-head {
+  height: 4em;
+}
+
+
+.clr-loss {
+  color: #ED5565;
+}
+.clr-gain {
+  color: #57BD0F;
+}
