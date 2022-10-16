@@ -18,6 +18,8 @@
   --clr-shadow: #808080;
   --clr-row: #F9FAFB;
   --clr-hr: #6B7280;
+  --clr-loss: #ED5565;
+  --clr-gain: #57BD0F;
 
 }
 
@@ -160,14 +162,6 @@ tbody {
   height: 4em;
   border-top: 1px solid var(--clr-hr);
   border-bottom: 1px solid var(--clr-hr);
-}
-
-
-.clr-loss {
-  color: #ED5565;
-}
-.clr-gain {
-  color: #57BD0F;
 }
 
 

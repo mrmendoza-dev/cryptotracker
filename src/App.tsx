@@ -5,7 +5,18 @@ import "./css/App.css";
 import { defaultGlobalData, defaultCryptoData } from "./defaultData";
 import DarkMode from "./components/DarkMode";
 import logo from "./assets/logo.png"
+import styled from "styled-components";
+import { Sparklines, SparklinesLine, SparklinesSpots } from "react-sparklines";
 
+
+const Percent = styled.p`
+  color: ${(props) =>
+    props.value === 0
+      ? "var(--clr-fontAccent)"
+      : props.value > 0
+      ? "var(--clr-gain)"
+      : "var(--clr-loss)"};
+`;
 
 function App() {
   const [cryptos, setCryptos] = useState([]);
@@ -20,6 +31,7 @@ function App() {
   });
   const [favorites, setFavorites] = useState(loadFavorites);
 
+  
 
   function loadFavorites() {
     let saved: any = JSON.parse(
@@ -75,27 +87,43 @@ function App() {
       setPageNum((prevPage) => prevPage - 1);
     }
   }
+  function goToPage(page) {
+    setPageNum(page);
+  }
 
   function favoriteCrypto(crypto: any) {
-    const fav = favorites.slice();
+    let fav = favorites.slice();
     if (fav.includes(crypto)) {
-      var index = fav.indexOf(crypto);
-      if (index !== -1) {
-        fav.splice(index, 1);
-      }
+      fav = fav.filter((e) => e !== crypto);
     } else {
       fav.push(crypto);
     }
     setFavorites(fav);
     localStorage.setItem("favorites", JSON.stringify(fav));
-    console.log(fav);
+    console.log("test")
   }
    
-
   function renderPagination() {
-    const maxPage = pageNum + 5;
-    const minPage = pageNum - 5;
+    let pages = Array.from({ length: 10 }, (x, i) => i + (pageNum - 5));
+    pages = pages.filter((page)=> page > 0)
+
+    if (!pages.includes(1)) {
+      pages.unshift(1);
+    }
+
+    let pageEl = pages.map((page)=> {
+      return(
+        <button key={nanoid()} className={page === pageNum ? "page-btn current-page" : "page-btn"} onClick={()=> {
+          goToPage(page)
+        }}>
+          {page}
+        </button>
+    )})
+    return pageEl;
+
   }
+
+
 
   return (
     <div className="App">
@@ -120,11 +148,14 @@ function App() {
                 maximumFractionDigits: 0,
               })}
             </p>
-            <p>
+            <Percent value={globalData.market_cap_change_percentage_24h_usd}>
               {globalData.market_cap_change_percentage_24h_usd.toFixed(2)}%
-              <i className="fa-solid fa-caret-up"></i>
-              {/* <i className="fa-solid fa-caret-down"></i> */}
-            </p>
+              {globalData.market_cap_change_percentage_24h_usd > 0 ? (
+                <i className="fa-solid fa-caret-up"></i>
+              ) : (
+                <i className="fa-solid fa-caret-down"></i>
+              )}
+            </Percent>
           </div>
 
           <p>
@@ -196,36 +227,45 @@ function App() {
                   <p className="right">
                     $
                     {crypto.current_price.toLocaleString(undefined, {
-                      maximumFractionDigits: 2,
+                      minimumFractionDigits: 2,
                     })}
                   </p>
                 </td>
 
                 <td>
-                  <p className="right">
+                  <Percent
+                    value={crypto.price_change_percentage_1h_in_currency}
+                    className="right"
+                  >
                     {Number(
                       crypto.price_change_percentage_1h_in_currency
                     ).toFixed(1)}
                     %
-                  </p>
+                  </Percent>
                 </td>
 
                 <td>
-                  <p className="right">
+                  <Percent
+                    value={crypto.price_change_percentage_24h_in_currency}
+                    className="right"
+                  >
                     {Number(
                       crypto.price_change_percentage_24h_in_currency
                     ).toFixed(1)}
                     %
-                  </p>
+                  </Percent>
                 </td>
 
                 <td>
-                  <p className="right">
+                  <Percent
+                    value={crypto.price_change_percentage_7d_in_currency}
+                    className="right"
+                  >
                     {Number(
                       crypto.price_change_percentage_7d_in_currency
                     ).toFixed(1)}
                     %
-                  </p>
+                  </Percent>
                 </td>
 
                 <td>
@@ -238,7 +278,21 @@ function App() {
                   <p className="right">${crypto.market_cap.toLocaleString()}</p>
                 </td>
 
-                <td className="center">sparkline</td>
+                <td className="center">
+                  <Sparklines data={crypto.sparkline_in_7d.price} margin={0}>
+                    <SparklinesLine
+                      color={
+                        crypto.sparkline_in_7d.price[0] >
+                        crypto.sparkline_in_7d.price[
+                          crypto.sparkline_in_7d.price.length - 1
+                        ]
+                          ? "var(--clr-loss)"
+                          : "var(--clr-gain)"
+                      }
+                      style={{ fill: "none", strokeWidth: 3 }}
+                    />
+                  </Sparklines>
+                </td>
               </tr>
             ))}
           </tbody>
@@ -250,7 +304,7 @@ function App() {
           <i className="fa-solid fa-angle-left"></i>Back
         </button>
 
-        <button className="page-btn current-page">{pageNum}</button>
+        <>{renderPagination()}</>
 
         <button className="page-btn" onClick={nextPage}>
           Next<i className="fa-solid fa-angle-right"></i>
