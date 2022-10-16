@@ -9,3 +9,5 @@ Price tracker for the top cryptocurrencies using the Coingecko API.
   - Load default
   - Update when API is call completed
 - Pagination to call next/prev results
+
+![plot](./src/assets/example.png)
