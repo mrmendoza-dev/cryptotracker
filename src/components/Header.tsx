@@ -14,6 +14,6 @@ export default function Header(props: any) {
       // console.log(props.globalData.data.active_cryptocurrencies);
 
   return (
-
+<></>
   );
 }
