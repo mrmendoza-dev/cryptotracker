@@ -39,6 +39,8 @@ a {
 .App {
   background-color: var(--clr-bg);
   color: var(--clr-font);
+  font-size: 16px;
+  font-weight: 400;
 }
 
 
