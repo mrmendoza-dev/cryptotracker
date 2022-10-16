@@ -1,13 +1,11 @@
 # Cryptotracker
-Price tracker for the top cryptocurrencies using the Coingecko API.
+## Price tracker for the top cryptocurrencies using the Coingecko API.
+## Cryptocurrency data for over 10,000 cryptocurrencies 
 
+![Example image](./src/assets/example.png)
 
 ## TODO
-- Color values on loss/gain
-- Display plotted sparklines
 - Add default dataset to prevent empty display
   - Load default
   - Update when API is call completed
-- Pagination to call next/prev results
-
-![plot](./src/assets/example.png)
+- Clean up code
