@@ -53,8 +53,17 @@ button {
   font-weight: 400;
     height: 100vh;
     /* overflow: hidden; */
-
 }
+
+.Cryptos {
+  max-height: 85vh;
+  overflow-y:scroll;
+  border-bottom: 1px solid var(--clr-fontAccent);
+  padding: 0 1em;
+  width: 90%;
+  margin: 0 auto;
+}
+
 
 
 .crypto-row {
@@ -77,12 +86,7 @@ button {
 }
 
 
-.Cryptos {
-  padding: 0 1em;
-  width: 90%;
-    margin: 0 auto;
 
-}
 
 .right {
   text-align: right;
@@ -167,9 +171,3 @@ tbody {
 }
 
 
-.Cryptos {
-  max-height: 85vh;
-  overflow-y:scroll;
-  border-bottom: 1px solid var(--clr-fontAccent);
-
-}

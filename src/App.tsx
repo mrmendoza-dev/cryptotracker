@@ -1,5 +1,5 @@
 import { nanoid } from "nanoid";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 import "./css/App.css";
 import { defaultGlobalData, defaultCryptoData } from "./defaultData";
 import DarkMode from "./components/DarkMode";
@@ -34,6 +34,7 @@ function App() {
   const [favorites, setFavorites] = useState(loadFavorites);
 
   
+
 
   function loadFavorites() {
     let saved: any = JSON.parse(
@@ -127,10 +128,12 @@ function App() {
     <div className="App">
       <div className="Header">
         <div className="main-header">
-          <div className="header-title">
-            <img src={logo} />
-            <p>CryptoTracker</p>
-          </div>
+          <a href="/">
+            <div className="header-title">
+              <img src={logo} />
+              <p>CryptoTracker</p>
+            </div>
+          </a>
           <DarkMode />
         </div>
 
