@@ -1,13 +1,11 @@
 import { nanoid } from "nanoid";
-import { useEffect, useState, useMemo } from "react";
-import "./css/App.css";
-import { defaultGlobalData, defaultCryptoData } from "./defaultData";
-import DarkMode from "./components/DarkMode";
-import logo from "./assets/logo.png"
+import { useEffect, useState } from "react";
+import { Sparklines, SparklinesLine } from "react-sparklines";
 import styled from "styled-components";
-import { Sparklines, SparklinesLine, SparklinesSpots } from "react-sparklines";
-import Footer from "./components/Footer";
-import Header from "./components/Header";
+import Footer from "./components/Nav/Footer";
+import Header from "./components/Nav/Header";
+import "./css/App.css";
+import { defaultCryptoData } from "./defaultData";
 
 const Percent = styled.p<{ data: number }>`
   color: ${(props: any) =>
@@ -20,7 +18,7 @@ const Percent = styled.p<{ data: number }>`
 
 function App() {
   const [cryptos, setCryptos] = useState([]);
-  const [pageNum, setPageNum] = useState(1)
+  const [pageNum, setPageNum] = useState(1);
   const [globalData, setGlobalData] = useState({
     active_cryptocurrencies: 0,
     markets: 0,
@@ -32,9 +30,7 @@ function App() {
   const [favorites, setFavorites] = useState(loadFavorites);
 
   function loadFavorites() {
-    let saved: any = JSON.parse(
-      localStorage.getItem("favorites") || "[]"
-    );
+    let saved: any = JSON.parse(localStorage.getItem("favorites") || "[]");
     if (saved != undefined) {
       return saved;
     } else {
@@ -46,7 +42,6 @@ function App() {
   useEffect(getCryptoData, [pageNum]);
   useEffect(getGlobalData, []);
   useEffect(loadDefault, []);
-
 
   function loadDefault() {
     setCryptos(defaultCryptoData);
@@ -60,7 +55,9 @@ function App() {
   const sparkline = "true";
   const pricePercentage = "1h%2C24h%2C7d%2C14d%2C30d%2C200d%2C1y";
 
-  const cryptosUrl = `${baseUrl}coins/markets?vs_currency=${currency}&order=${order}&per_page=${perPage}&page=${String(pageNum)}&sparkline=${sparkline}&price_change_percentage=${pricePercentage}`;
+  const cryptosUrl = `${baseUrl}coins/markets?vs_currency=${currency}&order=${order}&per_page=${perPage}&page=${String(
+    pageNum
+  )}&sparkline=${sparkline}&price_change_percentage=${pricePercentage}`;
   const globalUrl = "https://api.coingecko.com/api/v3/global";
 
   function getCryptoData() {
@@ -79,9 +76,8 @@ function App() {
       });
   }
 
-
   function nextPage() {
-    setPageNum(prevPage => prevPage+1)
+    setPageNum((prevPage) => prevPage + 1);
   }
   function prevPage() {
     if (pageNum > 1) {
@@ -102,30 +98,34 @@ function App() {
     setFavorites(fav);
     localStorage.setItem("favorites", JSON.stringify(fav));
   }
-   
+
   function renderPagination() {
     let pages = Array.from({ length: 10 }, (x, i) => i + (pageNum - 5));
-    pages = pages.filter((page)=> page > 0)
+    pages = pages.filter((page) => page > 0);
 
     if (!pages.includes(1)) {
       pages.unshift(1);
     }
 
-    let pageEl = pages.map((page)=> {
-      return(
-        <button key={nanoid()} className={page === pageNum ? "page-btn current-page" : "page-btn"} onClick={()=> {
-          goToPage(page)
-        }}>
+    let pageEl = pages.map((page) => {
+      return (
+        <button
+          key={nanoid()}
+          className={page === pageNum ? "page-btn current-page" : "page-btn"}
+          onClick={() => {
+            goToPage(page);
+          }}
+        >
           {page}
         </button>
-    )})
+      );
+    });
     return pageEl;
   }
 
-
   return (
     <div className="App">
-      <Header globalData={globalData}/>
+      <Header globalData={globalData} />
       <div className="Cryptos">
         <table>
           <thead>

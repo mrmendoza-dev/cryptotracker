@@ -1,5 +1,5 @@
-import "../css/Nav.css";
-import logo from "../assets/logo.png";
+import "./Nav.css";
+import logo from "./logo.png";
 
 export default function Footer() {
 

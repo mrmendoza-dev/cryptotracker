@@ -1,8 +1,7 @@
-import "../css/Nav.css";
-import logo from "../assets/logo.png";
-import DarkMode from "../components/DarkMode";
 import styled from "styled-components";
-
+import logo from "./logo.png";
+import "./Nav.css";
+import DarkMode from "./DarkMode";
 
 const Percent = styled.p<{ data: number }>`
   color: ${(props: any) =>
@@ -12,7 +11,6 @@ const Percent = styled.p<{ data: number }>`
       ? "var(--clr-gain)"
       : "var(--clr-loss)"};
 `;
-
 
 export default function Header(props: any) {
   let globalData = props.globalData;

@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
-import "../css/index.css";
-import "../css/Nav.css";
+import "./Nav.css";
 
 export default function DarkMode() {
   const root: any = document.querySelector(":root");
@@ -45,8 +44,6 @@ export default function DarkMode() {
     row: "#1E1E1E",
     hr: "#2F2F2F",
   };
-
-
 
   const colors = [
     "--clr-font",
