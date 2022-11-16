@@ -38,6 +38,8 @@
   top: 0;
   z-index: 10;
   background:var(--clr-bg);
+  --clr-logo: #fc8e06;
+
 }
 
 .header-title {
@@ -129,6 +131,7 @@
    align-items: flex-start;
    justify-content: space-between;
    padding: 2em 3em;
+
 }
 
 .footer-logo {

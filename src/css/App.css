@@ -51,9 +51,9 @@ button {
   color: var(--clr-font);
   font-size: 16px;
   font-weight: 400;
-    height: 100vh;
-    /* overflow: hidden; */
-}
+  height: 100vh;
+  /* overflow: hidden; */
+  }
 
 .Cryptos {
   max-height: 85vh;
@@ -170,4 +170,5 @@ tbody {
   border-top: 1px solid var(--clr-hr);
   border-bottom: 1px solid var(--clr-hr);
 }
+
 
