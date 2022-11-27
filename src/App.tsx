@@ -5,7 +5,7 @@ import styled from "styled-components";
 import Footer from "./components/Nav/Footer";
 import Header from "./components/Nav/Header";
 import "./css/App.css";
-import { defaultCryptoData } from "./defaultData";
+import { defaultCryptoData } from "./data/defaultData";
 
 const Percent = styled.p<{ data: number }>`
   color: ${(props: any) =>
@@ -15,6 +15,7 @@ const Percent = styled.p<{ data: number }>`
       ? "var(--clr-gain)"
       : "var(--clr-loss)"};
 `;
+
 
 function App() {
   const [cryptos, setCryptos] = useState([]);
@@ -29,23 +30,7 @@ function App() {
   });
   const [favorites, setFavorites] = useState(loadFavorites);
 
-  function loadFavorites() {
-    let saved: any = JSON.parse(localStorage.getItem("favorites") || "[]");
-    if (saved != undefined) {
-      return saved;
-    } else {
-      localStorage.setItem("favorites", JSON.stringify([]));
-      return false;
-    }
-  }
 
-  useEffect(getCryptoData, [pageNum]);
-  useEffect(getGlobalData, []);
-  useEffect(loadDefault, []);
-
-  function loadDefault() {
-    setCryptos(defaultCryptoData);
-  }
 
   const coingeckoUrl = "https://www.coingecko.com/en/coins/";
   const baseUrl = "https://api.coingecko.com/api/v3/";
@@ -54,39 +39,43 @@ function App() {
   const perPage = "100";
   const sparkline = "true";
   const pricePercentage = "1h%2C24h%2C7d%2C14d%2C30d%2C200d%2C1y";
-
   const cryptosUrl = `${baseUrl}coins/markets?vs_currency=${currency}&order=${order}&per_page=${perPage}&page=${String(
     pageNum
   )}&sparkline=${sparkline}&price_change_percentage=${pricePercentage}`;
   const globalUrl = "https://api.coingecko.com/api/v3/global";
 
+
+
   function getCryptoData() {
+    fetch(globalUrl)
+      .then((res) => res.json())
+      .then((data) => {
+        setGlobalData(data.data);
+      });
     fetch(cryptosUrl)
       .then((res) => res.json())
       .then((data) => {
         setCryptos(data);
       });
   }
+    useEffect(getCryptoData, [pageNum]);
 
-  function getGlobalData() {
-    fetch(globalUrl)
-      .then((res) => res.json())
-      .then((data) => {
-        setGlobalData(data.data);
-      });
-  }
 
-  function nextPage() {
-    setPageNum((prevPage) => prevPage + 1);
-  }
-  function prevPage() {
-    if (pageNum > 1) {
-      setPageNum((prevPage) => prevPage - 1);
+
+    function loadFavorites() {
+      let saved: any = JSON.parse(localStorage.getItem("favorites") || "[]");
+      if (saved != undefined) {
+        return saved;
+      } else {
+        localStorage.setItem("favorites", JSON.stringify([]));
+        return false;
+      }
     }
-  }
-  function goToPage(page: any) {
-    setPageNum(page);
-  }
+
+    useEffect(loadDefault, []);
+    function loadDefault() {
+      setCryptos(defaultCryptoData);
+    }
 
   function favoriteCrypto(crypto: any) {
     let fav = favorites.slice();
@@ -98,6 +87,20 @@ function App() {
     setFavorites(fav);
     localStorage.setItem("favorites", JSON.stringify(fav));
   }
+
+
+
+    function nextPage() {
+      setPageNum((prevPage) => prevPage + 1);
+    }
+    function prevPage() {
+      if (pageNum > 1) {
+        setPageNum((prevPage) => prevPage - 1);
+      }
+    }
+    function goToPage(page: any) {
+      setPageNum(page);
+    }
 
   function renderPagination() {
     let pages = Array.from({ length: 10 }, (x, i) => i + (pageNum - 5));
