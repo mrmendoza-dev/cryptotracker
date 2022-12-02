@@ -1,6 +1,6 @@
 # CryptoTracker
 ## Price tracker for the top cryptocurrencies using the Coingecko API.
-### Cryptocurrency data for over 10,000 cryptocurrencies, Modeled after CoinMarketCap and CoinGecko and using data from different APIs including CoinGecko, CryptoNews, and Etherscan.
+#### Cryptocurrency data for over 10,000 cryptocurrencies, Modeled after CoinMarketCap and CoinGecko and using data from different APIs including CoinGecko, CryptoNews, and Etherscan.
 
 ![Example image](./src/assets/example.png)
 
