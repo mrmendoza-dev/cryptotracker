@@ -1,17 +1,19 @@
 # CryptoTracker
 ## Price tracker for the top cryptocurrencies using the Coingecko API.
-### Cryptocurrency data for over 10,000 cryptocurrencies 
+### Cryptocurrency data for over 10,000 cryptocurrencies, Modeled after CoinMarketCap and CoinGecko and using data from different APIs including CoinGecko, CryptoNews, and Etherscan.
 
 ![Example image](./src/assets/example.png)
 
-## TODO
-- Add default dataset to prevent empty display
-  - Load default
-  - Update when API is call completed
-- Clean up code
-- Sorting functions on table
-- Simple filters
+## Main Features
+- Cryptocurrency overview page
+- Portfolio tracker
+- Related news articles and videos
+- Cryptocurrency widgets
 
 ## Resources
-- [Coingecko](https://www.coingecko.com/)
-- [Coingecko API](https://www.coingecko.com/api/documentations/v3)
+- [CoinGecko](https://www.coingecko.com/)
+- [CoinGecko API](https://www.coingecko.com/api/documentations/v3)
+- [CoinMarketCap](https://coinmarketcap.com/)
+- [Etherscan Gas Tracker](https://docs.etherscan.io/api-endpoints/gas-tracker)
+- [Crypto Fear & Greed Index](https://alternative.me/crypto/fear-and-greed-index/)
+- [CryptoNews API](https://cryptonews-api.com/)
