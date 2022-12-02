@@ -1,0 +1,110 @@
+{
+  "coins": [
+    {
+      "item": {
+        "id": "ankr",
+        "coin_id": 4324,
+        "name": "Ankr",
+        "symbol": "ANKR",
+        "market_cap_rank": 159,
+        "thumb": "https://assets.coingecko.com/coins/images/4324/thumb/U85xTl2.png?1608111978",
+        "small": "https://assets.coingecko.com/coins/images/4324/small/U85xTl2.png?1608111978",
+        "large": "https://assets.coingecko.com/coins/images/4324/large/U85xTl2.png?1608111978",
+        "slug": "ankr-network",
+        "price_btc": 0.0000013771582371302251,
+        "score": 0
+      }
+    },
+    {
+      "item": {
+        "id": "apollo",
+        "coin_id": 5226,
+        "name": "Apollo",
+        "symbol": "APL",
+        "market_cap_rank": 818,
+        "thumb": "https://assets.coingecko.com/coins/images/5226/thumb/NxxI4VuS.png?1631512642",
+        "small": "https://assets.coingecko.com/coins/images/5226/small/NxxI4VuS.png?1631512642",
+        "large": "https://assets.coingecko.com/coins/images/5226/large/NxxI4VuS.png?1631512642",
+        "slug": "apollo",
+        "price_btc": 4.346942119431646e-8,
+        "score": 1
+      }
+    },
+    {
+      "item": {
+        "id": "evmos",
+        "coin_id": 24023,
+        "name": "Evmos",
+        "symbol": "EVMOS",
+        "market_cap_rank": 125,
+        "thumb": "https://assets.coingecko.com/coins/images/24023/thumb/evmos.png?1653958927",
+        "small": "https://assets.coingecko.com/coins/images/24023/small/evmos.png?1653958927",
+        "large": "https://assets.coingecko.com/coins/images/24023/large/evmos.png?1653958927",
+        "slug": "evmos",
+        "price_btc": 0.00004135358863057594,
+        "score": 2
+      }
+    },
+    {
+      "item": {
+        "id": "kadena",
+        "coin_id": 3693,
+        "name": "Kadena",
+        "symbol": "KDA",
+        "market_cap_rank": 145,
+        "thumb": "https://assets.coingecko.com/coins/images/3693/thumb/djLWD6mR_400x400.jpg?1591080616",
+        "small": "https://assets.coingecko.com/coins/images/3693/small/djLWD6mR_400x400.jpg?1591080616",
+        "large": "https://assets.coingecko.com/coins/images/3693/large/djLWD6mR_400x400.jpg?1591080616",
+        "slug": "kadena",
+        "price_btc": 0.00006077871722510366,
+        "score": 3
+      }
+    },
+    {
+      "item": {
+        "id": "aptos",
+        "coin_id": 26455,
+        "name": "Aptos",
+        "symbol": "APT",
+        "market_cap_rank": 61,
+        "thumb": "https://assets.coingecko.com/coins/images/26455/thumb/aptos_round.png?1666839629",
+        "small": "https://assets.coingecko.com/coins/images/26455/small/aptos_round.png?1666839629",
+        "large": "https://assets.coingecko.com/coins/images/26455/large/aptos_round.png?1666839629",
+        "slug": "aptos",
+        "price_btc": 0.00028581371651745474,
+        "score": 4
+      }
+    },
+    {
+      "item": {
+        "id": "lever",
+        "coin_id": 26205,
+        "name": "LeverFi",
+        "symbol": "LEVER",
+        "market_cap_rank": 440,
+        "thumb": "https://assets.coingecko.com/coins/images/26205/thumb/WI72SpBl_400x400.jpeg?1656494480",
+        "small": "https://assets.coingecko.com/coins/images/26205/small/WI72SpBl_400x400.jpeg?1656494480",
+        "large": "https://assets.coingecko.com/coins/images/26205/large/WI72SpBl_400x400.jpeg?1656494480",
+        "slug": "leverfi",
+        "price_btc": 1.6729890400038258e-7,
+        "score": 5
+      }
+    },
+    {
+      "item": {
+        "id": "matic-network",
+        "coin_id": 4713,
+        "name": "Polygon",
+        "symbol": "MATIC",
+        "market_cap_rank": 10,
+        "thumb": "https://assets.coingecko.com/coins/images/4713/thumb/matic-token-icon.png?1624446912",
+        "small": "https://assets.coingecko.com/coins/images/4713/small/matic-token-icon.png?1624446912",
+        "large": "https://assets.coingecko.com/coins/images/4713/large/matic-token-icon.png?1624446912",
+        "slug": "polygon",
+        "price_btc": 0.00005208122078847248,
+        "score": 6
+      }
+    }
+  ],
+  "exchanges": []
+}

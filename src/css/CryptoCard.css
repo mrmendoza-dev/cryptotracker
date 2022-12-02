@@ -1,0 +1,86 @@
+
+
+
+
+.CryptoCard {
+    width: 225px;
+    /* height: 175px; */
+    box-shadow: 0 0 15px rgba(105, 105, 105, 0.2);
+    border-radius: 15px;
+    padding: 1em;
+    background-color: VAR(--clr-bg);
+    transition: transform 150ms;
+    cursor: pointer;
+
+}
+.CryptoCard:hover {
+    transform: scale(1.1);
+}
+
+
+.crypto-cards {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+    flex-wrap: wrap;
+    margin-top: 2em;
+}
+
+
+.card-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-img {
+    width: 40px;
+}
+.card-title {
+    display: flex;
+    gap: .4em;
+}
+.card-name {
+    font-size: 1.2rem;
+}
+.card-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.card-symbol {
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--clr-fontAccent);
+    margin-top: .3em;
+}
+.card-price {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+.card-price-change {
+    /* background-color: gray; */
+    color: #ffffff;
+    border-radius: 10px;
+    padding: .2em .4em;
+    margin-top: .4em;
+    text-align: center;
+}
+
+.card-main {
+    display: flex;
+    justify-content: flex-start;
+    /* align-items: center; */
+    gap: .6em;
+}
+.card-market {
+    /* display: flex; */
+    margin: 0 auto;
+    margin-top: .4em;
+    margin-left: .4em;
+}
+
+.card-sparkline {
+    margin-top: 1.2em;
+}

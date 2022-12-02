@@ -31,6 +31,7 @@ export default function DarkMode() {
     shadow: "#999",
     row: "#F9FAFB",
     hr: "#F3F4F6",
+    
   };
   
   const darkTheme = {
@@ -64,7 +65,6 @@ export default function DarkMode() {
       root.style.setProperty("--clr-shadow", theme.shadow);
       root.style.setProperty("--clr-row", theme.row);
       root.style.setProperty("--clr-hr", theme.hr);
-
   }
 
   function setTheme() {
@@ -77,7 +77,7 @@ export default function DarkMode() {
   }
 
   return (
-    <button className="theme-btn" onClick={changeTheme}>
+    <button className="theme-btn nav-icon" onClick={changeTheme}>
       {darkMode ? (
         <i style={{ color: "white" }} className="fa-solid fa-sun"></i>
       ) : (
@@ -86,3 +86,5 @@ export default function DarkMode() {
     </button>
   );
 }
+
+

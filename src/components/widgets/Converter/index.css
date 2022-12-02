@@ -1,0 +1,60 @@
+
+.Converter {
+    background-color: var(--clr-bg);
+    color:var(--clr-font);
+    padding: 1em 2em;
+}
+
+
+
+.converter-form {
+    display: flex;
+    justify-content: center;
+    margin-top: 1em;
+
+}
+
+.form-quantity, .form-select {
+    border:1px solid #DDDDDD;
+    padding: 0 1em;
+}
+.form-quantity:focus, .form-select:focus {
+    outline: none;
+}
+.form-quantity {
+    border-radius: 10px;
+    background-color: #ffffff;
+    color: #495057;
+    width: 150px;
+
+}
+
+.form-select {
+    width: 300px;
+
+}
+
+
+.btn-swap {
+    background-color: #3384E4;
+    border: none;
+    color: white;
+    border-radius: 10px;
+    padding: .6em 1em;
+    margin: 0 .4em;
+    font-size: 1rem;
+}
+
+
+
+.results {
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+    margin-top: 1em;
+    font-weight: 600;
+}
+
+
+.result {
+}

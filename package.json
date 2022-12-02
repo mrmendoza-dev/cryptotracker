@@ -10,7 +10,10 @@
   },
   "dependencies": {
     "react": "^18.2.0",
+    "react-chartjs-2": "^5.0.1",
     "react-dom": "^18.2.0",
+    "react-router": "^6.4.4",
+    "react-router-dom": "^6.4.4",
     "react-sparklines": "^1.7.0",
     "styled-components": "^5.3.6"
   },

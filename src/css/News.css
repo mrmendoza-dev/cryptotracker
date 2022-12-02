@@ -1,0 +1,167 @@
+
+.News {
+  max-height: 85vh;
+  overflow-y:hidden;
+  border-bottom: 1px solid var(--clr-fontAccent);
+    padding: 0 1em;
+  width: 90%;
+    margin: 0 auto;
+
+}
+
+
+.news-tickers {
+  display: flex;
+  margin-top: .6em;
+  text-transform: uppercase;
+  font-weight: 600;
+  gap: 1em;
+}
+
+.news-video {
+  /* height: 200px; */
+  /* background-color: #000; */
+}
+.news-latest {
+    padding: 0 2em;
+}
+
+.news-heading {
+    font-size: 1.8rem;
+    font-weight: 600;
+        font-family: 'Times New Roman', Times, serif;
+        margin-bottom: .2em;
+
+}
+.news-list {
+  height: 1000px;
+  /* background-color: #555; */
+    /* overflow-y:scroll; */
+    overflow-y:scroll;
+
+}
+
+
+
+
+
+.news-card {
+    display: flex;
+    flex-direction: column;
+    gap: 1.4em;
+    padding: 1em 0;
+    border-bottom: 1px solid var(--clr-hr);
+    transition: background-color 200ms;
+    max-width: 1000px;
+    position: relative;
+
+}
+
+
+
+.news-card:hover {
+    background-color: var(--clr-row);
+}
+
+.news-info {
+
+}
+
+.news-img-box {
+    aspect-ratio: 3/2;
+    height: 170px;
+    display: flex;
+}
+
+.news-img {
+    border-radius: 5px;
+    transition: all 200ms;
+    overflow: hidden;
+}
+.news-img:hover {
+    /* transform: scale(1.3); */
+    opacity: 0.75;
+}
+
+.news-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: .3em;
+}
+.news-date {
+    color: var(--clr-fontAccent);
+
+}
+.news-source {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: .2em;
+    
+}
+.news-subheader {
+    display: flex;
+    justify-content: flex-start;
+    gap: .6em;
+    margin-bottom: .3em;
+    border-bottom: 1px solid var(--clr-hr);
+
+}
+.news-text {
+    line-height: 1.2;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.1rem;
+    letter-spacing: .6px;
+}
+
+@media (min-width:700px) {
+    .news-card {
+        flex-direction: row;
+    }
+}
+
+
+.news-video {
+    padding-bottom: 1.4em;
+    margin-bottom: 1em;
+    border-top: 2px solid var(--clr-hr);
+    border-bottom: 2px solid var(--clr-hr);
+
+}
+
+.video-showcase {
+    display: flex;
+    justify-content: center;
+    background-color: #0b0b0b;
+    /* height: 400px; */
+        max-width: 1200px;
+
+}
+
+.video-frame {
+    height: 500px;
+    aspect-ratio: 3/2;
+    border: none;
+}
+
+
+.news-bookmark {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 1em;
+    font-size: 1.1rem;
+    cursor: pointer;
+    color: var(--clr-fontAccent);
+      transition: all 100ms;
+      border: none;
+      background-color: inherit;
+
+}
+.news-bookmark:hover {
+
+}
+
+.bookmarked {
+  color: var(--clr-font);
+}
+

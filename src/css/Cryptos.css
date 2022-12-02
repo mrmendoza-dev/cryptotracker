@@ -1,0 +1,118 @@
+
+
+
+.Cryptos {
+  max-height: 85vh;
+  overflow-y:scroll;
+  border-bottom: 1px solid var(--clr-fontAccent);
+  padding: 0 1em;
+  width: 90%;
+  margin: 0 auto;
+}
+
+
+
+.crypto-row {
+  align-items: center;
+  gap: 1em;
+}
+
+
+.crypto-img {
+  width: 24px;
+}
+.crypto-symbol {
+  text-transform: uppercase;
+}
+
+.coin-data {
+  display: flex;
+  gap: .8em;
+  align-items: center;
+}
+
+
+
+
+.right {
+  text-align: right;
+}
+.left {
+  text-align: left;
+}
+.center {
+  text-align: center;
+}
+
+.crypto-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--clr-font);
+
+}
+
+.crypto-symbol {
+  font-size: .8rem;
+  font-weight: 400;
+}
+
+
+
+.starred {
+  color: #FFCC66;
+}
+
+.star-btn {
+  color: var(--clr-fontAccent);
+  cursor: pointer;
+  margin: .5em;
+
+  background-color: inherit;
+  border: none;
+  font-size: 1rem;
+  transition: all 100ms;
+
+}
+
+.star-btn:hover {
+  color: #FFCC66;
+}
+
+
+.flex {
+    gap: .5em;
+    display: flex;
+}
+
+
+table {
+  width: 100%;
+  border-collapse:collapse;
+  /* height: 500px; */
+      /* overflow:scroll; */
+  position: relative;
+  z-index: 1;
+
+}
+  
+tbody {
+    /* overflow: auto; */
+
+}
+
+.crypto-row {
+  height: 3em;
+  border-bottom: 1px solid var(--clr-hr);
+  font-size: 1rem;
+  color: var(--clr-fontAccent);
+  transition: background-color 100ms;
+
+}
+.crypto-row:hover {
+  background-color: var(--clr-row);
+}
+.table-head {
+  height: 4em;
+  border-top: 1px solid var(--clr-hr);
+  border-bottom: 1px solid var(--clr-hr);
+}
