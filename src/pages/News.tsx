@@ -13,7 +13,7 @@ export default function News(props: any) {
   const [currentVideo, setCurrentVideo] = useState();
   const coingeckoUrl = "https://www.coingecko.com/en/coins/";
 
- 
+
  
  
   function getNews() {

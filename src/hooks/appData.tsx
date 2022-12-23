@@ -79,12 +79,12 @@ function appData() {
   }, []);
 
 
-    useEffect(() => {
-      const interval = setInterval(() => {
-        getCryptoData();
-      }, 10000);
-      return () => clearInterval(interval);
-    }, []);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      getCryptoData();
+    }, 10000);
+    return () => clearInterval(interval);
+  }, []);
 
 
 

@@ -29,8 +29,7 @@
 .news-heading {
     font-size: 1.8rem;
     font-weight: 600;
-        font-family: 'Times New Roman', Times, serif;
-        margin-bottom: .2em;
+    margin-bottom: .2em;
 
 }
 .news-list {
@@ -108,9 +107,9 @@
 }
 .news-text {
     line-height: 1.2;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 1.1rem;
+    font-size: 1rem;
     letter-spacing: .6px;
+    font-weight: 400;
 }
 
 @media (min-width:700px) {

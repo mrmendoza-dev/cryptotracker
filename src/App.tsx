@@ -14,11 +14,6 @@ import News from "./pages/News";
 function App() {
   const { cryptos, globalData, trending, news } = appData();
 
-
-
-
-
-
   return (
     <div className="App">
       <Nav globalData={globalData} />
