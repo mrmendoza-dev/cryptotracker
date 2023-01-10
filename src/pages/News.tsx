@@ -77,7 +77,7 @@ export default function News(props: any) {
                 <iframe className="video-frame" src={videoLink}></iframe>
               </div>
             );
-          })}
+          })} 
 
           {/* <iframe
             className="video-frame"

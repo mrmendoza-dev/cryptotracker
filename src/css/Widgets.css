@@ -1,20 +1,13 @@
-
-
 .Widgets {
-  max-height: 85vh;
-  border-bottom: 1px solid var(--clr-fontAccent);
   padding: 0 1em;
   width: 90%;
   margin: 0 auto;
 }
 
-
-
 .crypto-row {
   align-items: center;
   gap: 1em;
 }
-
 
 .crypto-img {
   width: 24px;
@@ -25,12 +18,9 @@
 
 .coin-data {
   display: flex;
-  gap: .8em;
+  gap: 0.8em;
   align-items: center;
 }
-
-
-
 
 .right {
   text-align: right;
@@ -46,43 +36,36 @@
   font-size: 1.1rem;
   font-weight: 600;
   color: var(--clr-font);
-
 }
 
 .crypto-symbol {
-  font-size: .8rem;
+  font-size: 0.8rem;
   font-weight: 400;
 }
 
-
-
 .starred {
-  color: #FFCC66;
+  color: #ffcc66;
 }
 
 .star-btn {
   color: var(--clr-fontAccent);
   cursor: pointer;
-  margin: .5em;
+  margin: 0.5em;
 
   background-color: inherit;
   border: none;
   font-size: 1rem;
   transition: all 100ms;
-
 }
 
 .star-btn:hover {
-  color: #FFCC66;
+  color: #ffcc66;
 }
-
 
 .flex {
-    gap: .5em;
-    display: flex;
+  gap: 0.5em;
+  display: flex;
 }
-
-
 
 .widget-row {
   display: flex;
@@ -91,23 +74,21 @@
   padding: 2em 4em;
 }
 
-
 .module {
-    /* border: 1px solid #9a9a9a; */
-    /* padding: .6em 1em; */
-    /* max-width: 300px; */
-    /* text-align: center; */
-    box-shadow: 0 0 15px rgba(105, 105, 105, 0.2);
-    border-radius: 15px;
+  /* border: 1px solid #9a9a9a; */
+  /* padding: .6em 1em; */
+  /* max-width: 300px; */
+  /* text-align: center; */
+  box-shadow: 0 0 15px rgba(105, 105, 105, 0.2);
+  border-radius: 15px;
 }
 
 .module-title {
-    font-size: 1.6rem;
-    font-weight: 600;
-    text-align: center;
-    margin-bottom: .4em;
+  font-size: 1.6rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 0.4em;
 }
-
 
 .space {
   flex: 1 1 auto;

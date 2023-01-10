@@ -16,17 +16,16 @@
   --clr-accent2: #577399;
   --clr-bg: #f7f7ff;
   --clr-font: #242424;
-  --clr-fontAccent: #6B7280;
+  --clr-fontAccent: #6b7280;
   --clr-shadow: #808080;
-  --clr-row: #F9FAFB;
-  --clr-hr: #6B7280;
-  --clr-loss: #EA3943;
-  --clr-gain: #16C784;
+  --clr-row: #f9fafb;
+  --clr-hr: #6b7280;
+  --clr-loss: #ea3943;
+  --clr-gain: #16c784;
   --clr-logo: #fc8e06;
-  --clr-btn: #3459E7;
+  --clr-btn: #3459e7;
   --clr-link: #6188ff;
 }
-
 
 * {
   box-sizing: border-box;
@@ -53,17 +52,19 @@ button:active {
   border: none;
 }
 
+body {
+  background-color: var(--clr-bg);
+}
 .App {
   background-color: var(--clr-bg);
   color: var(--clr-font);
   font-size: 16px;
   font-weight: 600;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   height: 100vh;
   min-height: 1000px;
   /* overflow: hidden; */
-  }
-
+}
 
 .right {
   text-align: right;
@@ -75,9 +76,8 @@ button:active {
   text-align: center;
 }
 
-
 .flex {
-  gap: .5em;
+  gap: 0.5em;
   display: flex;
 }
 
@@ -93,8 +93,8 @@ button:active {
   width: 1em;
 }
 
-
-input, select {
+input,
+select {
   font-size: inherit;
   font-weight: inherit;
 }

@@ -22,6 +22,7 @@ export default function DarkMode() {
 
 
   const lightTheme = {
+    scheme: "light",
     font: "#111827",
     bg: "#ffffff",
     fontAccent: "#6B7280",
@@ -31,10 +32,10 @@ export default function DarkMode() {
     shadow: "#999",
     row: "#F9FAFB",
     hr: "#F3F4F6",
-    
   };
   
   const darkTheme = {
+    scheme: "dark",
     font: "#EEEEEE",
     bg: "#121212",
     fontAccent: "#A0A0A0",
@@ -46,16 +47,8 @@ export default function DarkMode() {
     hr: "#2F2F2F",
   };
 
-  const colors = [
-    "--clr-font",
-    "--clr-bg",
-    "--clr-contrast",
-    "--clr-accent1",
-    "--clr-accent2",
-    "--clr-shadow",
-  ];
-
   function updateTheme(theme: any) {
+      root.style.setProperty("color-scheme", theme.scheme);
       root.style.setProperty("--clr-font", theme.font);
       root.style.setProperty("--clr-fontAccent", theme.fontAccent);
       root.style.setProperty("--clr-bg", theme.bg);

@@ -4,6 +4,8 @@ import { Percent } from "../components/Percent";
 import Private from "../components/Private";
 import { nanoid } from "nanoid";
 
+
+
 export default function Portfolio(props: any) {
   const cryptos = props.cryptos;
     const [hidden, setHidden] = useState(loadStorage());
@@ -16,11 +18,11 @@ export default function Portfolio(props: any) {
       worst: { percent: 64.2, amount: 29082.71 },
     });
     const holdings: any = {
-      bitcoin: 1,
-      dogecoin: 100000,
-      ethereum: 5,
-      litecoin: 50,
-      cardano: 10000,
+      bitcoin: 0.01,
+      dogecoin: 1000,
+      ethereum: 1,
+      litecoin: 5,
+      cardano: 100,
     };
 
     const coingeckoUrl = "https://www.coingecko.com/en/coins/";
@@ -138,6 +140,7 @@ export default function Portfolio(props: any) {
                   <p className="header-total">
                     $
                     {stats.total.toLocaleString(undefined, {
+                      maximumFractionDigits: 2,
                       minimumFractionDigits: 2,
                     })}
                   </p>
@@ -156,6 +159,7 @@ export default function Portfolio(props: any) {
                 )}
               </button>
             </div>
+
             <div className="header-change">
               <div className="change-amount">
                 <Private
@@ -164,6 +168,7 @@ export default function Portfolio(props: any) {
                     <p className="">
                       + $
                       {stats.amountChange.toLocaleString(undefined, {
+                        maximumFractionDigits: 2,
                         minimumFractionDigits: 2,
                       })}
                     </p>
@@ -176,17 +181,19 @@ export default function Portfolio(props: any) {
           </div>
           <div className="header-controls">
             <button className="btn btn-more">
-              <i className="fa-solid fa-ellipsis"></i>
+              <i className="fa-solid fa-ellipsis icon-shift"></i>
               More
             </button>
             <button className="btn btn-add">
-              <i className="fa-solid fa-circle-plus"></i>
+              <i className="fa-solid fa-circle-plus icon-shift"></i>
               Add New
             </button>
           </div>
         </div>
 
-        <div className="portfolio-main-chart"></div>
+        <div className="portfolio-main-chart">
+
+        </div>
 
         <div className="portfolio-main-allocation">
           <div className="allocation-wrapper">
@@ -289,10 +296,7 @@ export default function Portfolio(props: any) {
                             rel="noopener"
                           >
                             <div className="coin-data">
-                              <img
-                                className="crypto-img"
-                                src={crypto.image}
-                              />
+                              <img className="crypto-img" src={crypto.image} />
                               <p className="crypto-name">{crypto.name}</p>
                               <p className="crypto-symbol">{crypto.symbol}</p>
                             </div>
@@ -303,6 +307,7 @@ export default function Portfolio(props: any) {
                           <p className="right">
                             $
                             {crypto.current_price.toLocaleString(undefined, {
+                              maximumFractionDigits: 2,
                               minimumFractionDigits: 2,
                             })}
                           </p>
@@ -331,12 +336,12 @@ export default function Portfolio(props: any) {
                                   {(
                                     holdings[held] * crypto.current_price
                                   ).toLocaleString(undefined, {
+                                    maximumFractionDigits: 2,
                                     minimumFractionDigits: 2,
                                   })}
                                 </p>
                                 <p className="">
-                                  {holdings[held]}{" "}
-                                  {crypto.symbol.toUpperCase()}
+                                  {holdings[held]} {crypto.symbol.toUpperCase()}
                                 </p>
                               </div>
                             }
@@ -347,6 +352,7 @@ export default function Portfolio(props: any) {
                           <p className="right">
                             $
                             {crypto.current_price.toLocaleString(undefined, {
+                              maximumFractionDigits: 2,
                               minimumFractionDigits: 2,
                             })}
                           </p>
@@ -360,6 +366,7 @@ export default function Portfolio(props: any) {
                                 <p className="">
                                   $
                                   {stats.total.toLocaleString(undefined, {
+                                    maximumFractionDigits: 2,
                                     minimumFractionDigits: 2,
                                   })}
                                 </p>
