@@ -116,3 +116,31 @@ tbody {
   border-top: 1px solid var(--clr-hr);
   border-bottom: 1px solid var(--clr-hr);
 }
+
+
+
+/* PAGINATION */
+.Pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1em 0;
+}
+.page-btn {
+  background-color: inherit;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--clr-font);
+  border: 1px solid var(--clr-fontAccent);
+  padding: .5em .8em;
+  transition: all 100ms;
+
+}
+
+.current-page {
+  background-color: var(--clr-hr);
+}
+
+.page-btn:hover {
+  background-color: var(--clr-hr);
+}

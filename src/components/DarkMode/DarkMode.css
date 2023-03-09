@@ -1,0 +1,11 @@
+
+.theme-btn {
+  background-color: inherit;
+  border: none;
+  color: var(--clr-font);
+  transition: text-shadow 0.2s;
+  cursor: pointer;
+}
+.theme-btn:hover {
+  text-shadow: 0 0 15px white;
+}

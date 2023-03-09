@@ -1,6 +1,6 @@
-import "../../css/CryptoCard.css";
+import "./CryptoCard.css";
 import { Sparklines, SparklinesLine } from "react-sparklines";
-import Change from "../Change";
+import Change from "../../Change";
 
 
 

@@ -1,11 +1,9 @@
 import { useEffect, useState } from "react";
-import "../css/News.css";
-import "../css/App.css";
+import "./NewsPage.css";
 import { nanoid } from "nanoid";
-import logo from "./assets/logo.png";
 
 
-export default function News(props: any) {
+export default function NewsPage(props: any) {
   const news = props.news;
 
   const [articles, setArticles] = useState<any[]>([]);
@@ -13,9 +11,6 @@ export default function News(props: any) {
   const [currentVideo, setCurrentVideo] = useState();
   const coingeckoUrl = "https://www.coingecko.com/en/coins/";
 
-
- 
- 
   function getNews() {
     let articles: any = [];
     let videos: any = [];
@@ -63,8 +58,6 @@ export default function News(props: any) {
     localStorage.setItem("bookmarks", JSON.stringify(fav));
   }
 
-
-
   return (
     <div className="News">
       <div className="news-video">
@@ -77,7 +70,7 @@ export default function News(props: any) {
                 <iframe className="video-frame" src={videoLink}></iframe>
               </div>
             );
-          })} 
+          })}
 
           {/* <iframe
             className="video-frame"

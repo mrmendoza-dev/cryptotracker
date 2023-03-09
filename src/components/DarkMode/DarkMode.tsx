@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import "./Nav.css";
+import "./DarkMode.css";
 
 export default function DarkMode() {
   const root: any = document.querySelector(":root");

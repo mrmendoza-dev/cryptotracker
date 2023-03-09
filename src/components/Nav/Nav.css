@@ -142,138 +142,7 @@
 
 
 
-/* PAGINATION */
-.Pagination {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 1em 0;
-}
-.page-btn {
-  background-color: inherit;
-  font-size: 1rem;
-  font-weight: 500;
-  color: var(--clr-font);
-  border: 1px solid var(--clr-fontAccent);
-  padding: .5em .8em;
-  transition: all 100ms;
 
-}
-
-.current-page {
-  background-color: var(--clr-hr);
-}
-
-.page-btn:hover {
-  background-color: var(--clr-hr);
-}
-
-
-
-/* FOOTER */
-.Footer {
-   /* position:absolute; */
-   bottom:0;
-   width:100%;
-   height:25%;   /* Height of the footer */
-   background:var(--clr-bg);
-   border-top: 1px solid var(--clr-hr);
-   display: flex;
-   align-items: flex-start;
-   justify-content: space-between;
-   padding: 2em 3em;
-}
-
-.footer-main {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  position: relative;
-  width: 50%;
-
-}
-.footer-copyright {
-  color: var(--clr-fontAccent);
-  bottom: 0;
-  position: absolute;
-}
-.footer-dir {
-  display: flex;
-  justify-content: center;
-  gap: 2em;
-}
-
-.dir-col {
-  min-width: 100px;
-  font-weight: 600;
-
-}
-.dir-title {
-  font-size: 1.2rem;
-  color: var(--clr-font);
-}
-.dir-list {
-  margin-top: 1em;
-  list-style: none;
-  position: relative;
-  line-height: 1.2em;
-}
-.dir-item {
-  /* list-style: none; */
-  margin-top: 1em;
-  /* left: 0; */
-  text-align: left;
-  color: var(--clr-fontAccent);
-  font-size: .9em;
-  /* transition: color 200ms; */
-}
-
-.dir-item:hover {
-  color: var(--clr-accent);
-}
-
-
-.nav-link {
-  transition: color 200ms;
-}
-.nav-link:hover {
-  color: var(--clr-accent);
-}
-
-
-/* .Nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  background-color: var(--clr-accent2);
-  color: #fff;
-  padding: 1.2em 1em;
-  z-index: 10;
-}
-
-.nav-title {
-  font-size: 1.2rem;
-  font-weight: bold;
-}
-.nav-logo {
-  height: 40px;
-}
-.nav-list {
-  display: flex;
-  gap: 2em;
-  justify-content: center;
-  align-items: center;
-}
-.nav-item {
-  list-style: none;
-  font-size: 1.2rem;
-}
-.nav-link {
-  text-decoration: none;
-  color: inherit;
-  font-weight: bold;
-} */
 
 
 
@@ -308,3 +177,7 @@
 .nav-select:hover {
   background-color: var(--clr-hr);
 }
+
+
+
+

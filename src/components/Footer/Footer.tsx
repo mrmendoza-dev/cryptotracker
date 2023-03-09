@@ -1,4 +1,4 @@
-import "./Nav.css";
+import "./Footer.css";
 import { Link } from "react-router-dom";
 
 export default function Footer(props: any) {
@@ -6,7 +6,7 @@ export default function Footer(props: any) {
       <div className="Footer">
         <div className="footer-main">
           <p className="footer-copyright">
-            © 2022 CryptoTracker. All rights reserved
+            © 2023 CryptoTracker. All rights reserved
           </p>
         </div>
 

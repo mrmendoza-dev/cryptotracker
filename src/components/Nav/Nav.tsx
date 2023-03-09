@@ -1,6 +1,6 @@
 import logo from "./logo.png";
 import "./Nav.css";
-import DarkMode from "./DarkMode";
+import DarkMode from "../DarkMode/DarkMode";
 import { Percent } from "../Percent";
 import {Link} from "react-router-dom"
 

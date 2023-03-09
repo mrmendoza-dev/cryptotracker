@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react";
 import Nav from "./components/Nav/Nav";
-import Footer from "./components/Nav/Footer";
+import Footer from "./components/Footer/Footer";
 import appData from "./hooks/appData";
 import "./css/App.css";
-import "./css/Cryptos.css";
+// import "./css/Cryptos.css";
 import {Routes, Route} from "react-router-dom"
-import Cryptos from "./pages/Cryptos"
-import Portfolio from "./pages/Portfolio";
-import Widgets from "./pages/Widgets";
-import News from "./pages/News";
+import Cryptos from "./pages/CryptosPage/CryptosPage"
+import Portfolio from "./pages/PortfolioPage/PortfolioPage";
+import Widgets from "./pages/WidgetsPage/WidgetsPage";
+import News from "./pages/NewsPage/NewsPage";
 
 
 function App() {

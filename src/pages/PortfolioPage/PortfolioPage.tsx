@@ -1,69 +1,64 @@
 import { useEffect, useState } from "react";
-import "../css/Portfolio.css";
-import { Percent } from "../components/Percent";
-import Private from "../components/Private";
+import "./PortfolioPage.css";
+import { Percent } from "../../components/Percent";
+import Private from "../../components/Private";
 import { nanoid } from "nanoid";
 
 
 
-export default function Portfolio(props: any) {
+export default function PortfolioPage(props: any) {
   const cryptos = props.cryptos;
-    const [hidden, setHidden] = useState(loadStorage());
-    const [stats, setStats] = useState({
-      total: 1235.67,
-      percentChange: 48.25,
-      amountChange: 12475.92,
-      profit: { percent: 60.59, amount: 58935.36 },
-      best: { percent: 0.97, amount: 36.06 },
-      worst: { percent: 64.2, amount: 29082.71 },
+  const [hidden, setHidden] = useState(loadStorage());
+  const [stats, setStats] = useState({
+    total: 1235.67,
+    percentChange: 48.25,
+    amountChange: 12475.92,
+    profit: { percent: 60.59, amount: 58935.36 },
+    best: { percent: 0.97, amount: 36.06 },
+    worst: { percent: 64.2, amount: 29082.71 },
+  });
+  const holdings: any = {
+    bitcoin: 0.01,
+    dogecoin: 1000,
+    ethereum: 1,
+    litecoin: 5,
+    cardano: 100,
+  };
+
+  const coingeckoUrl = "https://www.coingecko.com/en/coins/";
+
+  useEffect(() => {
+    localStorage.setItem("hidden", JSON.stringify(hidden));
+  }, [hidden]);
+
+  function loadStorage() {
+    let data: any = JSON.parse(localStorage.getItem("hidden") || "false");
+    if (data != undefined) {
+      return data;
+    } else {
+      localStorage.setItem("hidden", JSON.stringify(false));
+      return false;
+    }
+  }
+
+  function hideBalance() {
+    setHidden((prevState: any) => !prevState);
+  }
+
+  function calculateStats() {
+    let total = 0;
+    Object.keys(holdings).map((held: any) => {
+      let crypto: any = cryptos.find((x: any) => x.id === held);
+      crypto ? (total += crypto.current_price * holdings[held]) : (total += 0);
     });
-    const holdings: any = {
-      bitcoin: 0.01,
-      dogecoin: 1000,
-      ethereum: 1,
-      litecoin: 5,
-      cardano: 100,
-    };
+    setStats((prevStats) => {
+      return { ...prevStats, total: total };
+    });
+  }
 
-    const coingeckoUrl = "https://www.coingecko.com/en/coins/";
-
-
-    useEffect(() => {
-      localStorage.setItem("hidden", JSON.stringify(hidden));
-    }, [hidden]);
-
-    function loadStorage() {
-      let data: any = JSON.parse(localStorage.getItem("hidden") || "false");
-      if (data != undefined) {
-        return data;
-      } else {
-        localStorage.setItem("hidden", JSON.stringify(false));
-        return false;
-      }
-    }
-
-    function hideBalance() {
-      setHidden((prevState: any) => !prevState);
-    }
-
-    function calculateStats() {
-      let total = 0;
-      Object.keys(holdings).map((held: any) => {
-        let crypto: any = cryptos.find((x: any) => x.id === held);
-        crypto
-          ? (total += crypto.current_price * holdings[held])
-          : (total += 0);
-      });
-      setStats((prevStats) => {
-        return { ...prevStats, total: total };
-      });
-    }
-
-    useEffect(() => {
-      calculateStats();
-    }, [cryptos]);
-
-
+  useEffect(() => {
+    calculateStats();
+  }, [cryptos]);
 
   return (
     <div className="Portfolio">
@@ -191,9 +186,7 @@ export default function Portfolio(props: any) {
           </div>
         </div>
 
-        <div className="portfolio-main-chart">
-
-        </div>
+        <div className="portfolio-main-chart"></div>
 
         <div className="portfolio-main-allocation">
           <div className="allocation-wrapper">
