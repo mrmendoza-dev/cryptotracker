@@ -3,7 +3,7 @@
 ##### Cryptocurrency data for over 10,000 cryptocurrencies, Modeled after CoinMarketCap and CoinGecko, and using data from different APIs including CoinGecko, CryptoNews, and Etherscan. Research cryptocurrencies, track your portfolio, and find related news.
 ##### Built as a test to practice frontend development. Written mainly in React and deployed on Netlify with no backend.
 
-![Example image](./src/assets/example.png)
+![Example image](./src/assets/images/example.png)
 
 ## Main Features
 - Cryptocurrency overview page
