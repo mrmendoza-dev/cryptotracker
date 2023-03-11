@@ -1,15 +1,38 @@
 import logo from "./logo.png";
-import "./Nav.css";
+import "./Navbar.css";
 import DarkMode from "../DarkMode/DarkMode";
 import { Percent } from "../Percent";
 import {Link} from "react-router-dom"
+import React, { useState, useRef } from "react";
+import { nanoid } from "nanoid";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { icons } from "../../assets/icons";
+import NavbarOverlay from "../NavbarOverlay/NavbarOverlay"
+import CryptoSearchbar from "../CryptoSearchbar/CryptoSearchbar";
 
-export default function Header(props: any) {
+
+
+export default function Navbar(props: any) {
+  const overlayRef: any = useRef(null);
+
+
+  const activateOverlay = () => {
+
+    console.log("test")
+
+        console.log(overlayRef);
+
+    if (overlayRef.current) {
+      overlayRef.current.toggleOverlay();
+    }
+  };
+
+
   let globalData = props.globalData;
   const repoUrl = "https://github.com/mrmendoza171/cryptotracker";
 
   return (
-    <div className="Nav">
+    <div className="Navbar">
       <div className="sub-header">
         <div className="header-crypto">
           <div className="header-stat">
@@ -40,9 +63,9 @@ export default function Header(props: any) {
                 <Percent data={globalData.market_cap_change_percentage_24h_usd}>
                   {globalData.market_cap_change_percentage_24h_usd.toFixed(2)}%
                   {globalData.market_cap_change_percentage_24h_usd > 0 ? (
-                    <i className="fa-solid fa-caret-up"></i>
+                    <FontAwesomeIcon icon={icons.faCaretUp} />
                   ) : (
-                    <i className="fa-solid fa-caret-down"></i>
+                    <FontAwesomeIcon icon={icons.faCaretDown} />
                   )}
                 </Percent>
               </div>
@@ -73,6 +96,8 @@ export default function Header(props: any) {
             </Link>
           </div>
         </div>
+
+        
         <div className="header-control">
           <select className="nav-select">
             <option>English</option>
@@ -82,14 +107,18 @@ export default function Header(props: any) {
           </select>
           <div className="nav-icons">
             <DarkMode />
-            <a href={repoUrl} target="_blank">
-              <i className="fa-brands fa-github nav-icon"></i>
+            <a href={repoUrl} target="_blank" rel="noopener">
+              <FontAwesomeIcon
+                title="Search"
+                icon={icons.faGithub}
+                className="nav-icon"
+              />
             </a>
             <button className="nav-icon">
-              <i className="fa-solid fa-bell"></i>
+              <FontAwesomeIcon icon={icons.faBell} />
             </button>
             <button className="nav-icon">
-              <i className="fa-solid fa-user"></i>
+              <FontAwesomeIcon icon={icons.faUser} />
             </button>
           </div>
         </div>
@@ -124,18 +153,31 @@ export default function Header(props: any) {
             </div>
           </div>
         </div>
+        <div className="header-control-small nav-icons">
+          <button className="nav-icon">
+            <FontAwesomeIcon icon={icons.faMagnifyingGlass} />
+          </button>
+          <DarkMode />
 
-        <div className="nav-search">
-          <label className="search-icon">
-            <i className="fa-solid fa-magnifying-glass"></i>
-          </label>
-          <input
-            className="nav-search-input"
-            type="text"
-            placeholder="Search"
-          />
+          <a href={repoUrl} target="_blank" rel="noopener">
+            <FontAwesomeIcon
+              title="Search"
+              icon={icons.faGithub}
+              className="nav-icon"
+            />
+          </a>
+          <button className="nav-icon">
+            <FontAwesomeIcon icon={icons.faBell} />
+          </button>
+          <button className="nav-icon" onClick={activateOverlay}>
+            <FontAwesomeIcon icon={icons.faBars} />
+          </button>
+
+          <NavbarOverlay ref={overlayRef}/>
         </div>
+        <CryptoSearchbar className="nav-search" data={props.cryptoList} />
       </div>
     </div>
   );
 }
+

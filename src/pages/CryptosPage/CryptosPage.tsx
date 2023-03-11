@@ -3,16 +3,15 @@ import "./CryptosPage.css";
 import { Percent } from "../../components/Percent";
 import { nanoid } from "nanoid";
 import { Sparklines, SparklinesLine } from "react-sparklines";
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { icons } from "../../assets/icons";
 
 export default function CryptosPage(props: any) {
   const cryptos = props.cryptos;
-
   const coingeckoUrl = "https://www.coingecko.com/en/coins/";
-  // useEffect(getCryptoData, [pageNum]);
-
   const [pageNum, setPageNum] = useState(1);
   const [favorites, setFavorites] = useState(loadFavorites);
+
 
   function loadFavorites() {
     let saved: any = JSON.parse(localStorage.getItem("favorites") || "[]");
@@ -76,8 +75,8 @@ export default function CryptosPage(props: any) {
       <table>
         <thead>
           <tr className="table-head">
-            <th className="center">#</th>
-            <th className="left">Coin</th>
+            <th className="center fixed-column">#</th>
+            <th className="left fixed-column">Coin</th>
             <th className="center">Price</th>
             <th className="right">1h</th>
             <th className="right">24h</th>
@@ -99,9 +98,12 @@ export default function CryptosPage(props: any) {
                     }}
                   >
                     {favorites.includes(crypto.id) ? (
-                      <i className="starred fa-solid fa-star"></i>
+                      <FontAwesomeIcon
+                        icon={icons.faStarFilled}
+                        className="starred"
+                      />
                     ) : (
-                      <i className="fa-regular fa-star"></i>
+                      <FontAwesomeIcon icon={icons.faStarEmpty} />
                     )}
                   </button>
                   {crypto.market_cap_rank}.
@@ -197,18 +199,20 @@ export default function CryptosPage(props: any) {
 
       <div className="Pagination">
         <button className="page-btn" onClick={prevPage}>
-          <i className="fa-solid fa-angle-left"></i>Back
+          <FontAwesomeIcon icon={icons.faAngleLeft} />
+          Back
         </button>
 
         <>{renderPagination()}</>
 
         <button className="page-btn" onClick={nextPage}>
-          Next<i className="fa-solid fa-angle-right"></i>
+          Next <FontAwesomeIcon icon={icons.faAngleRight} />
         </button>
       </div>
     </div>
   );
 }
+
 
 
 

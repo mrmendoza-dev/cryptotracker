@@ -51,6 +51,7 @@ export default function FearGreed() {
       <a
         href="https://alternative.me/crypto/fear-and-greed-index/"
         target="_blank"
+        rel="noopener"
       >
         <p className="fg-time">Last Update: {index.timestamp}</p>
       </a>

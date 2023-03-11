@@ -40,7 +40,7 @@ export default function Scroller(props: any) {
             <div className="ticker-cell" key={nanoid()}>
               <img className="crypto-img" src={crypto.image} />
 
-              <a href={`${cgUrl}${crypto.id}`} target="_blank">
+              <a href={`${cgUrl}${crypto.id}`} target="_blank" rel="noopener">
                 <div className="">
                   <p className="crypto-name">{crypto.name}</p>
                   <p className="crypto-symbol">{crypto.symbol}</p>

@@ -1,0 +1,93 @@
+.NavbarOverlay {
+  background-color: var(--clr-bg);
+  color: var(--clr-font);
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  /* font-family: Arial, Helvetica, sans-serif; */
+  /* padding: 1em 2em; */
+  font-size: 16px;
+  /* width: 400px; */
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 999999999;
+
+  margin: 0;
+}
+
+.NavbarOverlay .Sidebar {
+  transition: all 200ms;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.NavbarOverlay .wrap {
+  padding: 1.6em 1.6em;
+}
+
+.NavbarOverlay .header {
+  display: flex;
+  justify-content: space-between;
+  margin-right: -0.8em;
+}
+.NavbarOverlay .btn-exit {
+  outline: none;
+  border: none;
+  background-color: inherit;
+  font-size: 1.4rem;
+}
+
+.NavbarOverlay .directory {
+  margin-top: 1.2em;
+}
+
+.NavbarOverlay .directory .nav-item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.NavbarOverlay .accounts {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  margin-top: 1.2em;
+}
+
+.NavbarOverlay .control {
+  display: flex;
+  margin: 0 auto;
+  margin-top: 1.2em;
+}
+.NavbarOverlay .control .select {
+  flex-grow: 1;
+}
+
+.NavbarOverlay .directory-extra {
+  display: flex;
+  justify-content: center;
+
+  align-items: center;
+  flex-direction: column;
+  color: var(--clr-fontAccent);
+  width: 200px;
+  margin: 0 auto;
+  gap: 0.6em;
+  margin-top: 0.6em;
+}
+
+.NavbarOverlay .social-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.6em;
+  font-size: 1.4rem;
+  color: var(--clr-fontAccent);
+  margin-top: 1.2em;
+}
+
+.NavbarOverlay .btn-create {
+}
+.NavbarOverlay .btn-login {
+}

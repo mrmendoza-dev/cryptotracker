@@ -1,19 +1,18 @@
-
 import { Percent } from "./Percent";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { icons } from "../assets/icons";
 
 export default function Change(props: any) {
-
   return (
     <div className="Change">
       <Percent className="card-price-change" data={props.value}>
         {props.value > 0 ? (
-          <i className="fa-solid fa-caret-up"></i>
+          <FontAwesomeIcon icon={icons.faCaretUp} />
         ) : (
-          <i className="fa-solid fa-caret-down"></i>
+          <FontAwesomeIcon icon={icons.faCaretDown} />
         )}
         {props.value.toFixed(2)}%
       </Percent>
     </div>
   );
 }
-

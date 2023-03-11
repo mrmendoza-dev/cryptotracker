@@ -1,20 +1,19 @@
-
 .FearGreed {
-    /* border: 1px solid #9a9a9a; */
-    padding: .6em 1em;
-    max-width: 300px;
-    text-align: center;
+  /* border: 1px solid #9a9a9a; */
+  padding: 0.6em 1em;
+  max-width: 300px;
+  text-align: center;
 }
 
 .fg-value {
-    font-size: 2rem;
-    font-weight: 600;
+  font-size: 2rem;
+  font-weight: 600;
 }
 .fg-class {
-    font-size: 1.4rem;
-    font-weight: 600;
+  font-size: 1.4rem;
+  font-weight: 600;
 }
 .fg-time {
-    text-align: right;
-    margin-top: .4em;
+  text-align: right;
+  margin-top: 0.4em;
 }

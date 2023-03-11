@@ -6,7 +6,7 @@ export default function Footer(props: any) {
       <div className="Footer">
         <div className="footer-main">
           <p className="footer-copyright">
-            © 2023 CryptoTracker. All rights reserved
+            © {new Date().getFullYear()} CryptoTracker. All rights reserved
           </p>
         </div>
 
@@ -44,13 +44,14 @@ export default function Footer(props: any) {
                   className="nav-link"
                   href="https://github.com/mrmendoza171"
                   target="_blank"
+                  rel="noopener"
                 >
                   Github
                 </a>
               </p>
               <p className="dir-item">
-                <a className="nav-link" href="">
-                  About Us
+                <a className="nav-link" href="https://github.com/mrmendoza171">
+                  About
                 </a>
               </p>
             </div>

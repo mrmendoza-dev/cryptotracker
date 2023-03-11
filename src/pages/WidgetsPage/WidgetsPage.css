@@ -4,72 +4,29 @@
   margin: 0 auto;
 }
 
-.crypto-row {
-  align-items: center;
-  gap: 1em;
+
+.Widgets .crypto-img {
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  margin-right: .8em;
 }
 
-.crypto-img {
-  width: 24px;
-}
-.crypto-symbol {
-  text-transform: uppercase;
-}
-
-.coin-data {
-  display: flex;
-  gap: 0.8em;
-  align-items: center;
+.Widgets .crypto-cards {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+    flex-wrap: wrap;
+    margin-top: 2em;
+    
 }
 
-.right {
-  text-align: right;
-}
-.left {
-  text-align: left;
-}
-.center {
-  text-align: center;
-}
-
-.crypto-name {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: var(--clr-font);
-}
-
-.crypto-symbol {
-  font-size: 0.8rem;
-  font-weight: 400;
-}
-
-.starred {
-  color: #ffcc66;
-}
-
-.star-btn {
-  color: var(--clr-fontAccent);
-  cursor: pointer;
-  margin: 0.5em;
-
-  background-color: inherit;
-  border: none;
-  font-size: 1rem;
-  transition: all 100ms;
-}
-
-.star-btn:hover {
-  color: #ffcc66;
-}
-
-.flex {
-  gap: 0.5em;
-  display: flex;
-}
 
 .widget-row {
   display: flex;
   justify-content: center;
+      flex-wrap: wrap;
+
   gap: 2em;
   padding: 2em 4em;
 }

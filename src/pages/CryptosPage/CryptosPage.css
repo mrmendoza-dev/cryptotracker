@@ -2,7 +2,6 @@
 
 
 .Cryptos {
-  max-height: 85vh;
   overflow-y:scroll;
   border-bottom: 1px solid var(--clr-fontAccent);
   padding: 0 1em;
@@ -18,8 +17,11 @@
 }
 
 
-.crypto-img {
-  width: 24px;
+.Cryptos .crypto-img {
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  margin-right: .8em;
 }
 .crypto-symbol {
   text-transform: uppercase;
@@ -92,13 +94,24 @@ table {
       /* overflow:scroll; */
   position: relative;
   z-index: 1;
+      /* overflow-x: auto; */
 
 }
   
 tbody {
     /* overflow: auto; */
 
+
 }
+
+/* .fixed-column {
+  position: sticky;
+  left: 0;
+  z-index: 1;
+  background-color: white;
+  min-width: 150px;
+} */
+
 
 .crypto-row {
   height: 3em;

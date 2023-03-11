@@ -1,0 +1,70 @@
+.nav-search {
+  font-size: 0.9rem;
+  padding: 0.8em 1em;
+  border-radius: 8px;
+  background-color: var(--clr-hr);
+  color: var(--clr-fontAccent);
+  position: relative;
+  display: flex;
+}
+
+.nav-search-input {
+  outline: none;
+  border: none;
+  position: relative;
+  background-color: inherit;
+  padding-left: 0.6em;
+  color: inherit;
+  max-height: 300px;
+  width: 300px;
+}
+.search-results {
+  list-style-type: none;
+  padding: 0;
+  font-size: 1rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-height: 400px;
+  background-color: inherit;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  width: 100%;
+  padding: 0.4em 0.8em;
+  background-color: var(--clr-bg);
+  border-radius: 8px;
+  /* display: none; */
+}
+.search-input-wrapper {
+  display: flex;
+  font: inherit;
+  font-weight: 400;
+  font-size: 0.9rem;
+}
+
+.search-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 4px;
+  color: var(--clr-fontAccent);
+
+  width: 100%;
+  padding: 0.4em 0.4em;
+}
+.search-row:hover {
+  background-color: var(--clr-hr);
+}
+.search-results .crypto {
+  display: flex;
+  align-items: center;
+  gap: 0.4em;
+}
+.search-results .crypto .name {
+  font-weight: 600;
+  color: var(--clr-font);
+}
+.search-results .crypto .symbol {
+  font-weight: 400;
+  font-size: 0.8rem;
+}

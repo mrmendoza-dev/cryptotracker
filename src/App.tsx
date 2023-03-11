@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Nav from "./components/Nav/Nav";
+import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
 import appData from "./hooks/appData";
 import "./css/App.css";
@@ -12,16 +12,16 @@ import News from "./pages/NewsPage/NewsPage";
 
 
 function App() {
-  const { cryptos, globalData, trending, news } = appData();
+  const { cryptos, globalData, trending, news, cryptoList } = appData();
 
   return (
     <div className="App">
-      <Nav globalData={globalData} />
+      <Navbar globalData={globalData} cryptoList={cryptoList} />
 
       <Routes>
         <Route path="/" element={<Cryptos cryptos={cryptos} />} />
         <Route path="/portfolio" element={<Portfolio cryptos={cryptos} />} />
-        <Route path="/news" element={<News news={news}/>} />
+        <Route path="/news" element={<News news={news} />} />
         <Route
           path="/widgets"
           element={

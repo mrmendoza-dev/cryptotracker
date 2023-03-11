@@ -2,8 +2,8 @@
   margin: 0 auto;
   display: flex;
   gap: 2em;
-  padding: 2em 4em;
-  padding-top: 4em;
+  padding: 2em .6em;
+  /* padding-top: 4em; */
   max-width: var(--app-width);
   width: 95%;
 }
@@ -70,6 +70,8 @@
 .portfolio-main-header {
   display: flex;
   justify-content: space-between;
+  width: 100%;
+  /* overflow-x: hidden; */
 }
 
 .header-stats {
@@ -93,6 +95,8 @@
   font-weight: 700;
   border-radius: 7px;
   padding: 0.4em 0.6em;
+    white-space: nowrap;
+
 }
 
 .header-change {
@@ -127,6 +131,8 @@
   display: flex;
   align-items: center;
   gap: 0.5em;
+    white-space: nowrap;
+
 }
 .btn-more {
   color: var(--clr-font);
@@ -134,10 +140,10 @@
   display: flex;
   align-items: center;
   gap: 0.5em;
+    white-space: nowrap;
+
 }
-.icon-shift {
-  transform: translateY(25%);
-}
+
 
 .btn-hide {
   background-color: inherit;
@@ -191,6 +197,7 @@
 
 .portfolio-main-allocation {
   width: 90%;
+  margin: 0 auto;
   margin-top: 2em;
 }
 .allocation-wrapper {
@@ -214,6 +221,7 @@
   margin-top: 1.4em;
 }
 
+
 .portfolio-stat {
   color: var(--clr-fontAccent);
   display: flex;
@@ -233,6 +241,7 @@
 
 .portfolio-main-table {
   margin-top: 2em;
+  overflow-x: scroll;
 }
 
 .caret {
@@ -240,20 +249,12 @@
   margin-right: 0.3em;
 }
 
-.Cryptos {
-  max-height: 85vh;
-  overflow-y: scroll;
-  border-bottom: 1px solid var(--clr-fontAccent);
-  padding: 0 1em;
-  width: 90%;
-  margin: 0 auto;
-}
 
-.crypto-img {
+.Portfolio .crypto-img {
   border-radius: 50%;
-  /* background-color: #2C4CC6; */
-  height: 26px;
-  aspect-ratio: 1;
+  height: 30px;
+  width: 30px;
+  margin-right: .8em;
 }
 
 .crypto-symbol {
@@ -271,22 +272,19 @@
 }
 
 .crypto-symbol {
-  /* font-size: .8rem; */
   font-weight: 600;
 }
 
 .portfolio-table {
   width: 100%;
   border-collapse: collapse;
-  /* height: 500px; */
-  /* overflow:scroll; */
+
   position: relative;
   z-index: 1;
   margin-top: 1.4em;
 }
 
 tbody {
-  /* overflow: auto; */
 }
 
 .crypto-row {
@@ -337,4 +335,32 @@ tbody {
   .portfolio-sidebar {
     display: none;
   }
+}
+
+
+
+@media all and (max-width: 800px) {
+  .portfolio-main-stats {
+ 
+    flex-direction: column;
+    gap: 1.2em;
+}
+.portfolio-stat {
+  justify-content: space-between;
+}
+}
+
+
+@media all and (max-width: 800px) {
+  .portfolio-main-stats {
+ 
+    flex-direction: column;
+}
+  .portfolio-main-header {
+ 
+      gap: .6em;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
 }

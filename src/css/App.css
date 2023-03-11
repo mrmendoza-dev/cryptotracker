@@ -64,6 +64,8 @@ body {
   height: 100vh;
   min-height: 1000px;
   /* overflow: hidden; */
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
 .right {

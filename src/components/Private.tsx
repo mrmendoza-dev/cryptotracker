@@ -1,13 +1,14 @@
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { icons } from "../assets/icons";
 
 export default function Private(props: any) {
   return (
     <div className="Private">
       {props.hidden ? (
         <div className="hidden-cover">
-          <p>{props.element}</p>
+          <div>{props.element}</div>
           <div className="hidden-icon">
-            <i className="fa-solid fa-eye-slash"></i>
+            <FontAwesomeIcon icon={icons.faEyeSlash} />
           </div>
         </div>
       ) : (

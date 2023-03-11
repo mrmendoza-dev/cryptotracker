@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import "./DarkMode.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { icons } from "../../assets/icons";
 
 export default function DarkMode() {
   const root: any = document.querySelector(":root");
@@ -72,9 +74,13 @@ export default function DarkMode() {
   return (
     <button className="theme-btn nav-icon" onClick={changeTheme}>
       {darkMode ? (
-        <i style={{ color: "white" }} className="fa-solid fa-sun"></i>
+        <div style={{ color: "white" }}>
+          <FontAwesomeIcon icon={icons.faSun} />
+        </div>
       ) : (
-        <i style={{ color: "black" }} className="fa-solid fa-moon"></i>
+        <div style={{ color: "black" }}>
+          <FontAwesomeIcon icon={icons.faMoon} />
+        </div>
       )}
     </button>
   );

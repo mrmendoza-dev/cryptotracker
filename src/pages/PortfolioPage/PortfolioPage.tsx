@@ -3,7 +3,8 @@ import "./PortfolioPage.css";
 import { Percent } from "../../components/Percent";
 import Private from "../../components/Private";
 import { nanoid } from "nanoid";
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { icons } from "../../assets/icons";
 
 
 export default function PortfolioPage(props: any) {
@@ -66,7 +67,7 @@ export default function PortfolioPage(props: any) {
         <div className="sidebar-main">
           <div className="portfolio-block">
             <div className="block-img">
-              <i className="fa-solid fa-wallet"></i>
+              <FontAwesomeIcon icon={icons.faWallet} />
             </div>
             <div className="block-info">
               <p>
@@ -91,7 +92,7 @@ export default function PortfolioPage(props: any) {
         <div className="sidebar-portfolios">
           <div className="portfolio-block">
             <div className="block-img">
-              <i className="fa-solid fa-wallet"></i>
+              <FontAwesomeIcon icon={icons.faWallet} />
             </div>
             <div className="block-info">
               <p>
@@ -116,16 +117,19 @@ export default function PortfolioPage(props: any) {
         </div>
         <div className="sidebar-controls">
           <button className="btn btn-sidebar">
-            <i className="fa-solid fa-circle-plus"></i>
+            <FontAwesomeIcon icon={icons.faCirclePlus} />
             Create portfolio
           </button>
           <button className="btn btn-sidebar">
-            <i className="fa-solid fa-folder-plus"></i> Manage portfolios
+            <FontAwesomeIcon icon={icons.faFolderPlus} />
+            Manage portfolios
           </button>
         </div>
       </div>
 
       <div className="portfolio-main">
+
+
         <div className="portfolio-main-header">
           <div className="header-stats">
             <div className="header-balance">
@@ -142,15 +146,15 @@ export default function PortfolioPage(props: any) {
                 }
               ></Private>
 
-              <p className="header-percent">
-                <i className="fa-solid fa-caret-up caret"></i>
+              <div className="header-percent">
+                <FontAwesomeIcon icon={icons.faCaretUp} className="caret" />
                 {stats.percentChange}%
-              </p>
+              </div>
               <button className="btn-hide" onClick={hideBalance}>
                 {hidden ? (
-                  <i className="fa-solid fa-eye-slash"></i>
+                  <FontAwesomeIcon icon={icons.faEyeSlash} />
                 ) : (
-                  <i className="fa-solid fa-eye"></i>
+                  <FontAwesomeIcon icon={icons.faEye} />
                 )}
               </button>
             </div>
@@ -174,13 +178,14 @@ export default function PortfolioPage(props: any) {
               <p className="change-timeframe">24h</p>
             </div>
           </div>
+
           <div className="header-controls">
             <button className="btn btn-more">
-              <i className="fa-solid fa-ellipsis icon-shift"></i>
+              <FontAwesomeIcon icon={icons.faEllipsis} />
               More
             </button>
             <button className="btn btn-add">
-              <i className="fa-solid fa-circle-plus icon-shift"></i>
+              <FontAwesomeIcon icon={icons.faCirclePlus} />
               Add New
             </button>
           </div>
@@ -196,64 +201,70 @@ export default function PortfolioPage(props: any) {
           </div>
         </div>
 
+
         <div className="portfolio-main-stats">
-          <div className="portfolio-stat">
+
+
+
             <div className="portfolio-stat">
-              <div className=""></div>
-              <div className="">
                 <p>All Time Profit</p>
                 <div className="stat-value">
                   <Private
                     hidden={hidden}
                     element={
-                      <p className="">
-                        <i className="fa-solid fa-caret-down caret"></i>
+                      <div className="">
+                        <FontAwesomeIcon
+                          icon={icons.faCaretDown}
+                          className="caret"
+                        />
                         {stats.profit.percent}%($
                         {stats.profit.amount.toLocaleString()})
-                      </p>
+                      </div>
                     }
                   ></Private>
                 </div>
-              </div>
             </div>
-          </div>
+
+
           <div className="portfolio-stat">
-            <div className="crypto-img"></div>
-            <div className="">
               <p>Best Performer</p>
               <div className="stat-value">
                 <Private
                   hidden={hidden}
                   element={
-                    <p className="">
-                      <i className="fa-solid fa-caret-down caret"></i>
+                    <div className="">
+                      <FontAwesomeIcon
+                        icon={icons.faCaretDown}
+                        className="caret"
+                      />
                       {stats.best.percent}%($
                       {stats.best.amount.toLocaleString()})
-                    </p>
+                    </div>
                   }
                 ></Private>
               </div>
-            </div>
           </div>
+
           <div className="portfolio-stat">
-            <div className="crypto-img"></div>
-            <div className="">
               <p>Worst Performer</p>
               <div className="stat-value">
                 <Private
                   hidden={hidden}
                   element={
-                    <p className="">
-                      <i className="fa-solid fa-caret-down caret"></i>
+                    <div className="">
+                      <FontAwesomeIcon
+                        icon={icons.faCaretDown}
+                        className="caret"
+                      />
                       {stats.worst.percent}%($
                       {stats.worst.amount.toLocaleString()})
-                    </p>
+                    </div>
                   }
                 ></Private>
               </div>
-            </div>
           </div>
         </div>
+
 
         <div className="portfolio-main-table">
           <p className="subheader">Your Assets</p>
@@ -372,10 +383,12 @@ export default function PortfolioPage(props: any) {
                         <td className="portfolio-table-actions center">
                           <div className="action-btns">
                             <button className="btn-table">
-                              <i className="fa-solid fa-plus"></i>
+                              <FontAwesomeIcon icon={icons.faPlus} />
                             </button>
                             <button className="btn-table">
-                              <i className="fa-solid fa-ellipsis-vertical"></i>
+                              <FontAwesomeIcon
+                                icon={icons.faEllipsisVertical}
+                              />
                             </button>
                           </div>
                         </td>

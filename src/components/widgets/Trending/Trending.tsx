@@ -29,6 +29,7 @@ export default function Trending(props: any) {
                   <a
                     href={`https://www.coingecko.com/en/coins/${crypto.item.id}`}
                     target="_blank"
+                    rel="noopener"
                   >
                     <div className="trending-title">
                       <p className="trending-name">{crypto.item.name}</p>

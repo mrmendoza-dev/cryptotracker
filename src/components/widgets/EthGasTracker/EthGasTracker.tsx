@@ -46,6 +46,7 @@ export default function EthGasTracker() {
       <a
         href={`https://etherscan.io/block/${oracle.LastBlock}`}
         target="_blank"
+        rel="noopener"
       >
         <p className="gas-block">Last Block: {oracle.LastBlock}</p>
       </a>

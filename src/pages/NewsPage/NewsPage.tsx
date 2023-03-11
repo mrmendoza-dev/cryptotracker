@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import "./NewsPage.css";
 import { nanoid } from "nanoid";
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { icons } from "../../assets/icons";
 
 export default function NewsPage(props: any) {
   const news = props.news;
@@ -10,6 +11,19 @@ export default function NewsPage(props: any) {
   const [videos, setVideos] = useState<any[]>([]);
   const [currentVideo, setCurrentVideo] = useState();
   const coingeckoUrl = "https://www.coingecko.com/en/coins/";
+
+
+function formatDate(dateString: string) {
+  const date = new Date(dateString);
+  const formattedDate = date.toLocaleDateString("en-US", {
+    month: "short",
+    day: "numeric",
+    year: "numeric",
+  });
+
+  return formattedDate;
+
+}
 
   function getNews() {
     let articles: any = [];
@@ -59,9 +73,8 @@ export default function NewsPage(props: any) {
   }
 
   return (
-    <div className="News">
+    <div className="NewsPage">
       <div className="news-video">
-        <div className="video-showcase">
           {videos.slice(0, 1).map((article) => {
             let videoLink = article.news_url.replace("watch?v=", "embed/");
 
@@ -72,11 +85,6 @@ export default function NewsPage(props: any) {
             );
           })}
 
-          {/* <iframe
-            className="video-frame"
-            src={currentVideo.news_url.replace("watch?v=", "embed/")}
-          ></iframe> */}
-        </div>
       </div>
       <div className="news-latest">
         <p className="news-heading">Latest News</p>
@@ -99,28 +107,34 @@ export default function NewsPage(props: any) {
                   </a>
                   <div className="news-subheader">
                     <p className="news-source">{article.source_name}</p>
-                    <p className="news-date">{article.date}</p>
+                    <p className="news-date">{formatDate(article.date)}</p>
                   </div>
                   <p className="news-text">{article.text}</p>
 
-                  <div className="news-tickers">
-                    {article.tickers.map((ticker: any) => {
-                      return <p key={nanoid()}>{ticker}</p>;
-                    })}
+                  <div className="news-bottom-row">
+                    <div className="news-tickers">
+                      {article.tickers.map((ticker: any) => {
+                        return <p key={nanoid()}>{ticker}</p>;
+                      })}
+                    </div>
+
+                    <button
+                      className="news-bookmark"
+                      onClick={() => {
+                        bookmarkArticle(article.news_url);
+                      }}
+                    >
+                      {bookmarks.includes(article.news_url) ? (
+                        <FontAwesomeIcon
+                          icon={icons.faBookmarkFilled}
+                          className="bookmarked"
+                        />
+                      ) : (
+                        <FontAwesomeIcon icon={icons.faBookmarkEmpty} />
+                      )}
+                    </button>
                   </div>
                 </div>
-                <button
-                  className="news-bookmark"
-                  onClick={() => {
-                    bookmarkArticle(article.news_url);
-                  }}
-                >
-                  {bookmarks.includes(article.news_url) ? (
-                    <i className="fa-solid fa-bookmark bookmarked"></i>
-                  ) : (
-                    <i className="fa-regular fa-bookmark"></i>
-                  )}
-                </button>
               </div>
             );
           })}

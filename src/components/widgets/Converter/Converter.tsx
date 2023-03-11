@@ -2,6 +2,9 @@
 import { useEffect, useState } from "react";
 import "./index.css";
 import { nanoid } from "nanoid";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { icons } from "../../../assets/icons";
+
 
 export default function Converter(props: any) {
 
@@ -103,7 +106,7 @@ export default function Converter(props: any) {
           </select>
 
           <button className="btn-swap" onClick={swapCurrencies}>
-            <i className="fa-solid fa-arrow-right-arrow-left"></i>
+            <FontAwesomeIcon icon={icons.faArrowRightArrowLeft} />
           </button>
 
           <select
