@@ -128,8 +128,6 @@ export default function PortfolioPage(props: any) {
       </div>
 
       <div className="portfolio-main">
-
-
         <div className="portfolio-main-header">
           <div className="header-stats">
             <div className="header-balance">
@@ -201,70 +199,64 @@ export default function PortfolioPage(props: any) {
           </div>
         </div>
 
-
         <div className="portfolio-main-stats">
-
-
-
-            <div className="portfolio-stat">
-                <p>All Time Profit</p>
-                <div className="stat-value">
-                  <Private
-                    hidden={hidden}
-                    element={
-                      <div className="">
-                        <FontAwesomeIcon
-                          icon={icons.faCaretDown}
-                          className="caret"
-                        />
-                        {stats.profit.percent}%($
-                        {stats.profit.amount.toLocaleString()})
-                      </div>
-                    }
-                  ></Private>
-                </div>
-            </div>
-
-
           <div className="portfolio-stat">
-              <p>Best Performer</p>
-              <div className="stat-value">
-                <Private
-                  hidden={hidden}
-                  element={
-                    <div className="">
-                      <FontAwesomeIcon
-                        icon={icons.faCaretDown}
-                        className="caret"
-                      />
-                      {stats.best.percent}%($
-                      {stats.best.amount.toLocaleString()})
-                    </div>
-                  }
-                ></Private>
-              </div>
+            <p>All Time Profit</p>
+            <div className="stat-value">
+              <Private
+                hidden={hidden}
+                element={
+                  <div className="">
+                    <FontAwesomeIcon
+                      icon={icons.faCaretDown}
+                      className="caret"
+                    />
+                    {stats.profit.percent}%($
+                    {stats.profit.amount.toLocaleString()})
+                  </div>
+                }
+              ></Private>
+            </div>
           </div>
 
           <div className="portfolio-stat">
-              <p>Worst Performer</p>
-              <div className="stat-value">
-                <Private
-                  hidden={hidden}
-                  element={
-                    <div className="">
-                      <FontAwesomeIcon
-                        icon={icons.faCaretDown}
-                        className="caret"
-                      />
-                      {stats.worst.percent}%($
-                      {stats.worst.amount.toLocaleString()})
-                    </div>
-                  }
-                ></Private>
-              </div>
+            <p>Best Performer</p>
+            <div className="stat-value">
+              <Private
+                hidden={hidden}
+                element={
+                  <div className="">
+                    <FontAwesomeIcon
+                      icon={icons.faCaretDown}
+                      className="caret"
+                    />
+                    {stats.best.percent}%($
+                    {stats.best.amount.toLocaleString()})
+                  </div>
+                }
+              ></Private>
+            </div>
+          </div>
+
+          <div className="portfolio-stat">
+            <p>Worst Performer</p>
+            <div className="stat-value">
+              <Private
+                hidden={hidden}
+                element={
+                  <div className="">
+                    <FontAwesomeIcon
+                      icon={icons.faCaretDown}
+                      className="caret"
+                    />
+                    {stats.worst.percent}%($
+                    {stats.worst.amount.toLocaleString()})
+                  </div>
+                }
+              ></Private>
+            </div>
           </div>
         </div>
-
 
         <div className="portfolio-main-table">
           <p className="subheader">Your Assets</p>

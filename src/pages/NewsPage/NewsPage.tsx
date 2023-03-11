@@ -12,18 +12,16 @@ export default function NewsPage(props: any) {
   const [currentVideo, setCurrentVideo] = useState();
   const coingeckoUrl = "https://www.coingecko.com/en/coins/";
 
+  function formatDate(dateString: string) {
+    const date = new Date(dateString);
+    const formattedDate = date.toLocaleDateString("en-US", {
+      month: "short",
+      day: "numeric",
+      year: "numeric",
+    });
 
-function formatDate(dateString: string) {
-  const date = new Date(dateString);
-  const formattedDate = date.toLocaleDateString("en-US", {
-    month: "short",
-    day: "numeric",
-    year: "numeric",
-  });
-
-  return formattedDate;
-
-}
+    return formattedDate;
+  }
 
   function getNews() {
     let articles: any = [];
@@ -75,16 +73,15 @@ function formatDate(dateString: string) {
   return (
     <div className="NewsPage">
       <div className="news-video">
-          {videos.slice(0, 1).map((article) => {
-            let videoLink = article.news_url.replace("watch?v=", "embed/");
+        {videos.slice(0, 1).map((article) => {
+          let videoLink = article.news_url.replace("watch?v=", "embed/");
 
-            return (
-              <div key={nanoid()} className="">
-                <iframe className="video-frame" src={videoLink}></iframe>
-              </div>
-            );
-          })}
-
+          return (
+            <div key={nanoid()} className="">
+              <iframe className="video-frame" src={videoLink}></iframe>
+            </div>
+          );
+        })}
       </div>
       <div className="news-latest">
         <p className="news-heading">Latest News</p>
