@@ -44,6 +44,14 @@ export default function CryptoSearchbar(props: any) {
         />
       </div>
 
+      <div
+        className="search-results-wrapper"
+        style={{ display: searchTerm ? "block" : "none" }}
+        onClick={() => {
+          setSearchTerm("");
+        }}
+      ></div>
+
       <ul
         className="search-results"
         style={{ display: searchTerm ? "block" : "none" }}
@@ -60,6 +68,7 @@ export default function CryptoSearchbar(props: any) {
             onChange={handleInputChange}
           />
         </div>
+
 
         {filteredData.map((crypto: any) => (
           <a

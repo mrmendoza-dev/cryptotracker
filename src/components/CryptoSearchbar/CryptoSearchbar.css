@@ -32,9 +32,22 @@
   width: 100%;
   padding: 0.4em 0.8em;
   background-color: var(--clr-bg);
+  z-index: 100;
   border-radius: 8px;
-  /* display: none; */
 }
+.search-results-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  opacity: 0.4;
+  z-index: 99;
+}
+
 .search-input-wrapper {
   display: flex;
   font: inherit;
