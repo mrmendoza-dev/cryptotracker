@@ -1,32 +1,27 @@
 import logo from "./logo.png";
-import "./Navbar.css";
+import "./Navbar.scss";
 import DarkMode from "../DarkMode/DarkMode";
 import { Percent } from "../Percent";
-import {Link} from "react-router-dom"
+import { Link } from "react-router-dom";
 import React, { useState, useRef } from "react";
 import { nanoid } from "nanoid";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { icons } from "../../assets/icons";
-import NavbarOverlay from "../NavbarOverlay/NavbarOverlay"
+import NavbarOverlay from "../NavbarOverlay/NavbarOverlay";
 import CryptoSearchbar from "../CryptoSearchbar/CryptoSearchbar";
-
-
 
 export default function Navbar(props: any) {
   const overlayRef: any = useRef(null);
 
-
   const activateOverlay = () => {
+    console.log("test");
 
-    console.log("test")
-
-        console.log(overlayRef);
+    console.log(overlayRef);
 
     if (overlayRef.current) {
       overlayRef.current.toggleOverlay();
     }
   };
-
 
   let globalData = props.globalData;
   const repoUrl = "https://github.com/mrmendoza171/cryptotracker";
@@ -97,7 +92,6 @@ export default function Navbar(props: any) {
           </div>
         </div>
 
-        
         <div className="header-control">
           <select className="nav-select">
             <option>English</option>
@@ -173,11 +167,10 @@ export default function Navbar(props: any) {
             <FontAwesomeIcon icon={icons.faBars} />
           </button>
 
-          <NavbarOverlay ref={overlayRef}/>
+          <NavbarOverlay ref={overlayRef} />
         </div>
         <CryptoSearchbar className="nav-search" data={props.cryptoList} />
       </div>
     </div>
   );
 }
-

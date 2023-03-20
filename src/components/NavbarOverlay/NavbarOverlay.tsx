@@ -1,29 +1,24 @@
-
 import logo from "./logo.png";
-import "./NavbarOverlay.css";
+import "./NavbarOverlay.scss";
 import DarkMode from "../DarkMode/DarkMode";
 import { Link } from "react-router-dom";
 import React, { useState, forwardRef, useImperativeHandle } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { icons } from "../../assets/icons";
 
-
 function NavbarOverlay(props: any, ref: any) {
   const [isToggled, setIsToggled] = useState(false);
-
 
   const toggleOverlay = () => {
     setIsToggled(!isToggled);
   };
 
-    useImperativeHandle(ref, () => ({
-      toggleOverlay: toggleOverlay,
-    }));
+  useImperativeHandle(ref, () => ({
+    toggleOverlay: toggleOverlay,
+  }));
 
   return (
     <div className="NavbarOverlay">
-
-
       <div className="Sidebar" style={{ width: isToggled ? "100vw" : "0px" }}>
         <div className="wrap">
           <div className="header">

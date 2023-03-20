@@ -1,15 +1,13 @@
-import { useEffect, useState } from "react";
-import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
+import Navbar from "./components/Navbar/Navbar";
+import "./css/App.scss";
 import appData from "./hooks/appData";
-import "./css/App.css";
-// import "./css/Cryptos.css";
-import {Routes, Route} from "react-router-dom"
-import Cryptos from "./pages/CryptosPage/CryptosPage"
+// import "./css/Cryptos.scss";
+import { Route, Routes } from "react-router-dom";
+import Cryptos from "./pages/CryptosPage/CryptosPage";
+import News from "./pages/NewsPage/NewsPage";
 import Portfolio from "./pages/PortfolioPage/PortfolioPage";
 import Widgets from "./pages/WidgetsPage/WidgetsPage";
-import News from "./pages/NewsPage/NewsPage";
-
 
 function App() {
   const { cryptos, globalData, trending, news, cryptoList } = appData();

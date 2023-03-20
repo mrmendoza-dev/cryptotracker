@@ -1,11 +1,10 @@
 import { useEffect, useState } from "react";
-import "./PortfolioPage.css";
+import "./PortfolioPage.scss";
 import { Percent } from "../../components/Percent";
 import Private from "../../components/Private";
 import { nanoid } from "nanoid";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { icons } from "../../assets/icons";
-
 
 export default function PortfolioPage(props: any) {
   const cryptos = props.cryptos;
@@ -398,5 +397,3 @@ export default function PortfolioPage(props: any) {
     </div>
   );
 }
-
-

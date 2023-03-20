@@ -1,8 +1,8 @@
 
 
 
-.Cryptos {
-  overflow-y:scroll;
+.CryptosPage {
+  /* overflow-y:scroll; */
   border-bottom: 1px solid var(--clr-fontAccent);
   padding: 0 1em;
   width: 90%;
@@ -17,7 +17,7 @@
 }
 
 
-.Cryptos .crypto-img {
+.CryptosPage .crypto-img {
   border-radius: 50%;
   height: 30px;
   width: 30px;
@@ -87,7 +87,7 @@
 }
 
 
-table {
+.CryptosPage table {
   width: 100%;
   border-collapse:collapse;
   /* height: 500px; */
@@ -98,7 +98,7 @@ table {
 
 }
   
-tbody {
+.CryptosPage tbody {
     /* overflow: auto; */
 
 

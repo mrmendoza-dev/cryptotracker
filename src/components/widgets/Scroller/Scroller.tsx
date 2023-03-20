@@ -1,20 +1,14 @@
-
 import { nanoid } from "nanoid";
 import { useEffect, useState } from "react";
-import "./index.css"
+import "./index.scss";
 import styled from "styled-components";
-
 
 const Percent = styled.p<{ data: number }>`
   color: ${(props: any) =>
-    props.data >= 0
-      ? "var(--clr-gain)"
-      : "var(--clr-loss)"};
+    props.data >= 0 ? "var(--clr-gain)" : "var(--clr-loss)"};
 `;
 
-
 export default function Scroller(props: any) {
-
   const cgUrl = "https://www.coingecko.com/en/coins/";
   const currencies = [
     "bitcoin",
@@ -28,9 +22,9 @@ export default function Scroller(props: any) {
     "litecoin",
   ];
 
-  let cryptoData = props.cryptos.filter((crypto: any)=> {
-      return currencies.includes(crypto.id);
-  })
+  let cryptoData = props.cryptos.filter((crypto: any) => {
+    return currencies.includes(crypto.id);
+  });
 
   return (
     <div className="Scroller">
@@ -65,7 +59,6 @@ export default function Scroller(props: any) {
             </div>
           );
         })}
-        
       </div>
     </div>
   );

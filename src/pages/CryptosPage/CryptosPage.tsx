@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import "./CryptosPage.css";
+import "./CryptosPage.scss";
 import { Percent } from "../../components/Percent";
 import { nanoid } from "nanoid";
 import { Sparklines, SparklinesLine } from "react-sparklines";
@@ -11,7 +11,6 @@ export default function CryptosPage(props: any) {
   const coingeckoUrl = "https://www.coingecko.com/en/coins/";
   const [pageNum, setPageNum] = useState(1);
   const [favorites, setFavorites] = useState(loadFavorites);
-
 
   function loadFavorites() {
     let saved: any = JSON.parse(localStorage.getItem("favorites") || "[]");
@@ -71,7 +70,7 @@ export default function CryptosPage(props: any) {
   }
 
   return (
-    <div className="Cryptos">
+    <div className="CryptosPage">
       <table>
         <thead>
           <tr className="table-head">
@@ -212,9 +211,3 @@ export default function CryptosPage(props: any) {
     </div>
   );
 }
-
-
-
-
-
-

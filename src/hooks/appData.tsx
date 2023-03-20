@@ -58,22 +58,22 @@ function appData() {
 
 
     function getCryptoData() {
-      // fetch(cryptosUrl)
-      //   .then((res) => res.json())
-      //   .then((data) => {
-      //     setCryptos(data);
-      //   });
-      // fetch(globalUrl)
-      //   .then((res) => res.json())
-      //   .then((data) => {
-      //     setGlobalData(data.data);
-      //   });
-      // fetch(trendingUrl)
-      //   .then((res) => res.json())
-      //   .then((data) => {
-      //     setTrending(data.coins);
-      //   });
-      // fetch(trendingUrl)
+      fetch(cryptosUrl)
+        .then((res) => res.json())
+        .then((data) => {
+          setCryptos(data);
+        });
+      fetch(globalUrl)
+        .then((res) => res.json())
+        .then((data) => {
+          setGlobalData(data.data);
+        });
+      fetch(trendingUrl)
+        .then((res) => res.json())
+        .then((data) => {
+          setTrending(data.coins);
+        });
+      // fetch(cryptoListUrl)
       //   .then((res) => res.json())
       //   .then((data) => {
       //     setTrending(data.coins);

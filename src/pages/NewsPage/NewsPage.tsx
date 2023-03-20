@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import "./NewsPage.css";
+import "./NewsPage.scss";
 import { nanoid } from "nanoid";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { icons } from "../../assets/icons";

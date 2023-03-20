@@ -1,21 +1,32 @@
-
 import { useEffect, useState } from "react";
-import "./index.css";
+import "./index.scss";
 import { nanoid } from "nanoid";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { icons } from "../../../assets/icons";
 
-
 export default function Converter(props: any) {
-
   const [quantity, setQuantity] = useState(1);
   const [result, setResult] = useState(1);
-  const [baseCurrency, setBaseCurrency] = useState({id: "bitcoin", name: "Bitcoin", symbol: "BTC", price: 16000})
-  const [targetCurrency, setTargetCurrency] = useState({id: "ethereum", name: "Ethereum", symbol: "ETH", price: 1200});
+  const [baseCurrency, setBaseCurrency] = useState({
+    id: "bitcoin",
+    name: "Bitcoin",
+    symbol: "BTC",
+    price: 16000,
+  });
+  const [targetCurrency, setTargetCurrency] = useState({
+    id: "ethereum",
+    name: "Ethereum",
+    symbol: "ETH",
+    price: 1200,
+  });
 
-
-  const currencies = props.cryptos.map((crypto: any)=> {
-    return { id: crypto.id, name: crypto.name, symbol: crypto.symbol.toUpperCase(), price: crypto.current_price };
+  const currencies = props.cryptos.map((crypto: any) => {
+    return {
+      id: crypto.id,
+      name: crypto.name,
+      symbol: crypto.symbol.toUpperCase(),
+      price: crypto.current_price,
+    };
   });
 
   const [formData, setFormData] = useState({
@@ -23,7 +34,6 @@ export default function Converter(props: any) {
     base: "bitcoin",
     target: "ethereum",
   });
-
 
   function handleChange(event: any) {
     const { name, value } = event.target;
@@ -41,20 +51,17 @@ export default function Converter(props: any) {
     return currencies.find((crypto: any) => {
       return crypto.id === id;
     });
-
   }
-  
+
   useEffect(() => {
     calculateResults();
   }, []);
 
-
-
-  useEffect(()=> {
+  useEffect(() => {
     setQuantity(formData.quantity);
     setBaseCurrency(findCrypto(formData.base));
     setTargetCurrency(findCrypto(formData.target));
-  }, [formData])
+  }, [formData]);
 
   function handleSubmit(event: any) {
     event.preventDefault();
@@ -75,8 +82,7 @@ export default function Converter(props: any) {
 
   function calculateResults() {
     setResult(100);
-  };
-
+  }
 
   return (
     <div className="Converter">

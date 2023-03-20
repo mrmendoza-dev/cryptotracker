@@ -1,4 +1,4 @@
-import "./CryptoSearchbar.css";
+import "./CryptoSearchbar.scss";
 import React, { useState, useRef } from "react";
 import { nanoid } from "nanoid";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -68,7 +68,6 @@ export default function CryptoSearchbar(props: any) {
             onChange={handleInputChange}
           />
         </div>
-
 
         {filteredData.map((crypto: any) => (
           <a

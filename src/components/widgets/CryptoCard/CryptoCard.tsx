@@ -1,8 +1,6 @@
-import "./CryptoCard.css";
+import "./CryptoCard.scss";
 import { Sparklines, SparklinesLine } from "react-sparklines";
 import Change from "../../Change";
-
-
 
 export default function CryptoCard(props: any) {
   let crypto = props.crypto;

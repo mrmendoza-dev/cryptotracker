@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
-import "./index.css"
+import "./index.scss";
 
 export default function EthGasTracker() {
-
   const [oracle, setOracle] = useState({
     FastGasPrice: "",
     ProposeGasPrice: "",
@@ -12,13 +11,12 @@ export default function EthGasTracker() {
     gasUsedRatio: "",
   });
   const apiKey = "JF9VSJETPKYG3XE2Y68WIB7BSN5KKFFTWD";
-  const url =    `https://api.etherscan.io/api?module=gastracker&action=gasoracle&apikey=${apiKey}`;
+  const url = `https://api.etherscan.io/api?module=gastracker&action=gasoracle&apikey=${apiKey}`;
   // const url = `https://api.etherscan.io/api
   //  ?module=gastracker
   //  &action=gasoracle
   //  &apikey=${apiKey}`;
 
- 
   function getCryptoData() {
     fetch(url)
       .then((res) => res.json())
@@ -48,7 +46,9 @@ export default function EthGasTracker() {
         target="_blank"
         rel="noopener"
       >
-        <p className="gas-block">Last Block: {oracle.LastBlock}</p>
+        <p className="gas-block">
+          Last Block: {Number(oracle.LastBlock).toLocaleString()}
+        </p>
       </a>
 
       {/* <p className="">{oracle.suggestBaseFee}</p> */}

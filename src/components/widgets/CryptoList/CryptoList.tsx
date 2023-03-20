@@ -1,13 +1,6 @@
-
-
-
-
 import { useEffect, useState } from "react";
 import { nanoid } from "nanoid";
-import "./index.css";
-
-
-
+import "./index.scss";
 
 export default function CryptoList(props: any) {
   const cryptos = props.cryptos;

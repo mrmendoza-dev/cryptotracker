@@ -1,11 +1,6 @@
-
-
 import { useEffect, useState } from "react";
 import { nanoid } from "nanoid";
-import "./index.css";
-
-
-
+import "./index.scss";
 
 export default function Trending(props: any) {
   const trendingList = props.cryptos;

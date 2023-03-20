@@ -1,14 +1,9 @@
-
-
-
-
 import { useEffect, useState } from "react";
 import { nanoid } from "nanoid";
-import "./index.css"
+import "./index.scss";
 import { Pie } from "react-chartjs-2";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 ChartJS.register(ArcElement, Tooltip, Legend);
-
 
 export default function Dominance(props: any) {
   let data = props.cryptos;
@@ -16,7 +11,7 @@ export default function Dominance(props: any) {
   for (let key in data) {
     dominanceList.push({ id: key, value: data[key] });
   }
-  const top3 = dominanceList.slice(0,3);
+  const top3 = dominanceList.slice(0, 3);
 
   const chartData = {
     labels: Object.keys(data).map((name) => name.toUpperCase()),
@@ -45,7 +40,6 @@ export default function Dominance(props: any) {
     ],
   };
 
-
   return (
     <div className="Dominance module">
       <p className="module-title">Dominance</p>
@@ -66,5 +60,3 @@ export default function Dominance(props: any) {
     </div>
   );
 }
-
-

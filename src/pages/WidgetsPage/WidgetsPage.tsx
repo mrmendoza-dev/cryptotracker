@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { nanoid } from "nanoid";
-import "./WidgetsPage.css";
+import "./WidgetsPage.scss";
 import Converter from "../../components/widgets/Converter/Converter";
 import CryptoCard from "../../components/widgets/CryptoCard/CryptoCard";
 import Dominance from "../../components/widgets/Dominance/Dominance";
@@ -8,7 +8,6 @@ import EthGasTracker from "../../components/widgets/EthGasTracker/EthGasTracker"
 import FearGreed from "../../components/widgets/FearGreed/FearGreed";
 import Scroller from "../../components/widgets/Scroller/Scroller";
 import Trending from "../../components/widgets/Trending/Trending";
-
 
 export default function WidgetsPage(props: any) {
   const cryptos = props.cryptos;

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import "./DarkMode.css";
+import "./DarkMode.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { icons } from "../../assets/icons";
 
@@ -22,7 +22,6 @@ export default function DarkMode() {
 
   useEffect(setTheme, [darkMode]);
 
-
   const lightTheme = {
     scheme: "light",
     font: "#111827",
@@ -35,7 +34,7 @@ export default function DarkMode() {
     row: "#F9FAFB",
     hr: "#F3F4F6",
   };
-  
+
   const darkTheme = {
     scheme: "dark",
     font: "#EEEEEE",
@@ -50,16 +49,16 @@ export default function DarkMode() {
   };
 
   function updateTheme(theme: any) {
-      root.style.setProperty("color-scheme", theme.scheme);
-      root.style.setProperty("--clr-font", theme.font);
-      root.style.setProperty("--clr-fontAccent", theme.fontAccent);
-      root.style.setProperty("--clr-bg", theme.bg);
-      root.style.setProperty("--clr-contrast", theme.contrast);
-      root.style.setProperty("--clr-accent1", theme.accent1);
-      root.style.setProperty("--clr-accent2", theme.accent2);
-      root.style.setProperty("--clr-shadow", theme.shadow);
-      root.style.setProperty("--clr-row", theme.row);
-      root.style.setProperty("--clr-hr", theme.hr);
+    root.style.setProperty("color-scheme", theme.scheme);
+    root.style.setProperty("--clr-font", theme.font);
+    root.style.setProperty("--clr-fontAccent", theme.fontAccent);
+    root.style.setProperty("--clr-bg", theme.bg);
+    root.style.setProperty("--clr-contrast", theme.contrast);
+    root.style.setProperty("--clr-accent1", theme.accent1);
+    root.style.setProperty("--clr-accent2", theme.accent2);
+    root.style.setProperty("--clr-shadow", theme.shadow);
+    root.style.setProperty("--clr-row", theme.row);
+    root.style.setProperty("--clr-hr", theme.hr);
   }
 
   function setTheme() {
@@ -85,5 +84,3 @@ export default function DarkMode() {
     </button>
   );
 }
-
-
