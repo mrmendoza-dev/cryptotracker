@@ -5,10 +5,11 @@ import Private from "../../components/Private";
 import { nanoid } from "nanoid";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { icons } from "../../assets/icons";
+import useLocalStorage from "../../hooks/useLocalStorage";
 
-export default function PortfolioPage(props: any) {
-  const cryptos = props.cryptos;
-  const [hidden, setHidden] = useState(loadStorage());
+
+export default function PortfolioPage({cryptos}: any) {
+  const [hidden, setHidden] = useLocalStorage("hidden", false);
   const [stats, setStats] = useState({
     total: 1235.67,
     percentChange: 48.25,
@@ -27,19 +28,6 @@ export default function PortfolioPage(props: any) {
 
   const coingeckoUrl = "https://www.coingecko.com/en/coins/";
 
-  useEffect(() => {
-    localStorage.setItem("hidden", JSON.stringify(hidden));
-  }, [hidden]);
-
-  function loadStorage() {
-    let data: any = JSON.parse(localStorage.getItem("hidden") || "false");
-    if (data != undefined) {
-      return data;
-    } else {
-      localStorage.setItem("hidden", JSON.stringify(false));
-      return false;
-    }
-  }
 
   function hideBalance() {
     setHidden((prevState: any) => !prevState);

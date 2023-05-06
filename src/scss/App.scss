@@ -1,8 +1,4 @@
 :root {
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -56,14 +52,14 @@ body {
   background-color: var(--clr-bg);
 }
 .App {
+  font-family: Inter, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
   background-color: var(--clr-bg);
   color: var(--clr-font);
   font-size: 16px;
-  font-weight: 600;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   height: 100vh;
   min-height: 1000px;
-  /* overflow: hidden; */
   max-width: 1400px;
   margin: 0 auto;
 }

@@ -3,13 +3,14 @@ import "./NewsPage.scss";
 import { nanoid } from "nanoid";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { icons } from "../../assets/icons";
+import useLocalStorage from "../../hooks/useLocalStorage";
 
-export default function NewsPage(props: any) {
-  const news = props.news;
+export default function NewsPage({news}: any) {
 
   const [articles, setArticles] = useState<any[]>([]);
   const [videos, setVideos] = useState<any[]>([]);
   const [currentVideo, setCurrentVideo] = useState();
+  const [bookmarks, setBookmarks] = useLocalStorage("bookmarks", []);
   const coingeckoUrl = "https://www.coingecko.com/en/coins/";
 
   function formatDate(dateString: string) {
@@ -47,18 +48,6 @@ export default function NewsPage(props: any) {
     setCurrentVideo(videos[0]);
   }, [videos]);
 
-  const [bookmarks, setBookmarks] = useState(loadBookmarks);
-
-  function loadBookmarks() {
-    let saved: any = JSON.parse(localStorage.getItem("bookmarks") || "[]");
-    if (saved != undefined) {
-      return saved;
-    } else {
-      localStorage.setItem("bookmarks", JSON.stringify([]));
-      return false;
-    }
-  }
-
   function bookmarkArticle(article: any) {
     let fav = bookmarks.slice();
     if (fav.includes(article)) {
@@ -67,7 +56,6 @@ export default function NewsPage(props: any) {
       fav.push(article);
     }
     setBookmarks(fav);
-    localStorage.setItem("bookmarks", JSON.stringify(fav));
   }
 
   return (

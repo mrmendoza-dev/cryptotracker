@@ -5,22 +5,14 @@ import { nanoid } from "nanoid";
 import { Sparklines, SparklinesLine } from "react-sparklines";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { icons } from "../../assets/icons";
+import useLocalStorage from "../../hooks/useLocalStorage";
 
-export default function CryptosPage(props: any) {
-  const cryptos = props.cryptos;
+
+export default function CryptosPage({cryptos}: any) {
   const coingeckoUrl = "https://www.coingecko.com/en/coins/";
   const [pageNum, setPageNum] = useState(1);
-  const [favorites, setFavorites] = useState(loadFavorites);
+  const [favorites, setFavorites] = useLocalStorage("favorites", []);
 
-  function loadFavorites() {
-    let saved: any = JSON.parse(localStorage.getItem("favorites") || "[]");
-    if (saved != undefined) {
-      return saved;
-    } else {
-      localStorage.setItem("favorites", JSON.stringify([]));
-      return false;
-    }
-  }
 
   function favoriteCrypto(crypto: any) {
     let fav = favorites.slice();
@@ -30,7 +22,6 @@ export default function CryptosPage(props: any) {
       fav.push(crypto);
     }
     setFavorites(fav);
-    localStorage.setItem("favorites", JSON.stringify(fav));
   }
 
   function nextPage() {

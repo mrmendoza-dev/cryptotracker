@@ -2,24 +2,12 @@ import { useEffect, useState } from "react";
 import "./DarkMode.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { icons } from "../../assets/icons";
+import useLocalStorage from "../../hooks/useLocalStorage";
 
 export default function DarkMode() {
   const root: any = document.querySelector(":root");
   const rootStyles = getComputedStyle(root);
-  const [darkMode, setDarkMode] = useState(loadTheme);
-
-  function loadTheme() {
-    let savedTheme: any = JSON.parse(
-      localStorage.getItem("darkMode") || "false"
-    );
-    if (savedTheme != undefined) {
-      return savedTheme;
-    } else {
-      localStorage.setItem("darkMode", JSON.stringify(false));
-      return false;
-    }
-  }
-
+  const [darkMode, setDarkMode] = useLocalStorage("darkMode", false);
   useEffect(setTheme, [darkMode]);
 
   const lightTheme = {
@@ -62,7 +50,6 @@ export default function DarkMode() {
   }
 
   function setTheme() {
-    localStorage.setItem("darkMode", JSON.stringify(darkMode));
     darkMode ? updateTheme(darkTheme) : updateTheme(lightTheme);
   }
 
