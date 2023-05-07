@@ -13,7 +13,6 @@ export default function CryptoSearchbar(props: any) {
   const handleInputChange = (event: any) => {
     setSearchTerm(event.target.value);
     const filtered = cryptoList.filter((crypto: any) => {
-      console.log(crypto);
 
       if (crypto.name && crypto.symbol) {
         if (

@@ -1,4 +1,4 @@
-import logo from "./logo.png";
+import logo from "/images/logo.png";
 import "./NavbarOverlay.scss";
 import DarkMode from "../DarkMode/DarkMode";
 import { Link } from "react-router-dom";

@@ -29,7 +29,6 @@ export default function NewsPage({news}: any) {
     let videos: any = [];
 
     if (news) {
-      console.log(news);
       let cropped = news.slice(0, 200);
       cropped.forEach((item: any) => {
         if (item.type === "Article") {

@@ -1,4 +1,4 @@
-import logo from "./logo.png";
+import logo from "/images/logo.png";
 import "./Navbar.scss";
 import DarkMode from "../DarkMode/DarkMode";
 import { Percent } from "../Percent";
@@ -14,10 +14,6 @@ export default function Navbar(props: any) {
   const overlayRef: any = useRef(null);
 
   const activateOverlay = () => {
-    console.log("test");
-
-    console.log(overlayRef);
-
     if (overlayRef.current) {
       overlayRef.current.toggleOverlay();
     }
