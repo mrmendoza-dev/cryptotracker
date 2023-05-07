@@ -38,40 +38,6 @@ export default function DarkMode() {
     root.style.setProperty("--clr-shadow", theme.shadow);
     root.style.setProperty("--clr-row", theme.row);
     root.style.setProperty("--clr-hr", theme.hr);
-    // Set the theme_color and background_color properties in the webmanifest
-
-      const themeColorMeta = document.querySelector('meta[name="theme-color"]');
-      if (themeColorMeta) {
-        themeColorMeta.setAttribute("content", theme.bg);
-      }
-
-      const backgroundColorMeta = document.querySelector(
-        'meta[name="background-color"]'
-      );
-      if (backgroundColorMeta) {
-        backgroundColorMeta.setAttribute("content", theme.font);
-      }
-
-      const manifestLink = document.querySelector('link[rel="manifest"]');
-      if (manifestLink) {
-        const manifestHref: any = manifestLink.getAttribute("href");
-        fetch(manifestHref)
-          .then((response) => response.json())
-          .then((manifest) => {
-            manifest.theme_color = theme.bg;
-            manifest.background_color = theme.font;
-            const updatedManifest = JSON.stringify(manifest);
-            const blob = new Blob([updatedManifest], {
-              type: "application/manifest+json",
-            });
-            const manifestUrl = URL.createObjectURL(blob);
-            manifestLink.setAttribute("href", manifestUrl);
-          })
-          .catch((error) => console.error(error));
-      }
-
-
-    
   }
 
   function setTheme() {
