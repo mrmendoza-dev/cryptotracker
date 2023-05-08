@@ -1,6 +1,5 @@
 @import "./mixins.scss";
 
-
 $table-row-height: 4.2em;
 
 .crypto-table,
@@ -17,8 +16,6 @@ $table-row-height: 4.2em;
   margin-top: 1.4em;
 }
 
-
-
 .table-wrapper {
   overflow-x: auto;
   max-width: 1200px;
@@ -29,8 +26,9 @@ $table-row-height: 4.2em;
   display: flex;
   align-items: center;
   justify-content: flex-start;
-    height: $table-row-height;
-
+  height: $table-row-height;
+  gap: 0.6em;
+  font-weight: 600;
 }
 
 .crypto-row {
@@ -84,16 +82,32 @@ $table-row-height: 4.2em;
   color: var(--clr-font);
 }
 
+.starred {
+  color: #ffcc66;
+}
 
+.star-btn {
+  color: var(--clr-fontAccent);
+  cursor: pointer;
+
+  background-color: inherit;
+  border: none;
+  font-size: 1rem;
+  transition: all 100ms;
+  padding: 0;
+  &:hover {
+    color: #ffcc66;
+  }
+}
 
 @media screen and (max-width: 600px) {
-    .crypto-table {
-      font-size: 0.8rem;
-    }
-    .crypto-row {
-      font-size: 0.8rem;
-    }
-    .crypto-name {
-      font-size: 1rem;
-    }
+  .crypto-table {
+    font-size: 0.8rem;
+  }
+  .crypto-row {
+    font-size: 0.8rem;
+  }
+  .crypto-name {
+    font-size: 1rem;
+  }
 }

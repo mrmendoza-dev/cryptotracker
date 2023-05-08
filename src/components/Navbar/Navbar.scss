@@ -1,7 +1,21 @@
 :root {
   --clr-logo: #fc8e06;
 }
-/* Header ICONS */
+
+.Navbar {
+  padding: 0 0.2em;
+  padding-top: 1em;
+  display: flex;
+  flex-direction: column;
+  top: 0;
+  z-index: 10;
+  width: 100%;
+  background: var(--clr-bg);
+  max-width: var(--app-width);
+  margin: 0 auto;
+}
+
+
 .nav-icons {
   display: flex;
   justify-content: center;
@@ -19,20 +33,7 @@
   cursor: pointer;
 }
 
-/* Header */
-.Navbar {
-  padding: 0 0.2em;
-  padding-top: 1em;
-  display: flex;
-  flex-direction: column;
-  top: 0;
-  z-index: 10;
-  width: 100%;
-  background: var(--clr-bg);
-  max-width: var(--app-width);
-  margin: 0 auto;
-  overflow: hidden;
-}
+
 
 .header-title {
   font-size: 1.2rem;
@@ -92,11 +93,19 @@
 .header-crypto {
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: 1.2em;
   white-space: nowrap;
+  width: fit-content;
   overflow: auto;
 }
+.header-stat {
+  display: flex;
+  gap: 0.4em;
+}
+.header-stat-link {
+  color: var(--clr-link);
+}
+
 
 .header-control {
   display: flex;
@@ -136,13 +145,6 @@
   gap: 0.4em;
 }
 
-.header-stat {
-  display: flex;
-  gap: 0.4em;
-}
-.header-stat-link {
-  color: var(--clr-link);
-}
 
 .nav-select {
   padding: 0.4em;
@@ -174,6 +176,7 @@
   .Navbar .header-control {
     display: none;
   }
+
   .Navbar .header-control-small {
     display: flex;
   }
@@ -183,10 +186,5 @@
   }
   .Navbar .sub-header {
     order: 1;
-  }
-}
-@media all and (max-width: 1000px) {
-  .Navbar .header-crypto {
-    overflow-x: scroll;
   }
 }

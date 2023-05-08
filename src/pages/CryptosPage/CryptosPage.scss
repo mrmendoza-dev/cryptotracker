@@ -1,6 +1,6 @@
 .CryptosPage {
   border-bottom: 1px solid var(--clr-fontAccent);
-  padding: 0 1.4em;
+  padding: 0 1em;
   margin: 0 auto;
 }
 
@@ -27,20 +27,3 @@
   }
 }
 
-.starred {
-  color: #ffcc66;
-}
-
-.star-btn {
-  color: var(--clr-fontAccent);
-  cursor: pointer;
-  margin: 0.5em;
-
-  background-color: inherit;
-  border: none;
-  font-size: 1rem;
-  transition: all 100ms;
-  &:hover {
-    color: #ffcc66;
-  }
-}
