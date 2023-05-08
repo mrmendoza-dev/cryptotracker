@@ -145,7 +145,7 @@ export default function Navbar(props: any) {
             </div>
           </div>
         </div>
-        <div className="header-control-small nav-icons">
+        <div className="header-control-small">
           <button className="nav-icon">
             <FontAwesomeIcon icon={icons.faMagnifyingGlass} />
           </button>
