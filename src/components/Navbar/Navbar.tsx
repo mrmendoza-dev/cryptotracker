@@ -146,24 +146,31 @@ export default function Navbar(props: any) {
           </div>
         </div>
         <div className="header-control-small">
-          <button className="nav-icon">
+          <div className="icon-div">
             <FontAwesomeIcon icon={icons.faMagnifyingGlass} />
-          </button>
-          <DarkMode />
-
-          <a href={repoUrl} target="_blank" rel="noopener">
-            <FontAwesomeIcon
-              title="Search"
-              icon={icons.faGithub}
-              className="nav-icon"
-            />
-          </a>
-          <button className="nav-icon">
-            <FontAwesomeIcon icon={icons.faBell} />
-          </button>
-          <button className="nav-icon" onClick={activateOverlay}>
-            <FontAwesomeIcon icon={icons.faBars} />
-          </button>
+          </div>
+          <div className="icon-div">
+            <DarkMode />
+          </div>
+          <div className="icon-div">
+            <a href={repoUrl} target="_blank" rel="noopener">
+              <FontAwesomeIcon
+                title="Search"
+                icon={icons.faGithub}
+                className="nav-icon"
+              />
+            </a>
+          </div>
+          <div className="icon-div">
+            <button className="nav-icon">
+              <FontAwesomeIcon icon={icons.faBell} />
+            </button>
+          </div>
+          <div className="icon-div">
+            <button className="nav-icon" onClick={activateOverlay}>
+              <FontAwesomeIcon icon={icons.faBars} />
+            </button>
+          </div>
         </div>
         <CryptoSearchbar className="nav-search" data={props.cryptoList} />
       </div>

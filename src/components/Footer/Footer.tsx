@@ -42,7 +42,7 @@ export default function Footer(props: any) {
             <p className="dir-item">
               <a
                 className="nav-link"
-                href="https://github.com/mrmendoza171"
+                href="https://github.com/mrmendoza-dev/cryptotracker"
                 target="_blank"
                 rel="noopener"
               >
@@ -50,7 +50,7 @@ export default function Footer(props: any) {
               </a>
             </p>
             <p className="dir-item">
-              <a className="nav-link" href="https://github.com/mrmendoza171">
+              <a className="nav-link" href="https://github.com/mrmendoza-dev">
                 About
               </a>
             </p>

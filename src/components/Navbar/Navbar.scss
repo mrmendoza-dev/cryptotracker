@@ -19,6 +19,17 @@
   cursor: pointer;
 }
 
+.icon-div {
+  background-color: inherit;
+  border: none;
+  color: var(--clr-font);
+  font-size: 1.2rem;
+  transition: text-shadow 0.2s;
+  cursor: pointer;
+  width: 25px;
+  height: 25px;
+}
+
 /* Header */
 .Navbar {
   padding: 0 0.2em;
@@ -112,11 +123,7 @@
   gap: 16px;
   font-size: 0.8rem;
   text-align: center;
-  button,
-  a {
-    width: 20px;
-    height: 20px;
-  }
+
 }
 
 .crypto-dominance {

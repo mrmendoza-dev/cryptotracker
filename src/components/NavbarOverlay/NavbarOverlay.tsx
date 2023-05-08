@@ -117,7 +117,7 @@ function NavbarOverlay(props: any, ref: any) {
             <FontAwesomeIcon icon={icons.faGithub} />
           </a>
           <a
-            href="https://www.linkedin.com/in/mrmendoza171/"
+            href="https://www.linkedin.com/in/mrmendoza-dev/"
             target="_blank"
             rel="noopener"
           >
