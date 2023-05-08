@@ -1,9 +1,11 @@
+@import "../../scss/mixins.scss";
+
+
 .Portfolio {
   margin: 0 auto;
   display: flex;
   gap: 2em;
-  padding: 2em .6em;
-  /* padding-top: 4em; */
+  padding: 2em 0.6em;
   max-width: var(--app-width);
   width: 95%;
 }
@@ -95,8 +97,7 @@
   font-weight: 700;
   border-radius: 7px;
   padding: 0.4em 0.6em;
-    white-space: nowrap;
-
+  white-space: nowrap;
 }
 
 .header-change {
@@ -124,40 +125,24 @@
   gap: 0.6em;
 }
 
+
+
 /* Buttons and Inputs */
 .btn-add {
-  background-color: var(--clr-btn);
-  color: #fff;
-  display: flex;
-  align-items: center;
+  @include button(var(--clr-btn));
   gap: 0.5em;
-    white-space: nowrap;
-
 }
+
 .btn-more {
-  color: var(--clr-font);
-  background-color: var(--clr-row);
-  display: flex;
-  align-items: center;
+  @include button(var(--clr-row), var(--clr-fontAccent));
   gap: 0.5em;
-    white-space: nowrap;
-
 }
-
 
 .btn-hide {
   background-color: inherit;
   color: var(--clr-fontAccent);
   border: none;
   font-size: 1.2rem;
-}
-
-.btn {
-  font-family: inherit;
-  font-weight: 600;
-  padding: 0.6em 1.2em;
-  border-radius: 10px;
-  border: none;
 }
 
 .btn-sidebar {
@@ -221,7 +206,6 @@
   margin-top: 1.4em;
 }
 
-
 .portfolio-stat {
   color: var(--clr-fontAccent);
   display: flex;
@@ -247,65 +231,6 @@
 .caret {
   font-size: 0.8rem;
   margin-right: 0.3em;
-}
-
-
-.Portfolio .crypto-img {
-  border-radius: 50%;
-  height: 30px;
-  width: 30px;
-  margin-right: .8em;
-}
-
-.crypto-symbol {
-  text-transform: uppercase;
-}
-
-.coin-data {
-  display: flex;
-  gap: 0.8em;
-  align-items: center;
-}
-
-.crypto-name {
-  color: var(--clr-font);
-}
-
-.crypto-symbol {
-  font-weight: 600;
-}
-
-.portfolio-table {
-  width: 100%;
-  border-collapse: collapse;
-
-  position: relative;
-  z-index: 1;
-  margin-top: 1.4em;
-}
-
-tbody {
-}
-
-.crypto-row {
-  height: 4.2em;
-  border-bottom: 1px solid var(--clr-hr);
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: var(--clr-fontAccent);
-  transition: background-color 100ms;
-  align-items: center;
-  gap: 1em;
-}
-
-.crypto-row:hover {
-  background-color: var(--clr-row);
-}
-.table-head {
-  height: 4.2em;
-  border-top: 1px solid var(--clr-hr);
-  border-bottom: 1px solid var(--clr-hr);
-  font-size: 0.9rem;
 }
 
 .hidden-cover {
@@ -337,30 +262,24 @@ tbody {
   }
 }
 
-
-
 @media all and (max-width: 800px) {
   .portfolio-main-stats {
- 
     flex-direction: column;
     gap: 1.2em;
+  }
+  .portfolio-stat {
+    justify-content: space-between;
+  }
 }
-.portfolio-stat {
-  justify-content: space-between;
-}
-}
-
 
 @media all and (max-width: 800px) {
   .portfolio-main-stats {
- 
     flex-direction: column;
-}
+  }
   .portfolio-main-header {
- 
-      gap: .6em;
+    gap: 0.6em;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-}
+  }
 }

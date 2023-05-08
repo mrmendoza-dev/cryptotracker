@@ -1,72 +1,8 @@
 .CryptosPage {
   border-bottom: 1px solid var(--clr-fontAccent);
-  padding: 0 1em;
-  width: 90%;
+  padding: 0 1.4em;
   margin: 0 auto;
   overflow: hidden;
-  .crypto-row {
-    align-items: center;
-    gap: 1em;
-  }
-  .crypto-img {
-    border-radius: 50%;
-    height: 30px;
-    width: 30px;
-    margin-right: 0.8em;
-  }
-  .crypto-symbol {
-    text-transform: uppercase;
-  }
-
-  .coin-data {
-    display: flex;
-    gap: 0.8em;
-    align-items: center;
-  }
-
-
-  .crypto-name {
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: var(--clr-font);
-  }
-
-  .crypto-symbol {
-    font-size: 0.8rem;
-    font-weight: 400;
-  }
-
-
-
-  .crypto-table {
-    overflow: auto;
-    width: 100%;
-    border-collapse: collapse;
-    position: relative;
-    z-index: 1;
-    // background-color: red;
-
-    .table-head {
-      height: 4em;
-      border-top: 1px solid var(--clr-hr);
-      border-bottom: 1px solid var(--clr-hr);
-      position: sticky;
-      top: 0;
-      background-color: var(--clr-bg);
-      z-index: 2;
-    }
-  }
-
-  .crypto-row {
-    height: 3em;
-    border-bottom: 1px solid var(--clr-hr);
-    font-size: 1rem;
-    color: var(--clr-fontAccent);
-    transition: background-color 100ms;
-    &:hover {
-        background-color: var(--clr-row);
-    }
-  }
 }
 
 /* PAGINATION */
@@ -88,28 +24,24 @@
     }
   }
   .current-page {
-  background-color: var(--clr-hr);
+    background-color: var(--clr-hr);
+  }
 }
 
+.starred {
+  color: #ffcc66;
 }
 
+.star-btn {
+  color: var(--clr-fontAccent);
+  cursor: pointer;
+  margin: 0.5em;
 
-
-
-  .starred {
+  background-color: inherit;
+  border: none;
+  font-size: 1rem;
+  transition: all 100ms;
+  &:hover {
     color: #ffcc66;
   }
-
-  .star-btn {
-    color: var(--clr-fontAccent);
-    cursor: pointer;
-    margin: 0.5em;
-
-    background-color: inherit;
-    border: none;
-    font-size: 1rem;
-    transition: all 100ms;
-    &:hover {
-      color: #ffcc66;
-    }
-  }
+}

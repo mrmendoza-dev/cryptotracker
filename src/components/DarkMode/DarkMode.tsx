@@ -51,11 +51,11 @@ export default function DarkMode() {
   return (
     <button className="theme-btn nav-icon" onClick={changeTheme}>
       {darkMode ? (
-        <div style={{ color: "white" }}>
+        <div style={{ color: "--clr-font" }}>
           <FontAwesomeIcon icon={icons.faSun} />
         </div>
       ) : (
-        <div style={{ color: "black" }}>
+        <div style={{ color: "--clr-font" }}>
           <FontAwesomeIcon icon={icons.faMoon} />
         </div>
       )}

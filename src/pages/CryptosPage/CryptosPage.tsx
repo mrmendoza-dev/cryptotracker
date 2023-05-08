@@ -62,25 +62,25 @@ export default function CryptosPage({cryptos}: any) {
 
   return (
     <div className="CryptosPage">
-      <table className="crypto-table">
-        <thead>
-          <tr className="table-head">
-            <th className="center fixed-column">#</th>
-            <th className="left fixed-column">Coin</th>
-            <th className="center">Price</th>
-            <th className="right">1h</th>
-            <th className="right">24h</th>
-            <th className="right">7d</th>
-            <th className="center">24h Volume</th>
-            <th className="center">Market Cap</th>
-            <th className="center">Last 7 Days</th>
-          </tr>
-        </thead>
-        <tbody>
-          {cryptos.map((crypto: any) => (
-            <tr key={nanoid()} className="crypto-row">
-              <td className="">
-                <p>
+      <div className="table-wrapper">
+        <table className="crypto-table">
+          <thead>
+            <tr className="table-head">
+              <th className="center fixed-column">#</th>
+              <th className="left fixed-column">Coin</th>
+              <th className="center">Price</th>
+              <th className="right">1h</th>
+              <th className="right">24h</th>
+              <th className="right">7d</th>
+              <th className="center">24h Volume</th>
+              <th className="center">Market Cap</th>
+              <th className="center">Last 7 Days</th>
+            </tr>
+          </thead>
+          <tbody>
+            {cryptos.map((crypto: any) => (
+              <tr key={nanoid()} className="crypto-row">
+                <td className="crypto-rank">
                   <button
                     className="star-btn"
                     onClick={() => {
@@ -96,96 +96,98 @@ export default function CryptosPage({cryptos}: any) {
                       <FontAwesomeIcon icon={icons.faStarEmpty} />
                     )}
                   </button>
-                  {crypto.market_cap_rank}.
-                </p>
-              </td>
+                  <p>{crypto.market_cap_rank}.</p>
+                </td>
 
-              <td>
-                <a
-                  href={`${coingeckoUrl}${crypto.id}`}
-                  target="_blank"
-                  rel="noopener"
-                >
-                  <div className="coin-data">
-                    <img className="crypto-img" src={crypto.image} />
-                    <p className="crypto-name">{crypto.name}</p>
-                    <p className="crypto-symbol">{crypto.symbol}</p>
-                  </div>
-                </a>
-              </td>
+                <td>
+                  <a
+                    href={`${coingeckoUrl}${crypto.id}`}
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    <div className="coin-data">
+                      <img className="crypto-img" src={crypto.image} />
+                      <p className="crypto-name">{crypto.name}</p>
+                      <p className="crypto-symbol">{crypto.symbol}</p>
+                    </div>
+                  </a>
+                </td>
 
-              <td>
-                <p className="right">
-                  $
-                  {crypto.current_price.toLocaleString(undefined, {
-                    minimumFractionDigits: 2,
-                  })}
-                </p>
-              </td>
+                <td>
+                  <p className="right">
+                    $
+                    {crypto.current_price.toLocaleString(undefined, {
+                      minimumFractionDigits: 2,
+                    })}
+                  </p>
+                </td>
 
-              <td>
-                <Percent
-                  data={crypto.price_change_percentage_1h_in_currency}
-                  className="right"
-                >
-                  {Number(
-                    crypto.price_change_percentage_1h_in_currency
-                  ).toFixed(1)}
-                  %
-                </Percent>
-              </td>
+                <td>
+                  <Percent
+                    data={crypto.price_change_percentage_1h_in_currency}
+                    className="right"
+                  >
+                    {Number(
+                      crypto.price_change_percentage_1h_in_currency
+                    ).toFixed(1)}
+                    %
+                  </Percent>
+                </td>
 
-              <td>
-                <Percent
-                  data={crypto.price_change_percentage_24h_in_currency}
-                  className="right"
-                >
-                  {Number(
-                    crypto.price_change_percentage_24h_in_currency
-                  ).toFixed(1)}
-                  %
-                </Percent>
-              </td>
+                <td>
+                  <Percent
+                    data={crypto.price_change_percentage_24h_in_currency}
+                    className="right"
+                  >
+                    {Number(
+                      crypto.price_change_percentage_24h_in_currency
+                    ).toFixed(1)}
+                    %
+                  </Percent>
+                </td>
 
-              <td>
-                <Percent
-                  data={crypto.price_change_percentage_7d_in_currency}
-                  className="right"
-                >
-                  {Number(
-                    crypto.price_change_percentage_7d_in_currency
-                  ).toFixed(1)}
-                  %
-                </Percent>
-              </td>
+                <td>
+                  <Percent
+                    data={crypto.price_change_percentage_7d_in_currency}
+                    className="right"
+                  >
+                    {Number(
+                      crypto.price_change_percentage_7d_in_currency
+                    ).toFixed(1)}
+                    %
+                  </Percent>
+                </td>
 
-              <td>
-                <p className="right">${crypto.total_volume.toLocaleString()}</p>
-              </td>
+                <td>
+                  <p className="right">
+                    ${crypto.total_volume.toLocaleString()}
+                  </p>
+                </td>
 
-              <td>
-                <p className="right">${crypto.market_cap.toLocaleString()}</p>
-              </td>
+                <td>
+                  <p className="right">${crypto.market_cap.toLocaleString()}</p>
+                </td>
 
-              <td className="center">
-                <Sparklines data={crypto.sparkline_in_7d.price} margin={0}>
-                  <SparklinesLine
-                    color={
-                      crypto.sparkline_in_7d.price[0] >
-                      crypto.sparkline_in_7d.price[
-                        crypto.sparkline_in_7d.price.length - 1
-                      ]
-                        ? "var(--clr-loss)"
-                        : "var(--clr-gain)"
-                    }
-                    style={{ fill: "none", strokeWidth: 3 }}
-                  />
-                </Sparklines>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+                <td className="center">
+                  <Sparklines data={crypto.sparkline_in_7d.price} margin={0}>
+                    <SparklinesLine
+                      color={
+                        crypto.sparkline_in_7d.price[0] >
+                        crypto.sparkline_in_7d.price[
+                          crypto.sparkline_in_7d.price.length - 1
+                        ]
+                          ? "var(--clr-loss)"
+                          : "var(--clr-gain)"
+                      }
+                      style={{ fill: "none", strokeWidth: 3 }}
+                    />
+                  </Sparklines>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
 
       <div className="Pagination">
         <button className="page-btn" onClick={prevPage}>

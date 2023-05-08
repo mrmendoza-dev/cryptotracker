@@ -12,6 +12,27 @@
   overflow: hidden;
   max-width: 100%;
   overflow: hidden;
+
+  .crypto-name {
+    font-size: 1.05rem;
+    font-weight: 600;
+  }
+  .crypto-symbol {
+    color: var(--clr-fontAccent);
+    font-weight: 600;
+  }
+  .crypto-price {
+    font-size: 1.05rem;
+    font-weight: 600;
+  }
+  .crypto-change {
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+  .price-data {
+    margin-left: 2em;
+    text-align: right;
+  }
 }
 
 .marquee {
@@ -36,27 +57,6 @@
   /* background-color: aqua; */
   cursor: pointer;
   padding: 0 2em;
-}
-
-.crypto-name {
-  font-size: 1.05rem;
-  font-weight: 600;
-}
-.crypto-symbol {
-  color: var(--clr-fontAccent);
-  font-weight: 600;
-}
-.crypto-price {
-  font-size: 1.05rem;
-  font-weight: 600;
-}
-.crypto-change {
-  font-weight: 600;
-  font-size: 0.9rem;
-}
-.price-data {
-  margin-left: 2em;
-  text-align: right;
 }
 
 @keyframes marquee {

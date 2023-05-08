@@ -51,9 +51,9 @@ body {
   background-color: var(--clr-bg);
 }
 .App {
-  font-family: Inter, Helvetica, Arial, sans-serif;
+  font-family: Inter, Helvetica, Arial, sans-serif ; 
   font-size: 16px;
-  font-weight: 400;
+  font-weight: 500;
   background-color: var(--clr-bg);
   color: var(--clr-font);
   font-size: 16px;
@@ -61,6 +61,7 @@ body {
   min-height: 1000px;
   max-width: 1400px;
   margin: 0 auto;
+  overflow-x: hidden;
 }
 
 .right {
@@ -94,4 +95,15 @@ input,
 select {
   font-size: inherit;
   font-weight: inherit;
+}
+
+
+
+
+.btn {
+  font-family: inherit;
+  font-weight: 600;
+  padding: 0.6em 1.2em;
+  border-radius: 10px;
+  border: none;
 }

@@ -3,17 +3,16 @@
   padding: 0.6em 1em;
   max-width: 300px;
   text-align: center;
-}
-
-.fg-value {
-  font-size: 2rem;
-  font-weight: 600;
-}
-.fg-class {
-  font-size: 1.4rem;
-  font-weight: 600;
-}
-.fg-time {
-  text-align: right;
-  margin-top: 0.4em;
+  .fg-value {
+    font-size: 2rem;
+    font-weight: 600;
+  }
+  .fg-class {
+    font-size: 1.4rem;
+    font-weight: 600;
+  }
+  .fg-time {
+    text-align: right;
+    margin-top: 0.4em;
+  }
 }
