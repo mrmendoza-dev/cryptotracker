@@ -19,8 +19,6 @@
   cursor: pointer;
 }
 
-
-
 /* Header */
 .Navbar {
   padding: 0 0.2em;
@@ -115,10 +113,9 @@
 
   * {
     padding: 0;
-    font-size: 1rem;
+    font-size: 1.1rem;
     * {
       padding: 0;
-      font-size: 1.4rem;
     }
   }
 }
@@ -128,7 +125,6 @@
   color: var(--clr-font);
   transition: text-shadow 0.2s;
 }
-
 
 .crypto-dominance {
   display: flex;
