@@ -15,7 +15,7 @@ export default function WidgetsPage(props: any) {
   const trending = props.trending;
 
   return (
-    <div className="Widgets">
+    <div className="WidgetsPage">
       <Scroller cryptos={cryptos} />
       <div className="crypto-cards">
         {cryptos.slice(0, 5).map((crypto: any) => {

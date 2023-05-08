@@ -1,18 +1,18 @@
-.Widgets {
+.WidgetsPage {
   padding: 0 1em;
   width: 90%;
   margin: 0 auto;
 }
 
 
-.Widgets .crypto-img {
+.WidgetsPage .crypto-img {
   border-radius: 50%;
   height: 30px;
   width: 30px;
   margin-right: .8em;
 }
 
-.Widgets .crypto-cards {
+.WidgetsPage .crypto-cards {
     display: flex;
     justify-content: center;
     gap: 1em;
