@@ -62,7 +62,7 @@ export default function CryptosPage({cryptos}: any) {
 
   return (
     <div className="CryptosPage">
-      <table>
+      <table className="crypto-table">
         <thead>
           <tr className="table-head">
             <th className="center fixed-column">#</th>

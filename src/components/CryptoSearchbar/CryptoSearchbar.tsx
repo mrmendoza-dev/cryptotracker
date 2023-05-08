@@ -29,7 +29,7 @@ export default function CryptoSearchbar(props: any) {
   };
 
   return (
-    <div className={props.className}>
+    <div className={`CryptoSearchbar ${props.className}`}>
       <div className="search-input-wrapper">
         <label className="search-icon">
           <FontAwesomeIcon icon={icons.faMagnifyingGlass} />
