@@ -109,11 +109,17 @@
 .header-control-small {
   display: flex;
   width: fit-content;
+  max-width: 200px;
   justify-content: center;
   align-items: center;
-  gap: 0.4em;
+  gap: 16px;
   font-size: 0.8rem;
   text-align: center;
+  button,
+  a {
+    width: 20px;
+    height: 20px;
+  }
 }
 
 .crypto-dominance {
