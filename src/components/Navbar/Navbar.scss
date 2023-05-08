@@ -23,18 +23,15 @@
 .Navbar {
   padding: 0 0.2em;
   padding-top: 1em;
-  /* max-height: 15vh; */
-
-  /* margin: 0 auto; */
   display: flex;
   flex-direction: column;
-  /* position: sticky; */
   top: 0;
   z-index: 10;
+  width: 100%;
   background: var(--clr-bg);
   max-width: var(--app-width);
-  max-width: inherit;
   margin: 0 auto;
+  overflow: hidden;
 }
 
 .header-title {
