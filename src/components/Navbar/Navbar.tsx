@@ -24,6 +24,8 @@ export default function Navbar(props: any) {
 
   return (
     <div className="Navbar">
+      <NavbarOverlay ref={overlayRef} />
+
       <div className="sub-header">
         <div className="header-crypto">
           <div className="header-stat">
@@ -162,8 +164,6 @@ export default function Navbar(props: any) {
           <button className="nav-icon" onClick={activateOverlay}>
             <FontAwesomeIcon icon={icons.faBars} />
           </button>
-
-          <NavbarOverlay ref={overlayRef} />
         </div>
         <CryptoSearchbar className="nav-search" data={props.cryptoList} />
       </div>
