@@ -1,9 +1,5 @@
 .NewsPage {
-  /* max-height: 85vh; */
-  overflow-y: hidden;
   border-bottom: 1px solid var(--clr-fontAccent);
-  /* padding: 0 1em; */
-  // width: 90%;
   margin: 0 auto;
   background-color: inherit;
 }
@@ -16,7 +12,7 @@
 }
 
 .news-latest {
-  padding: 0 0.4em;
+  padding: 0 1.2em;
   max-width: 1200px;
 
   margin: 0 auto;
@@ -30,7 +26,6 @@
 }
 .news-list {
   height: 1000px;
-  /* background-color: #555; */
   overflow-y: scroll;
   margin: 0 auto;
   width: 100%;
