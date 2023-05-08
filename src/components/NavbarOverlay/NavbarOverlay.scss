@@ -1,31 +1,22 @@
 @import "../../scss/mixins.scss";
 
-
 .NavbarOverlay {
   background-color: var(--clr-bg);
   color: var(--clr-font);
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
-  /* padding: 1em 2em; */
   font-size: 16px;
-  /* width: 100%; */
   height: 100vh;
-
   position: fixed;
   left: 0;
   top: 0;
-  /* right: 0;
-  bottom: 0; */
   z-index: 999999999;
-
   margin: 0;
-    transition: all 200ms;
+  transition: all 200ms;
   overflow: hidden;
   white-space: nowrap;
 }
-
-
 
 .NavbarOverlay .wrap {
   padding: 1.6em 1.6em;
@@ -42,7 +33,6 @@
   background-color: inherit;
   font-size: 1rem;
   color: var(--clr-fontAccent);
-  
 }
 
 .NavbarOverlay .directory {
@@ -50,7 +40,7 @@
   display: flex;
   flex-direction: column;
   gap: 1em;
-    font-size: 1rem;
+  font-size: 1rem;
   font-weight: 600;
 }
 
@@ -66,7 +56,7 @@
   flex-direction: column;
   align-items: stretch;
   margin-top: 1.2em;
-  gap: .4em;
+  gap: 0.4em;
 }
 
 .NavbarOverlay .control {
@@ -88,7 +78,7 @@
   width: 200px;
   margin: 0 auto;
   gap: 0.6em;
-  font-size: .8rem;
+  font-size: 0.8rem;
   margin-top: 1.2em;
   font-weight: 600;
 }
@@ -110,17 +100,15 @@
     @include button(var(--clr-row), var(--clr-fontAccent));
   }
   > * {
-        @include button(var(--clr-row), var(--clr-fontAccent));
-
+    @include button(var(--clr-row), var(--clr-fontAccent));
   }
 }
 
 .NavbarOverlay .btn-create {
-    @include button(var(--clr-btn), #fff);
-    font-size: .9rem;
-
+  @include button(var(--clr-btn), #fff);
+  font-size: 0.9rem;
 }
 .NavbarOverlay .btn-login {
   @include button(var(--clr-row), var(--clr-fontAccent));
-    font-size: .9rem;
+  font-size: 0.9rem;
 }
