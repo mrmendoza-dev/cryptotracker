@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import React, { useState, forwardRef, useImperativeHandle } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { icons } from "../../assets/icons";
+import CurrencySelector from "../CurrencySelector/CurrencySelector";
 
 function NavbarOverlay(props: any, ref: any) {
   const [isToggled, setIsToggled] = useState(false);
@@ -32,14 +33,14 @@ function NavbarOverlay(props: any, ref: any) {
     >
       <div className="wrap">
         <div className="header-title flex header">
-            <Link
-              to="/"
-              className="header-title flex nav-link"
-              onClick={toggleOverlay}
-            >
-              <img src={logo} />
-              <p>CryptoTracker</p>
-            </Link>
+          <Link
+            to="/"
+            className="header-title flex nav-link"
+            onClick={toggleOverlay}
+          >
+            <img src={logo} />
+            <p>CryptoTracker</p>
+          </Link>
           <button onClick={toggleOverlay} className="btn-exit">
             <FontAwesomeIcon icon={icons.faXmark} />
           </button>
@@ -80,6 +81,7 @@ function NavbarOverlay(props: any, ref: any) {
           <select className="select">
             <option>USD</option>
           </select>
+          {/* <CurrencySelector /> */}
           <DarkMode />
         </div>
 
@@ -130,3 +132,5 @@ function NavbarOverlay(props: any, ref: any) {
 }
 
 export default forwardRef(NavbarOverlay);
+
+

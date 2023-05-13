@@ -9,6 +9,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { icons } from "../../assets/icons";
 import NavbarOverlay from "../NavbarOverlay/NavbarOverlay";
 import CryptoSearchbar from "../CryptoSearchbar/CryptoSearchbar";
+import CurrencySelector from "../CurrencySelector/CurrencySelector";
 
 export default function Navbar(props: any) {
   const overlayRef: any = useRef(null);
@@ -97,6 +98,7 @@ export default function Navbar(props: any) {
           <select className="nav-select">
             <option>USD</option>
           </select>
+          {/* <CurrencySelector /> */}
           <div className="nav-icons">
             <DarkMode />
             <a href={repoUrl} target="_blank" rel="noopener">
