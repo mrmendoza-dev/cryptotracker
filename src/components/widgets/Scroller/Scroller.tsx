@@ -1,7 +1,7 @@
 import { nanoid } from "nanoid";
-import { useEffect, useState } from "react";
-import "./index.scss";
 import styled from "styled-components";
+import "../../../scss/variables.scss";
+import "./Scroller.scss";
 
 const Percent = styled.p<{ data: number }>`
   color: ${(props: any) =>

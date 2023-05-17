@@ -1,18 +1,16 @@
-import { useEffect, useState } from "react";
-import "./CryptosPage.scss";
-import { Percent } from "../../components/Percent";
-import { nanoid } from "nanoid";
-import { Sparklines, SparklinesLine } from "react-sparklines";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { nanoid } from "nanoid";
+import { useState } from "react";
+import { Sparklines, SparklinesLine } from "react-sparklines";
 import { icons } from "../../assets/icons";
+import { Percent } from "../../components/Percent";
 import useLocalStorage from "../../hooks/useLocalStorage";
+import "./CryptosPage.scss";
 
-
-export default function CryptosPage({cryptos}: any) {
+export default function CryptosPage({ cryptos }: any) {
   const coingeckoUrl = "https://www.coingecko.com/en/coins/";
   const [pageNum, setPageNum] = useState(1);
   const [favorites, setFavorites] = useLocalStorage("favorites", []);
-
 
   function favoriteCrypto(crypto: any) {
     let fav = favorites.slice();

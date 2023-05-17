@@ -1,6 +1,8 @@
+@import "../../../scss/variables.scss";
+
 .Converter {
-  background-color: var(--clr-bg);
-  color: var(--clr-font);
+  background-color: $clr-bg;
+  color: $clr-font;
   padding: 1em 2em;
   display: none;
 

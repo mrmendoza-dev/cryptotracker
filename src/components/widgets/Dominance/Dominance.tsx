@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { nanoid } from "nanoid";
-import "./index.scss";
+import "./Dominance.scss";
 import { Pie } from "react-chartjs-2";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 ChartJS.register(ArcElement, Tooltip, Legend);

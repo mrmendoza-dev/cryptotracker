@@ -1,9 +1,6 @@
+@import "./variables.scss";
 
-
-
-
-
-@mixin button($bg: #3459e7, $color: #fff) {
+@mixin button($bg: $clr-btn, $color: #fff) {
   background-color: $bg;
   color: $color;
   padding: 0.4em 0.6em;
@@ -19,7 +16,6 @@
   border-radius: 10px;
   border: none;
 }
-
 
 @mixin table() {
   overflow: auto;

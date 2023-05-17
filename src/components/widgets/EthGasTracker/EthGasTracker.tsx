@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import "./index.scss";
+import "./EthGasTracker.scss";
 
 export default function EthGasTracker() {
   const [oracle, setOracle] = useState({

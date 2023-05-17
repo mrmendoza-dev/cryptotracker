@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import "./index.scss";
+import "./FearGreed.scss";
 import styled from "styled-components";
 
 const colorCodes = ["#F02602", "#FF8400", "#FDD101", "#B7DD16", "#4FBA1E"];

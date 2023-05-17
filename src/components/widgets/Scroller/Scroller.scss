@@ -1,9 +1,11 @@
+@import "../../../scss/variables.scss";
+
 .Scroller {
   width: 100%;
-  background-color: var(--clr-bg);
+  background-color: $clr-bg;
   height: 4em;
-  border-top: 1px solid var(--clr-hr);
-  border-bottom: 1px solid var(--clr-hr);
+  border-top: 1px solid $clr-hr;
+  border-bottom: 1px solid $clr-hr;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -18,7 +20,7 @@
     font-weight: 600;
   }
   .crypto-symbol {
-    color: var(--clr-fontAccent);
+    color: $clr-fontAccent;
     font-weight: 600;
   }
   .crypto-price {
@@ -52,8 +54,8 @@
   flex: 1 0 auto;
   justify-content: space-between;
   align-items: center;
-  border-left: 1px solid var(--clr-hr);
-  border-right: 1px solid var(--clr-hr);
+  border-left: 1px solid $clr-hr;
+  border-right: 1px solid $clr-hr;
   /* background-color: aqua; */
   cursor: pointer;
   padding: 0 2em;

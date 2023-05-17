@@ -1,25 +1,11 @@
+@import "./variables.scss";
+
 :root {
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
-
-  --app-width: 1600px;
-
-  --clr-font: #111827;
-  --clr-fontAccent: #6B7280;
-  --clr-bg: #ffffff;
-  --clr-accent: #fc8e06;
-  --clr-shadow: #999;
-  --clr-row: #F9FAFB;
-  --clr-hr: #F3F4F6;
-  
-  --clr-loss: #ea3943;
-  --clr-gain: #16c784;
-  --clr-logo: #fc8e06;
-  --clr-btn: #3459e7;
-  --clr-link: #6188ff;
 }
 
 * {
@@ -48,14 +34,14 @@ button:active {
 }
 
 body {
-  background-color: var(--clr-bg);
+  background-color: $clr-bg;
 }
 .App {
-  font-family: Inter, Helvetica, Arial, sans-serif ; 
+  font-family: Inter, Helvetica, Arial, sans-serif;
   font-size: 16px;
   font-weight: 500;
-  background-color: var(--clr-bg);
-  color: var(--clr-font);
+  background-color: $clr-bg;
+  color: $clr-font;
   font-size: 16px;
   height: 100vh;
   width: 100vw;
@@ -96,9 +82,6 @@ select {
   font-weight: inherit;
 }
 
-
-
-
 .btn {
   font-family: inherit;
   font-weight: 600;
@@ -107,31 +90,23 @@ select {
   border: none;
 }
 
-
-
-$max-width: 1600px;
 .Navbar {
-    max-width: $max-width;
-
+  max-width: $app-width;
 }
 
 .CryptosPage {
-  max-width: $max-width;
+  max-width: $app-width;
 }
 
 .NewsPage {
-  max-width: $max-width;
+  max-width: $app-width;
   margin: 0 auto;
-
 }
 
 .PortfolioPage {
-  max-width: $max-width;
-
-
+  max-width: $app-width;
 }
 
 .WidgetsPage {
-  max-width: $max-width;
-
+  max-width: $app-width;
 }

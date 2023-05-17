@@ -1,11 +1,13 @@
+@import "../../scss/variables.scss";
+
 /* FOOTER */
 .Footer {
   /* position:absolute; */
   bottom: 0;
   width: 100%;
   min-height: 300px; /* Height of the footer */
-  background: var(--clr-bg);
-  border-top: 1px solid var(--clr-hr);
+  background: $clr-bg;
+  border-top: 1px solid $clr-hr;
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
@@ -23,7 +25,7 @@
   align-self: flex-end;
 }
 .footer-copyright {
-  color: var(--clr-fontAccent);
+  color: $clr-fontAccent;
   bottom: 0;
   /* position: absolute; */
   white-space: nowrap;
@@ -41,7 +43,7 @@
 }
 .Footer .dir-title {
   font-size: 1.2rem;
-  color: var(--clr-font);
+  color: $clr-font;
 }
 .Footer .dir-list {
   margin-top: 1em;
@@ -54,23 +56,23 @@
   margin-top: 1em;
   /* left: 0; */
   text-align: left;
-  color: var(--clr-fontAccent);
+  color: $clr-fontAccent;
   font-size: 0.9em;
   /* transition: color 200ms; */
 }
 
 .Footer .dir-item:hover {
-  color: var(--clr-accent);
+  color: $clr-accent;
 }
 
 .Footer .nav-link {
   transition: color 200ms;
 }
 .Footer .nav-link:hover {
-  color: var(--clr-accent);
+  color: $clr-accent;
 }
 
-@media all and (max-width: 800px) {
+@media screen and (width <= 800px) {
   .Footer {
     flex-direction: column-reverse;
     gap: 1.6em;

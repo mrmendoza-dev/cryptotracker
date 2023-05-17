@@ -1,5 +1,7 @@
+@import "../../scss/variables.scss";
+
 .NewsPage {
-  border-bottom: 1px solid var(--clr-fontAccent);
+  border-bottom: 1px solid $clr-fontAccent;
   margin: 0 auto;
   background-color: inherit;
 }
@@ -36,7 +38,7 @@
   flex-direction: row;
   gap: 1.4em;
   padding: 1em 0;
-  border-bottom: 1px solid var(--clr-hr);
+  border-bottom: 1px solid $clr-hr;
   transition: background-color 200ms;
   max-width: 1000px;
   position: relative;
@@ -45,7 +47,7 @@
 }
 
 .news-card:hover {
-  background-color: var(--clr-row);
+  background-color: $clr-row;
 }
 
 .news-info {
@@ -87,7 +89,7 @@
   /* max-width: 600px; */
 }
 .news-date {
-  color: var(--clr-fontAccent);
+  color: $clr-fontAccent;
 }
 .news-source {
   font-size: 1rem;
@@ -100,7 +102,7 @@
   align-items: center;
   gap: 0.6em;
   margin-bottom: 0.2em;
-  border-bottom: 1px solid var(--clr-hr);
+  border-bottom: 1px solid $clr-hr;
 }
 .news-text {
   line-height: 1.2;
@@ -119,8 +121,8 @@
 }
 
 .news-video {
-  border-top: 2px solid var(--clr-hr);
-  border-bottom: 2px solid var(--clr-hr);
+  border-top: 2px solid $clr-hr;
+  border-bottom: 2px solid $clr-hr;
   display: flex;
   justify-content: center;
   background-color: #0b0b0b;
@@ -147,7 +149,7 @@
   margin: 1em;
   font-size: 1.1rem;
   cursor: pointer;
-  color: var(--clr-fontAccent);
+  color: $clr-fontAccent;
   transition: all 100ms;
   border: none;
   background-color: inherit;
@@ -156,10 +158,10 @@
 }
 
 .bookmarked {
-  color: var(--clr-font);
+  color: $clr-font;
 }
 
-@media (max-width: 700px) {
+@media screen and (width <= 700px) {
   .news-card {
     gap: 0.8em;
     font-size: 0.8rem;

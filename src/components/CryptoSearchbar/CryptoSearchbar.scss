@@ -1,13 +1,14 @@
+@import "../../scss/variables.scss";
+
 .CryptoSearchbar {
-  
 }
 
 .nav-search {
   font-size: 0.9rem;
   padding: 0.8em 1em;
   border-radius: 8px;
-  background-color: var(--clr-hr);
-  color: var(--clr-fontAccent);
+  background-color: $clr-hr;
+  color: $clr-fontAccent;
   position: relative;
   display: flex;
 }
@@ -35,7 +36,7 @@
   overflow-x: hidden;
   width: 100%;
   padding: 0.4em 0.8em;
-  background-color: var(--clr-bg);
+  background-color: $clr-bg;
   z-index: 100;
   border-radius: 8px;
 }
@@ -64,13 +65,13 @@
   justify-content: space-between;
   align-items: center;
   border-radius: 4px;
-  color: var(--clr-fontAccent);
+  color: $clr-fontAccent;
 
   width: 100%;
   padding: 0.4em 0.4em;
 }
 .search-row:hover {
-  background-color: var(--clr-hr);
+  background-color: $clr-hr;
 }
 .search-results .crypto {
   display: flex;
@@ -79,7 +80,7 @@
 }
 .search-results .crypto .name {
   font-weight: 600;
-  color: var(--clr-font);
+  color: $clr-font;
 }
 .search-results .crypto .symbol {
   font-weight: 400;

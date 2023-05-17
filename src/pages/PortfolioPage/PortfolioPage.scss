@@ -1,12 +1,12 @@
 @import "../../scss/mixins.scss";
-
+@import "../../scss/variables.scss";
 
 .Portfolio {
   margin: 0 auto;
   display: flex;
   gap: 2em;
   padding: 2em 0.6em;
-  max-width: var(--app-width);
+  max-width: $app-width;
   width: 95%;
 }
 
@@ -28,12 +28,12 @@
   font-size: 0.9em;
 }
 .portfolio-block:hover {
-  background-color: var(--clr-row);
+  background-color: $clr-row;
 }
 
 .portfolio-block-total {
   font-size: 0.9em;
-  color: var(--clr-fontAccent);
+  color: $clr-fontAccent;
 }
 
 .block-img {
@@ -92,7 +92,7 @@
 
 .header-percent {
   color: #fff;
-  background-color: var(--clr-gain);
+  background-color: $clr-gain;
   font-weight: 700;
   border-radius: 7px;
   padding: 0.4em 0.6em;
@@ -106,14 +106,14 @@
 }
 
 .change-timeframe {
-  color: var(--clr-fontAccent);
-  background-color: var(--clr-row);
+  color: $clr-fontAccent;
+  background-color: $clr-row;
   font-size: 0.9rem;
   padding: 0.1em 0.2em;
   border-radius: 5px;
 }
 .change-amount {
-  color: var(--clr-gain);
+  color: $clr-gain;
   font-weight: 700;
 }
 
@@ -124,22 +124,20 @@
   gap: 0.6em;
 }
 
-
-
 /* Buttons and Inputs */
 .btn-add {
-  @include button(var(--clr-btn));
+  @include button($clr-btn);
   gap: 0.5em;
 }
 
 .btn-more {
-  @include button(var(--clr-row), var(--clr-fontAccent));
+  @include button($clr-row, $clr-fontAccent);
   gap: 0.5em;
 }
 
 .btn-hide {
   background-color: inherit;
-  color: var(--clr-fontAccent);
+  color: $clr-fontAccent;
   border: none;
   font-size: 1.2rem;
 }
@@ -148,7 +146,7 @@
   font-size: 1rem;
   background-color: inherit;
   border: none;
-  color: var(--clr-font);
+  color: $clr-font;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -158,15 +156,15 @@
 }
 .btn-sidebar:hover {
   background-color: inherit;
-  color: var(--clr-link);
-  background-color: var(--clr-row);
+  color: $clr-link;
+  background-color: $clr-row;
 }
 
 .btn-table {
   font-size: 1.1rem;
   background-color: inherit;
   border: none;
-  color: var(--clr-fontAccent);
+  color: $clr-fontAccent;
 }
 
 .action-btns {
@@ -185,7 +183,7 @@
   margin-top: 2em;
 }
 .allocation-wrapper {
-  border: 8px solid var(--clr-hr);
+  border: 8px solid $clr-hr;
   border-radius: 10px;
 }
 
@@ -206,7 +204,7 @@
 }
 
 .portfolio-stat {
-  color: var(--clr-fontAccent);
+  color: $clr-fontAccent;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -216,7 +214,7 @@
 }
 
 .stat-value {
-  color: var(--clr-loss);
+  color: $clr-loss;
   margin-top: 0.3em;
   font-weight: 600;
   font-size: 0.9rem;
@@ -233,15 +231,15 @@
 }
 
 .hidden-cover {
-  background-color: var(--clr-hr);
+  background-color: $clr-hr;
   border-radius: 0.4em;
-  color: var(--clr-hr) !important;
+  color: $clr-hr !important;
   position: relative;
   user-select: none;
 }
 
 .hidden-icon {
-  color: var(--clr-fontAccent);
+  color: $clr-fontAccent;
   opacity: 0.7;
   font-size: 0.8em;
   position: absolute;
@@ -255,13 +253,13 @@
   bottom: 0;
 }
 
-@media (max-width: 1200px) {
+@media screen and (width <= 1200px) {
   .portfolio-sidebar {
     display: none;
   }
 }
 
-@media all and (max-width: 800px) {
+@media screen and (width <= 800px) {
   .portfolio-main-stats {
     flex-direction: column;
     gap: 1.2em;
@@ -271,7 +269,7 @@
   }
 }
 
-@media all and (max-width: 800px) {
+@media screen and (width <= 800px) {
   .portfolio-main-stats {
     flex-direction: column;
   }

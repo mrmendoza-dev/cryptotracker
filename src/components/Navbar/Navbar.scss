@@ -1,6 +1,4 @@
-:root {
-  --clr-logo: #fc8e06;
-}
+@import "../../scss/variables.scss";
 
 .Navbar {
   padding: 0 0.2em;
@@ -10,11 +8,10 @@
   top: 0;
   z-index: 10;
   width: 100%;
-  background: var(--clr-bg);
-  max-width: var(--app-width);
+  background: $clr-bg;
+  max-width: $app-width;
   margin: 0 auto;
 }
-
 
 .nav-icons {
   display: flex;
@@ -27,13 +24,11 @@
 .nav-icon {
   background-color: inherit;
   border: none;
-  color: var(--clr-font);
+  color: $clr-font;
   font-size: 1.2rem;
   transition: text-shadow 0.2s;
   cursor: pointer;
 }
-
-
 
 .header-title {
   font-size: 1.2rem;
@@ -42,9 +37,8 @@
   display: flex;
   align-items: center;
   gap: 0.2em;
-  color: var(--clr-font);
+  color: $clr-font;
   user-select: none;
-  /* text-shadow: 0 0 25px var(--clr-logo), -1px 1px 10px rgb(229, 229, 229), 1px 1px 10px rgb(170, 168, 168); */
 }
 .header-title img {
   width: 30px;
@@ -55,9 +49,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid var(--clr-hr);
+  border-bottom: 1px solid $clr-hr;
   padding: 0.6em;
-  background-color: var(--clr-bg);
+  background-color: $clr-bg;
   order: 1;
 }
 .header-links {
@@ -87,7 +81,7 @@
   flex-wrap: wrap;
   font-size: 0.8rem;
   font-weight: 600;
-  border-bottom: 1px solid var(--clr-hr);
+  border-bottom: 1px solid $clr-hr;
   order: 0;
 }
 .header-crypto {
@@ -103,9 +97,8 @@
   gap: 0.4em;
 }
 .header-stat-link {
-  color: var(--clr-link);
+  color: $clr-link;
 }
-
 
 .header-control {
   display: flex;
@@ -131,7 +124,7 @@
 .icon-div {
   background-color: inherit;
   border: none;
-  color: var(--clr-font);
+  color: $clr-font;
   transition: text-shadow 0.2s;
 }
 
@@ -145,28 +138,27 @@
   gap: 0.4em;
 }
 
-
 .nav-select {
   padding: 0.4em;
   font-size: 0.8rem;
   outline: none;
   border: none;
   background-color: inherit;
-  color: var(--clr-fontAccent);
+  color: $clr-fontAccent;
   cursor: pointer;
   border-radius: 8px;
 }
 
 .nav-select:hover {
-  background-color: var(--clr-hr);
+  background-color: $clr-hr;
 }
 
 .header-control-small {
   display: none;
-  color: var(--clr-fontAccent);
+  color: $clr-fontAccent;
 }
 
-@media all and (max-width: 1200px) {
+@media screen and (width <= 1200px) {
   .Navbar .nav-list {
     display: none;
   }

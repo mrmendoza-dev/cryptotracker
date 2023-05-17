@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import "./index.scss";
+import "./Converter.scss";
 import { nanoid } from "nanoid";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { icons } from "../../../assets/icons";

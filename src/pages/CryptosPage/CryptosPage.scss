@@ -1,5 +1,7 @@
+@import "../../scss/variables.scss";
+
 .CryptosPage {
-  border-bottom: 1px solid var(--clr-fontAccent);
+  border-bottom: 1px solid $clr-fontAccent;
   padding: 0 1em;
   margin: 0 auto;
 }
@@ -14,16 +16,15 @@
     background-color: inherit;
     font-size: 1rem;
     font-weight: 500;
-    color: var(--clr-font);
-    border: 1px solid var(--clr-fontAccent);
+    color: $clr-font;
+    border: 1px solid $clr-fontAccent;
     padding: 0.5em 0.8em;
     transition: all 100ms;
     &:hover {
-      background-color: var(--clr-hr);
+      background-color: $clr-hr;
     }
   }
   .current-page {
-    background-color: var(--clr-hr);
+    background-color: $clr-hr;
   }
 }
-
