@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import "./PortfolioPage.scss";
 import { Percent } from "../../components/Percent";
 import Private from "../../components/Private";
@@ -48,8 +48,48 @@ export default function PortfolioPage({cryptos}: any) {
     calculateStats();
   }, [cryptos]);
 
+  const dialogRef: any = useRef(null);
+
+  const openDialog = () => {
+    dialogRef.current.showModal();
+  };
+
+  const closeDialog = () => {
+    dialogRef.current.close();
+  };
+
+
+
+
+
   return (
     <div className="Portfolio">
+      <dialog
+        ref={dialogRef}
+        data-modal
+        className="dialog-modal"
+        onClick={(e) => {
+          const dialogDimensions = dialogRef.current.getBoundingClientRect();
+          if (
+            e.clientX < dialogDimensions.left ||
+            e.clientX > dialogDimensions.right ||
+            e.clientY < dialogDimensions.top ||
+            e.clientY > dialogDimensions.bottom
+          ) {
+            closeDialog();
+          }
+        }}
+      >
+        <div className="header">
+          <p className="">Select Coin</p>
+          <button className="" onClick={closeDialog}>
+            Close
+          </button>
+        </div>
+        <input type="text" />
+        <div className="coin-list"></div>
+      </dialog>
+
       <div className="portfolio-sidebar">
         <div className="sidebar-main">
           <div className="portfolio-block">
@@ -103,14 +143,13 @@ export default function PortfolioPage({cryptos}: any) {
           </div>
         </div>
         <div className="sidebar-controls">
-          <button className="btn btn-sidebar">
+          <button className="btn btn-sidebar"
+          onClick={openDialog}
+          >
             <FontAwesomeIcon icon={icons.faCirclePlus} />
             Create portfolio
           </button>
-          <button className="btn btn-sidebar">
-            <FontAwesomeIcon icon={icons.faFolderPlus} />
-            Manage portfolios
-          </button>
+
         </div>
       </div>
 
@@ -165,11 +204,11 @@ export default function PortfolioPage({cryptos}: any) {
           </div>
 
           <div className="header-controls">
-            <button className="btn btn-more">
+            <button className="btn btn-more" onClick={openDialog}>
               <FontAwesomeIcon icon={icons.faEllipsis} />
               More
             </button>
-            <button className="btn btn-add">
+            <button className="btn btn-add" onClick={openDialog}>
               <FontAwesomeIcon icon={icons.faCirclePlus} />
               Add New
             </button>
@@ -361,7 +400,7 @@ export default function PortfolioPage({cryptos}: any) {
 
                         <td className="portfolio-table-actions center">
                           <div className="action-btns">
-                            <button className="btn-table">
+                            <button className="btn-table" onClick={openDialog}>
                               <FontAwesomeIcon icon={icons.faPlus} />
                             </button>
                             <button className="btn-table">

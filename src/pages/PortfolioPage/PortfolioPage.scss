@@ -280,3 +280,42 @@
     align-items: flex-start;
   }
 }
+
+.dialog-modal::backdrop {
+  background: rgba(10, 30, 66, 0.4);
+}
+
+.dialog-modal {
+  background-color: $clr-bg;
+  width: 500px;
+  height: 550px;
+  border-radius: 17px;
+  border: none;
+
+    position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+}
+.dialog-modal {
+
+}
+
+@media screen and (width <= 600px) {
+  .dialog-modal {
+    width: 100%;
+    height: 100vh;
+      max-height: 100vh;
+  max-width: 100vw;
+  border-radius: 0;
+    margin: 0;
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform: unset;
+  }
+}
