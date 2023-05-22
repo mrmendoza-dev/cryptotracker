@@ -281,41 +281,122 @@
   }
 }
 
-.dialog-modal::backdrop {
-  background: rgba(10, 30, 66, 0.4);
+.DialogModal {
+  text-align: left;
+  .header {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 0.6em;
+
+  }
+
+  .subtitle {
+    font-size: 1.4rem;
+    font-weight: 700;
+  }
 }
 
-.dialog-modal {
-  background-color: $clr-bg;
-  width: 500px;
-  height: 550px;
-  border-radius: 17px;
-  border: none;
 
-    position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.ModalAddTransaction {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  width: 100%;
+  justify-content: center;
+  align-items: stretch;
 
-}
-.dialog-modal {
-
-}
-
-@media screen and (width <= 600px) {
-  .dialog-modal {
+  input,
+  select {
     width: 100%;
-    height: 100vh;
-      max-height: 100vh;
-  max-width: 100vw;
-  border-radius: 0;
-    margin: 0;
-    position: absolute;
+    border-radius: $border-radius;
+    padding: 0.6em 0.8em;
+    border: 1px solid $clr-shadow;
+    font-size: 1rem;
+  }
 
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    transform: unset;
+  .crypto-select {
+    width: 100%;
+    border-radius: $border-radius;
+  }
+
+  .transaction-inputs {
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+    width: 100%;
+  }
+  .transaction-inputs-sub {
+    width: 100%;
+    display: flex;
+    button {
+      flex: 1;
+    }
+  }
+  .input-block {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4em;
+  }
+
+  .transaction-total {
+    background-color: $clr-hr;
+    border-radius: $border-radius;
+
+    padding: 0.4em 0.6em;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6em;
+
+    .total {
+      font-size: 1.4rem;
+      font-weight: 700;
+    }
+  }
+
+  .nav-buttons {
+    display: flex;
+    width: 100%;
+    background-color: $clr-hr;
+    padding: 0.2em 0.4em;
+    border-radius: $border-radius;
+
+    button {
+      flex: 1;
+      background-color: $clr-hr;
+      @include button($clr-hr, $clr-fontAccent);
+
+      &:hover {
+        background-color: $clr-row;
+      }
+    }
+  }
+}
+
+.ModalEditTransaction {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  width: 100%;
+  justify-content: center;
+  align-items: stretch;
+  text-align: left;
+
+  .commands {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4em;
+    margin-top: 1.2em;
+
+    button {
+      width: 100%;
+      @include button($clr-hr, $clr-fontAccent);
+    }
+    .btn-remove {
+      @include button($clr-loss, #fff);
+    }
   }
 }

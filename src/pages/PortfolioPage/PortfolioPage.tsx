@@ -6,9 +6,9 @@ import { nanoid } from "nanoid";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { icons } from "../../assets/icons";
 import useLocalStorage from "../../hooks/useLocalStorage";
+import DialogModal from "../../components/DialogModal/DialogModal";
 
-
-export default function PortfolioPage({cryptos}: any) {
+export default function PortfolioPage({ cryptos }: any) {
   const [hidden, setHidden] = useLocalStorage("hidden", false);
   const [stats, setStats] = useState({
     total: 1235.67,
@@ -18,15 +18,51 @@ export default function PortfolioPage({cryptos}: any) {
     best: { percent: 0.97, amount: 36.06 },
     worst: { percent: 64.2, amount: 29082.71 },
   });
-  const holdings: any = {
+
+  const [holdings, setHoldings] = useLocalStorage("holdings", {
     bitcoin: 0.01,
     dogecoin: 1000,
     ethereum: 1,
     litecoin: 5,
     cardano: 100,
-  };
+  });
+
+  
+  useEffect(() => {
+    console.log("holdings changed");
+    console.log(holdings);
+    calculateStats();
+  }, [holdings]);
+
 
   const coingeckoUrl = "https://www.coingecko.com/en/coins/";
+
+function addPortfolioTransaction(crypto: any, quantity: number, pricePerCoin: number) {
+  console.log("add portfolio transaction");
+
+
+
+  setHoldings((prevHoldings: any) => {
+    const updatedHoldings = { ...prevHoldings };
+    updatedHoldings[crypto] = (prevHoldings[crypto] || 0) + quantity;
+    return updatedHoldings;
+  });
+
+
+}
+
+function deletePortfolioTransactions(crypto: any) {
+  console.log("delete portfolio transaction");
+  console.log(crypto);
+
+  setHoldings((prevHoldings: any) => {
+    const updatedHoldings = { ...prevHoldings };
+    delete updatedHoldings[crypto];
+    return updatedHoldings;
+  });
+}
+
+
 
 
   function hideBalance() {
@@ -49,47 +85,12 @@ export default function PortfolioPage({cryptos}: any) {
   }, [cryptos]);
 
   const dialogRef: any = useRef(null);
-
   const openDialog = () => {
     dialogRef.current.showModal();
   };
 
-  const closeDialog = () => {
-    dialogRef.current.close();
-  };
-
-
-
-
-
   return (
     <div className="Portfolio">
-      <dialog
-        ref={dialogRef}
-        data-modal
-        className="dialog-modal"
-        onClick={(e) => {
-          const dialogDimensions = dialogRef.current.getBoundingClientRect();
-          if (
-            e.clientX < dialogDimensions.left ||
-            e.clientX > dialogDimensions.right ||
-            e.clientY < dialogDimensions.top ||
-            e.clientY > dialogDimensions.bottom
-          ) {
-            closeDialog();
-          }
-        }}
-      >
-        <div className="header">
-          <p className="">Select Coin</p>
-          <button className="" onClick={closeDialog}>
-            Close
-          </button>
-        </div>
-        <input type="text" />
-        <div className="coin-list"></div>
-      </dialog>
-
       <div className="portfolio-sidebar">
         <div className="sidebar-main">
           <div className="portfolio-block">
@@ -143,13 +144,16 @@ export default function PortfolioPage({cryptos}: any) {
           </div>
         </div>
         <div className="sidebar-controls">
-          <button className="btn btn-sidebar"
-          onClick={openDialog}
-          >
-            <FontAwesomeIcon icon={icons.faCirclePlus} />
-            Create portfolio
-          </button>
-
+          <DialogModal
+            buttonLabel={
+              <>
+                <FontAwesomeIcon icon={icons.faCirclePlus} />
+                <p>Create portfolio</p>
+              </>
+            }
+            buttonClass="btn btn-sidebar"
+            elements={<ModalCreatePortfolio />}
+          />
         </div>
       </div>
 
@@ -204,14 +208,26 @@ export default function PortfolioPage({cryptos}: any) {
           </div>
 
           <div className="header-controls">
-            <button className="btn btn-more" onClick={openDialog}>
-              <FontAwesomeIcon icon={icons.faEllipsis} />
-              More
-            </button>
-            <button className="btn btn-add" onClick={openDialog}>
-              <FontAwesomeIcon icon={icons.faCirclePlus} />
-              Add New
-            </button>
+            <DialogModal
+              buttonLabel={
+                <>
+                  <FontAwesomeIcon icon={icons.faEllipsis} />
+                  <p>More</p>
+                </>
+              }
+              buttonClass="btn btn-more"
+              elements={ModalAddTransaction({ cryptos })}
+            />
+            <DialogModal
+              buttonLabel={
+                <>
+                  <FontAwesomeIcon icon={icons.faCirclePlus} />
+                  <p>Add New</p>
+                </>
+              }
+              buttonClass="btn btn-add"
+              elements={ModalAddTransaction({ cryptos, addPortfolioTransaction })}
+            />
           </div>
         </div>
 
@@ -400,14 +416,37 @@ export default function PortfolioPage({cryptos}: any) {
 
                         <td className="portfolio-table-actions center">
                           <div className="action-btns">
-                            <button className="btn-table" onClick={openDialog}>
-                              <FontAwesomeIcon icon={icons.faPlus} />
-                            </button>
-                            <button className="btn-table">
-                              <FontAwesomeIcon
-                                icon={icons.faEllipsisVertical}
-                              />
-                            </button>
+                            <DialogModal
+                              buttonLabel={
+                                <FontAwesomeIcon icon={icons.faPlus} />
+                              }
+                              buttonClass="btn-table"
+                              elements={
+                                <ModalAddTransaction
+                                  cryptos={cryptos}
+                                  addPortfolioTransaction={
+                                    addPortfolioTransaction
+                                  }
+                                />
+                              }
+                            />
+
+                            <DialogModal
+                              buttonLabel={
+                                <FontAwesomeIcon
+                                  icon={icons.faEllipsisVertical}
+                                />
+                              }
+                              buttonClass="btn-table"
+                              elements={
+                                <ModalEditTransaction
+                                  deletePortfolioTransactions={
+                                    deletePortfolioTransactions
+                                  }
+                                  cryptoId={crypto.id}
+                                />
+                              }
+                            />
                           </div>
                         </td>
                       </tr>
@@ -420,6 +459,163 @@ export default function PortfolioPage({cryptos}: any) {
             </tbody>
           </table>
         </div>
+      </div>
+    </div>
+  );
+}
+
+
+function ModalAddTransaction({ cryptos, addPortfolioTransaction }: any) {
+  const [totalCost, setTotalCost] = useState(0);
+  const [selectedCrypto, setSelectedCrypto] = useState(cryptos[0]);
+  const [quantity, setQuantity] = useState(0);
+  const [pricePerCoin, setPricePerCoin] = useState(0);
+
+
+
+  function addTransaction() {
+    console.log("add transaction");
+    console.log(selectedCrypto);
+    console.log(quantity);
+    console.log(pricePerCoin);
+    console.log(`${selectedCrypto.id} ${quantity}`)
+    addPortfolioTransaction(selectedCrypto.id, quantity, pricePerCoin);
+    setQuantity(0);
+    setSelectedCrypto(cryptos[0]);
+
+  }
+
+
+
+  useEffect(() => {
+    setTotalCost(quantity * pricePerCoin);
+  }, [quantity, pricePerCoin])
+
+  useEffect(() => {
+    setPricePerCoin(selectedCrypto.current_price);
+  }, [selectedCrypto])
+
+  return (
+    <div className="ModalAddTransaction">
+      <div className="header">
+        <p className="subtitle">Add Transaction</p>
+      </div>
+
+      <div className="nav-buttons">
+        <button className="">Buy</button>
+        <button className="">Sell</button>
+        <button className="">Transfer</button>
+      </div>
+
+      <select className="crypto-select"
+        value={selectedCrypto.id}
+        onChange={(e: any) => {
+          setSelectedCrypto(cryptos.find((x: any) => x.id === e.target.value));
+        }}
+      >
+
+
+        {cryptos.map((crypto: any) => {
+          return (
+            <option key={nanoid()} value={crypto.id}>
+              {crypto.name}
+            </option>
+          );
+        })}
+      </select>
+
+      <div className="transaction-inputs">
+        <div className="input-block">
+          <p>Quantity</p>
+          <input
+            type="number"
+            value={quantity}
+            onChange={(e: any) => {
+              setQuantity(e.target.value);
+            }}
+          />
+        </div>
+        <div className="input-block">
+          <p>Price Per Coin</p>
+          <input
+            type="number"
+            value={pricePerCoin}
+            onChange={(e: any) => {
+              setPricePerCoin(e.target.value);
+            }}
+          />
+        </div>
+      </div>
+
+      {/* <div className=""></div> */}
+
+      <div className="transaction-total">
+        <p>Total Spent</p>
+        <p className="total">$ {totalCost}</p>
+      </div>
+
+      {/* <div className="transaction-inputs-sub">
+        <button className="">Date</button>
+        <button className="">Fee</button>
+        <button className="">Notes</button>
+      </div> */}
+
+      <button className="btn btn-add"
+        onClick={addTransaction}
+      >Add Transaction</button>
+    </div>
+  );
+}
+
+function ModalCreatePortfolio(props: any) {
+  return (
+    <div className="ModalAddTransaction">
+      <div className="header">
+        <p className="subtitle">Select Coin</p>
+      </div>
+
+      <div className="">
+        <div className="">
+          <p>Portfolio avatar</p>
+          <img />
+        </div>
+
+        <button className="btn">Change</button>
+      </div>
+
+      <form method="dialog">
+        <div className="portfolio-input">
+          <p className="">Portfolio name</p>
+          <input type="text" />
+          <p>0/24 characters</p>
+        </div>
+
+        <button className="btn">Create Portfolio</button>
+      </form>
+    </div>
+  );
+}
+
+
+
+function ModalEditTransaction({cryptoId, deletePortfolioTransactions}: any) {
+  return (
+    <div className="ModalEditTransaction">
+      <div className="header">
+        <p className="subtitle">Remove this coin</p>
+        <p className="">All transactions associated with this coin will be removed.</p>
+      </div>
+
+      <div className="commands">
+        <button
+          onClick={() => {
+            deletePortfolioTransactions(cryptoId);
+          }}
+          className="btn btn-remove"
+        >
+          Remove
+        </button>
+        <button>Cancel</button>
       </div>
     </div>
   );

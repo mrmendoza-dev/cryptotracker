@@ -4,6 +4,9 @@ import {
   faMedium,
   faYoutube,
   faTwitter,
+  faBitcoin,
+  faEthereum,
+  faDiscord,
 } from "@fortawesome/free-brands-svg-icons";
 import { faSun, faMoon } from "@fortawesome/free-solid-svg-icons";
 
@@ -14,6 +17,7 @@ import {
 import {
   faStar as faStarEmpty,
   faBookmark as faBookmarkEmpty,
+  faCalendar,
 } from "@fortawesome/free-regular-svg-icons";
 
 import {
@@ -28,7 +32,7 @@ import {
   faFolderPlus,
   faEllipsis,
   faEllipsisVertical,
-  faPlus,faXmark
+  faPlus,faXmark, faPenToSquare,
 } from "@fortawesome/free-solid-svg-icons";
 import {
   faCaretDown,
@@ -48,51 +52,57 @@ import {
   faAngleUp,
 } from "@fortawesome/free-solid-svg-icons";
 
+
 export const icons = {
-  faGithub: faGithub,
-  faLinkedin: faLinkedin,
-  faMedium: faMedium,
-  faYoutube: faYoutube,
-  faTwitter: faTwitter,
+  faGithub,
+  faLinkedin,
+  faMedium,
+  faYoutube,
+  faTwitter,
 
-  faBell: faBell,
-  faUser: faUser,
-  faMagnifyingGlass: faMagnifyingGlass,
-  faBars: faBars,
+  faBell,
+  faUser,
+  faMagnifyingGlass,
+  faBars,
 
-  faCaretDown: faCaretDown,
-  faCaretUp: faCaretUp,
-  faCaretRight: faCaretRight,
-  faCaretLeft: faCaretLeft,
+  faCaretDown,
+  faCaretUp,
+  faCaretRight,
+  faCaretLeft,
 
-  faArrowDown: faArrowDown,
-  faArrowUp: faArrowUp,
-  faArrowRight: faArrowRight,
-  faArrowLeft: faArrowLeft,
-  faArrowRightArrowLeft: faArrowRightArrowLeft,
+  faArrowDown,
+  faArrowUp,
+  faArrowRight,
+  faArrowLeft,
+  faArrowRightArrowLeft,
 
-  faAngleLeft: faAngleLeft,
-  faAngleRight: faAngleRight,
-  faAngleDown: faAngleDown,
-  faAngleUp: faAngleUp,
+  faAngleLeft,
+  faAngleRight,
+  faAngleDown,
+  faAngleUp,
 
-  faEye: faEye,
-  faEyeSlash: faEyeSlash,
-  faSun: faSun,
-  faMoon: faMoon,
-  faWallet: faWallet,
+  faEye,
+  faEyeSlash,
+  faSun,
+  faMoon,
+  faWallet,
 
-  faPlus: faPlus,
-  faCirclePlus: faCirclePlus,
-  faFolderPlus: faFolderPlus,
+  faPlus,
+  faCirclePlus,
+  faFolderPlus,
 
-  faEllipsis: faEllipsis,
-  faEllipsisVertical: faEllipsisVertical,
+  faEllipsis,
+  faEllipsisVertical,
 
-  faStarFilled: faStarFilled,
-  faStarEmpty: faStarEmpty,
-  faBookmarkFilled: faBookmarkFilled,
-  faBookmarkEmpty: faBookmarkEmpty,
+  faStarFilled,
+  faStarEmpty,
+  faBookmarkFilled,
+  faBookmarkEmpty,
 
-  faXmark: faXmark,
+  faXmark,
+  faPenToSquare,
+  faCalendar,
+  faBitcoin,
+  faEthereum,
+  faDiscord,
 };
