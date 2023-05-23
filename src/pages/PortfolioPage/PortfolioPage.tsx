@@ -27,7 +27,7 @@ export default function PortfolioPage({ cryptos }: any) {
     cardano: 100,
   });
 
-  
+
   useEffect(() => {
     console.log("holdings changed");
     console.log(holdings);
@@ -84,10 +84,6 @@ function deletePortfolioTransactions(crypto: any) {
     calculateStats();
   }, [cryptos]);
 
-  const dialogRef: any = useRef(null);
-  const openDialog = () => {
-    dialogRef.current.showModal();
-  };
 
   return (
     <div className="Portfolio">
@@ -465,7 +461,7 @@ function deletePortfolioTransactions(crypto: any) {
 }
 
 
-function ModalAddTransaction({ cryptos, addPortfolioTransaction }: any) {
+function ModalAddTransaction({ cryptos, addPortfolioTransaction, closeDialog }: any) {
   const [totalCost, setTotalCost] = useState(0);
   const [selectedCrypto, setSelectedCrypto] = useState(cryptos[0]);
   const [quantity, setQuantity] = useState(0);
@@ -474,15 +470,10 @@ function ModalAddTransaction({ cryptos, addPortfolioTransaction }: any) {
 
 
   function addTransaction() {
-    console.log("add transaction");
-    console.log(selectedCrypto);
-    console.log(quantity);
-    console.log(pricePerCoin);
-    console.log(`${selectedCrypto.id} ${quantity}`)
     addPortfolioTransaction(selectedCrypto.id, quantity, pricePerCoin);
     setQuantity(0);
     setSelectedCrypto(cryptos[0]);
-
+    closeDialog();
   }
 
 
