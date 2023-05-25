@@ -7,6 +7,7 @@ import {
   defaultNewsData,
   defaultCryptoListData,
 } from "../data/defaultData";
+import axios from "axios";
 
 
 
@@ -57,43 +58,45 @@ function appData() {
     }
 
 
-    function getCryptoData() {
-      fetch(cryptosUrl)
-        .then((res) => res.json())
-        .then((data) => {
-          setCryptos(data);
-        });
-      fetch(globalUrl)
-        .then((res) => res.json())
-        .then((data) => {
-          setGlobalData(data.data);
-        });
-      fetch(trendingUrl)
-        .then((res) => res.json())
-        .then((data) => {
-          setTrending(data.coins);
-        });
-      // fetch(cryptoListUrl)
-      //   .then((res) => res.json())
-      //   .then((data) => {
-      //     setTrending(data.coins);
-      //   });
-      return;
-    }
+function getCryptoData() {
+  axios
+    .get(cryptosUrl)
+    .then((response) => {
+      setCryptos(response.data);
+    })
+    .catch((error) => {
+      console.error("Error fetching cryptos data: ", error);
+    });
+
+  axios
+    .get(globalUrl)
+    .then((response) => {
+      setGlobalData(response.data.data);
+    })
+    .catch((error) => {
+      console.error("Error fetching global data: ", error);
+    });
+
+  axios
+    .get(trendingUrl)
+    .then((response) => {
+      setTrending(response.data.coins);
+    })
+    .catch((error) => {
+      console.error("Error fetching trending data: ", error);
+    });
+
+  // axios.get(cryptoListUrl)
+  //   .then(response => {
+  //     setTrending(response.data.coins);
+  //   })
+  //   .catch(error => {
+  //     console.error("Error fetching crypto list data: ", error);
+  //   });
+}
 
 
-// function getCryptoData() {
-//   Promise.all([fetch(cryptosUrl), fetch(globalUrl), fetch(trendingUrl)])
-//     .then((responses) => Promise.all(responses.map((res) => res.json())))
-//     .then((data) => {
-//       setCryptos(data[0]);
-//       setGlobalData(data[1].data);
-//       setTrending(data[2].coins);
-//     })
-//     .catch((error) => {
-//       console.error("Error fetching data: ", error);
-//     });
-// }
+
   
   useEffect(() => {
     loadDefault();
@@ -107,9 +110,6 @@ function appData() {
     }, 20000);
     return () => clearInterval(interval);
   }, []);
-
-
-
 
 
 

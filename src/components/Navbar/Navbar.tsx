@@ -152,9 +152,9 @@ export default function Navbar(props: any) {
           <button className="icon-div">
             <FontAwesomeIcon icon={icons.faMagnifyingGlass} />
           </button>
-          <button className="icon-div">
+          <div className="icon-div">
             <DarkMode />
-          </button>
+          </div>
           <a href={repoUrl} target="_blank" rel="noopener" className="icon-div">
             <FontAwesomeIcon title="Search" icon={icons.faGithub} />
           </a>

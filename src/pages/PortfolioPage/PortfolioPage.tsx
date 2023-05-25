@@ -29,8 +29,6 @@ export default function PortfolioPage({ cryptos }: any) {
 
 
   useEffect(() => {
-    console.log("holdings changed");
-    console.log(holdings);
     calculateStats();
   }, [holdings]);
 
@@ -38,9 +36,6 @@ export default function PortfolioPage({ cryptos }: any) {
   const coingeckoUrl = "https://www.coingecko.com/en/coins/";
 
 function addPortfolioTransaction(crypto: any, quantity: number, pricePerCoin: number) {
-  console.log("add portfolio transaction");
-
-
 
   setHoldings((prevHoldings: any) => {
     const updatedHoldings = { ...prevHoldings };
@@ -52,9 +47,6 @@ function addPortfolioTransaction(crypto: any, quantity: number, pricePerCoin: nu
 }
 
 function deletePortfolioTransactions(crypto: any) {
-  console.log("delete portfolio transaction");
-  console.log(crypto);
-
   setHoldings((prevHoldings: any) => {
     const updatedHoldings = { ...prevHoldings };
     delete updatedHoldings[crypto];
@@ -467,7 +459,8 @@ function ModalAddTransaction({ cryptos, addPortfolioTransaction, closeDialog }: 
   const [quantity, setQuantity] = useState(0);
   const [pricePerCoin, setPricePerCoin] = useState(0);
 
-
+    const tabs = ["Buy", "Sell", "Transfer"];
+    const [selectedTab, setSelectedTab] = useState(tabs[0]);
 
   function addTransaction() {
     addPortfolioTransaction(selectedCrypto.id, quantity, pricePerCoin);
@@ -508,7 +501,8 @@ function ModalAddTransaction({ cryptos, addPortfolioTransaction, closeDialog }: 
 
         {cryptos.map((crypto: any) => {
           return (
-            <option key={nanoid()} value={crypto.id}>
+            <option key={nanoid()} value={crypto.id}
+            >
               {crypto.name}
             </option>
           );
@@ -559,6 +553,9 @@ function ModalAddTransaction({ cryptos, addPortfolioTransaction, closeDialog }: 
 }
 
 function ModalCreatePortfolio(props: any) {
+
+
+
   return (
     <div className="ModalAddTransaction">
       <div className="header">

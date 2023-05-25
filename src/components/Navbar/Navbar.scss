@@ -1,7 +1,7 @@
 @import "../../scss/variables.scss";
 
 .Navbar {
-  padding: 0 0.2em;
+  padding: 0 0;
   padding-top: 1em;
   display: flex;
   flex-direction: column;
@@ -11,6 +11,7 @@
   background: $clr-bg;
   max-width: $app-width;
   margin: 0 auto;
+
 }
 
 .nav-icons {
@@ -50,7 +51,7 @@
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid $clr-hr;
-  padding: 0.6em;
+  padding: 0.6em 2em;
   background-color: $clr-bg;
   order: 1;
 }
@@ -74,7 +75,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 1em;
+  padding: 0 2em;
 
   padding-top: 0.5em;
   padding-bottom: 1em;
