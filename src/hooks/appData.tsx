@@ -52,36 +52,36 @@ function appData() {
   function getCryptoData() {
     axios
       .get(cryptosUrl)
-      .then((response) => {
+      .then((response: any) => {
         setCryptos(response.data);
       })
-      .catch((error) => {
+      .catch((error: any) => {
         console.error("Error fetching cryptos data: ", error);
       });
 
     axios
       .get(globalUrl)
-      .then((response) => {
+      .then((response: any) => {
         setGlobalData(response.data.data);
       })
-      .catch((error) => {
+      .catch((error: any) => {
         console.error("Error fetching global data: ", error);
       });
 
     axios
       .get(trendingUrl)
-      .then((response) => {
+      .then((response: any) => {
         setTrending(response.data.coins);
       })
-      .catch((error) => {
+      .catch((error: any) => {
         console.error("Error fetching trending data: ", error);
       });
 
     // axios.get(cryptoListUrl)
-    //   .then(response => {
+      // .then((response: any) => {
     //     setTrending(response.data.coins);
     //   })
-    //   .catch(error => {
+      // .catch((error: any) => {
     //     console.error("Error fetching crypto list data: ", error);
     //   });
   }
