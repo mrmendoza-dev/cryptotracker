@@ -11,7 +11,7 @@ import NavbarOverlay from "../NavbarOverlay/NavbarOverlay";
 import CryptoSearchbar from "../CryptoSearchbar/CryptoSearchbar";
 import CurrencySelector from "../CurrencySelector/CurrencySelector";
 
-export default function Navbar(props: any) {
+export default function Navbar({globalData, cryptoList}: any) {
   const overlayRef: any = useRef(null);
 
   const activateOverlay = () => {
@@ -20,7 +20,6 @@ export default function Navbar(props: any) {
     }
   };
 
-  let globalData = props.globalData;
   const repoUrl = "https://github.com/mrmendoza171/cryptotracker";
 
   return (
@@ -165,7 +164,7 @@ export default function Navbar(props: any) {
               <FontAwesomeIcon icon={icons.faBars} />
             </button>
         </div>
-        <CryptoSearchbar className="nav-search" data={props.cryptoList} />
+        <CryptoSearchbar className="nav-search" data={cryptoList} />
       </div>
     </div>
   );
