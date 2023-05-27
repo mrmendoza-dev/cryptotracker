@@ -88,7 +88,7 @@ function appData() {
 
   useEffect(() => {
     loadDefault();
-    // getCryptoData();
+    getCryptoData();
   }, []);
 
   useEffect(() => {

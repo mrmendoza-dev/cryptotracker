@@ -41,9 +41,16 @@
   border-bottom: 1px solid $clr-hr;
   transition: background-color 200ms;
   max-width: 1000px;
+  width: 100%;
   position: relative;
   height: 200px;
   overflow: hidden;
+  .news-img-box {
+    width: 30%;
+  }
+  .news-info {
+    width: 70%;
+  }
 }
 
 .news-card:hover {
@@ -54,8 +61,7 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  /* width: 100%; */
-  max-width: 70%;
+  width: 100%;
 }
 
 .news-img-box {

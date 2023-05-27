@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 import "./NewsPage.scss";
 import { nanoid } from "nanoid";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -7,12 +7,19 @@ import useLocalStorage from "../../hooks/useLocalStorage";
 
 export default function NewsPage({news}: any) {
 
-  const [articles, setArticles] = useState<any[]>([]);
-  const [videos, setVideos] = useState<any[]>([]);
   const [currentVideo, setCurrentVideo] = useState();
   const [bookmarks, setBookmarks] = useLocalStorage("bookmarks", []);
   const coingeckoUrl = "https://www.coingecko.com/en/coins/";
 
+
+  const articles = useMemo(
+    () => news.filter((item: any) => item.type === "Article"),
+    [news]
+  );
+  const videos = useMemo(
+    () => news.filter((item: any) => item.type === "Video"),
+    [news]
+  );
   function formatDate(dateString: string) {
     const date = new Date(dateString);
     const formattedDate = date.toLocaleDateString("en-US", {
@@ -24,43 +31,24 @@ export default function NewsPage({news}: any) {
     return formattedDate;
   }
 
-  function getNews() {
-    let articles: any = [];
-    let videos: any = [];
 
-    if (news) {
-      let cropped = news.slice(0, 200);
-      cropped.forEach((item: any) => {
-        if (item.type === "Article") {
-          articles.push(item);
-        } else if (item.type === "Video") {
-          videos.push(item);
-        }
-      });
-    }
-    setArticles(articles);
-    setVideos(videos);
-  }
-
-  useEffect(getNews, []);
   useEffect(() => {
-    setCurrentVideo(videos[0]);
+    setCurrentVideo(videos[0])
   }, [videos]);
 
   function bookmarkArticle(article: any) {
-    let fav = bookmarks.slice();
-    if (fav.includes(article)) {
-      fav = fav.filter((e: any) => e !== article);
-    } else {
-      fav.push(article);
-    }
-    setBookmarks(fav);
+    setBookmarks((prevBookmarks: any[]) => {
+      if (prevBookmarks.includes(article)) {
+        return prevBookmarks.filter((e: any) => e !== article);
+      } else {
+        return [...prevBookmarks, article];
+      }
+    });
   }
-
   return (
     <div className="NewsPage">
       <div className="news-video">
-        {videos.slice(0, 1).map((article) => {
+        {videos.slice(0, 1).map((article: any) => {
           let videoLink = article.news_url.replace("watch?v=", "embed/");
 
           return (
@@ -73,7 +61,7 @@ export default function NewsPage({news}: any) {
       <div className="news-latest">
         <p className="news-heading">Latest News</p>
         <div className="news-list">
-          {articles.map((article) => {
+          {articles.map((article: any) => {
             return (
               <div key={nanoid()} className="news-card">
                 <a
