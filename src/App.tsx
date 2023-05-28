@@ -1,10 +1,10 @@
 import Footer from "./components/Footer/Footer";
 import Navbar from "./components/Navbar/Navbar";
-import "./scss/App.scss";
-import "./scss/crypto-table.scss";
+import "./styles/App.scss";
+import "./styles/crypto-table.scss";
 
-import appData from "./hooks/appData";
 import { Route, Routes } from "react-router-dom";
+import appData from "./hooks/appData";
 import Cryptos from "./pages/CryptosPage/CryptosPage";
 import News from "./pages/NewsPage/NewsPage";
 import Portfolio from "./pages/PortfolioPage/PortfolioPage";

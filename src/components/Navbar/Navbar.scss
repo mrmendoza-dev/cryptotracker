@@ -1,4 +1,4 @@
-@import "../../scss/variables.scss";
+@import "../../styles/variables.scss";
 
 .Navbar {
   padding: 0 0;
@@ -11,7 +11,6 @@
   background: $clr-bg;
   max-width: $app-width;
   margin: 0 auto;
-
 }
 
 .nav-icons {

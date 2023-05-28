@@ -1,4 +1,4 @@
-@import "../../scss/variables.scss";
+@import "../../styles/variables.scss";
 
 .WidgetsPage {
   padding: 0 1em;
@@ -6,28 +6,25 @@
   margin: 0 auto;
 }
 
-
 .WidgetsPage .crypto-img {
   border-radius: 50%;
   height: 30px;
   width: 30px;
-  margin-right: .8em;
+  margin-right: 0.8em;
 }
 
 .WidgetsPage .crypto-cards {
-    display: flex;
-    justify-content: center;
-    gap: 1em;
-    flex-wrap: wrap;
-    margin-top: 2em;
-    
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+  flex-wrap: wrap;
+  margin-top: 2em;
 }
-
 
 .widget-row {
   display: flex;
   justify-content: center;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
 
   gap: 2em;
   padding: 2em 4em;
