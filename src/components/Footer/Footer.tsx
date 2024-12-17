@@ -20,11 +20,6 @@ export default function Footer(props: any) {
               </Link>
             </p>
             <p className="dir-item">
-              <Link className="nav-link" to="/news">
-                CryptoNews
-              </Link>
-            </p>
-            <p className="dir-item">
               <Link className="nav-link" to="/portfolio">
                 CryptoPortfolio
               </Link>

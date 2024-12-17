@@ -11,7 +11,6 @@
 ## Main Features
 - Cryptocurrency overview page
 - Portfolio tracker
-- Related news articles and videos (Not using an active API subscription)
 - Cryptocurrency widgets
 
 ## Widgets
@@ -28,4 +27,3 @@
 - [CoinMarketCap](https://coinmarketcap.com/)
 - [Etherscan Gas Tracker](https://docs.etherscan.io/api-endpoints/gas-tracker)
 - [Crypto Fear & Greed Index](https://alternative.me/crypto/fear-and-greed-index/)
-- [CryptoNews API](https://cryptonews-api.com/)

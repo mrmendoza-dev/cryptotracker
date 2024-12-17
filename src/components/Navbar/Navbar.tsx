@@ -1,17 +1,15 @@
-import logo from "/images/logo.png";
-import "./Navbar.scss";
-import DarkMode from "../DarkMode/DarkMode";
-import { Percent } from "../Percent";
-import { Link } from "react-router-dom";
-import React, { useState, useRef } from "react";
-import { nanoid } from "nanoid";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useRef } from "react";
+import { Link } from "react-router-dom";
 import { icons } from "../../assets/icons";
-import NavbarOverlay from "../NavbarOverlay/NavbarOverlay";
 import CryptoSearchbar from "../CryptoSearchbar/CryptoSearchbar";
-import CurrencySelector from "../CurrencySelector/CurrencySelector";
+import DarkMode from "../DarkMode/DarkMode";
+import NavbarOverlay from "../NavbarOverlay/NavbarOverlay";
+import { Percent } from "../Percent";
+import "./Navbar.scss";
+import logo from "/images/logo.png";
 
-export default function Navbar({globalData, cryptoList}: any) {
+export default function Navbar({ globalData, cryptoList }: any) {
   const overlayRef: any = useRef(null);
 
   const activateOverlay = () => {
@@ -53,14 +51,9 @@ export default function Navbar({globalData, cryptoList}: any) {
                   })}
                 </p>
 
-                <Percent data={globalData.market_cap_change_percentage_24h_usd}>
-                  {globalData.market_cap_change_percentage_24h_usd.toFixed(2)}%
-                  {globalData.market_cap_change_percentage_24h_usd > 0 ? (
-                    <FontAwesomeIcon icon={icons.faCaretUp} />
-                  ) : (
-                    <FontAwesomeIcon icon={icons.faCaretDown} />
-                  )}
-                </Percent>
+                <Percent
+                  value={globalData.market_cap_change_percentage_24h_usd}
+                />
               </div>
             </Link>
           </div>
@@ -135,11 +128,6 @@ export default function Navbar({globalData, cryptoList}: any) {
               </Link>
             </div>
             <div className="nav-item">
-              <Link className="nav-link" to="/news">
-                News
-              </Link>
-            </div>
-            <div className="nav-item">
               <Link className="nav-link" to="/widgets">
                 Widgets
               </Link>
@@ -157,12 +145,12 @@ export default function Navbar({globalData, cryptoList}: any) {
           <a href={repoUrl} target="_blank" rel="noopener" className="icon-div">
             <FontAwesomeIcon title="Search" icon={icons.faGithub} />
           </a>
-            <button className="icon-div">
-              <FontAwesomeIcon icon={icons.faBell} />
-            </button>
-            <button className="icon-div" onClick={activateOverlay}>
-              <FontAwesomeIcon icon={icons.faBars} />
-            </button>
+          <button className="icon-div">
+            <FontAwesomeIcon icon={icons.faBell} />
+          </button>
+          <button className="icon-div" onClick={activateOverlay}>
+            <FontAwesomeIcon icon={icons.faBars} />
+          </button>
         </div>
         <CryptoSearchbar className="nav-search" data={cryptoList} />
       </div>

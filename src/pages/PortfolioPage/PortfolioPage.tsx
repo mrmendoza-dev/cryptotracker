@@ -462,13 +462,8 @@ export default function PortfolioPage({ cryptos }: any) {
 
                     <td className="portfolio-table-24h right">
                       <Percent
-                        data={crypto.price_change_percentage_24h_in_currency}
-                      >
-                        {Number(
-                          crypto.price_change_percentage_24h_in_currency
-                        ).toFixed(1)}
-                        %
-                      </Percent>
+                        value={crypto.price_change_percentage_24h_in_currency}
+                      />
                     </td>
 
                     <td className="portolio-table-holdings right">

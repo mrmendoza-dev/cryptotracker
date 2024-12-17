@@ -1,12 +1,9 @@
 import { nanoid } from "nanoid";
-import styled from "styled-components";
-import "../../../styles/variables.scss";
+import "@/styles/variables.scss";
 import "./Scroller.scss";
+import { Percent } from "../../Percent";
 
-const Percent = styled.p<{ data: number }>`
-  color: ${(props: any) =>
-    props.data >= 0 ? "var(--clr-gain)" : "var(--clr-loss)"};
-`;
+
 
 export default function Scroller(props: any) {
   const cgUrl = "https://www.coingecko.com/en/coins/";
@@ -44,17 +41,8 @@ export default function Scroller(props: any) {
               <div className="price-data">
                 <p className="crypto-price">${crypto.current_price}</p>
                 <Percent
-                  className="crypto-change"
-                  data={crypto.market_cap_change_percentage_24h}
-                >
-                  {crypto.market_cap_change_percentage_24h.toLocaleString(
-                    undefined,
-                    {
-                      maximumFractionDigits: 2,
-                    }
-                  )}
-                  %
-                </Percent>
+                  value={crypto.price_change_percentage_24h_in_currency}
+                />
               </div>
             </div>
           );

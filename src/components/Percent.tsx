@@ -1,12 +1,30 @@
-import styled from "styled-components";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { icons } from "@/assets/icons";
 
-const Percent = styled.p<{ data: number }>`
-  color: ${(props: any) =>
-    props.data === 0
-      ? "$clr-fontAccent"
-      : props.data > 0
-      ? "var(--clr-gain)"
-      : "var(--clr-loss)"};
-`;
+export const Percent = ({
+  value,
+  className = "",
+}: {
+  value: any;
+  className?: string;
+}) => {
+  const colorClass =
+    value === 0
+      ? "text-gray-500"
+      : value > 0
+      ? "text-green-500"
+      : "text-red-500";
 
-export { Percent };
+  const formattedValue = Number(value).toFixed(2);
+
+  return (
+    <p className={`flex items-center ${colorClass} ${className}`}>
+      {value > 0 ? (
+        <FontAwesomeIcon icon={icons.faCaretUp} className="mr-0.5" />
+      ) : (
+        <FontAwesomeIcon icon={icons.faCaretDown} className="mr-0.5" />
+      )}
+      {formattedValue}%
+    </p>
+  );
+};

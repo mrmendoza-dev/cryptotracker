@@ -1,5 +1,5 @@
 import { Sparklines, SparklinesLine } from "react-sparklines";
-import Change from "../../Change";
+import { Percent } from "../../Percent";
 import "./CryptoCard.scss";
 
 export default function CryptoCard(props: any) {
@@ -25,7 +25,7 @@ export default function CryptoCard(props: any) {
                     minimumFractionDigits: 2,
                   })}
                 </p>
-                <Change value={crypto.price_change_percentage_24h}></Change>
+                <Percent value={crypto.price_change_percentage_24h}></Percent>
               </div>
             </div>
           </div>

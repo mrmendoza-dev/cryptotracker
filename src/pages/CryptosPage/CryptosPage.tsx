@@ -112,7 +112,7 @@ export default function CryptosPage({ cryptos }: any) {
                 </td>
 
                 <td>
-                  <p className="right">
+                  <p className="text-right">
                     $
                     {crypto.current_price.toLocaleString(undefined, {
                       minimumFractionDigits: 2,
@@ -122,48 +122,35 @@ export default function CryptosPage({ cryptos }: any) {
 
                 <td>
                   <Percent
-                    data={crypto.price_change_percentage_1h_in_currency}
-                    className="right"
-                  >
-                    {Number(
-                      crypto.price_change_percentage_1h_in_currency
-                    ).toFixed(1)}
-                    %
-                  </Percent>
+                    value={crypto.price_change_percentage_1h_in_currency}
+                    className="justify-end"
+                  />
                 </td>
 
                 <td>
                   <Percent
-                    data={crypto.price_change_percentage_24h_in_currency}
-                    className="right"
-                  >
-                    {Number(
-                      crypto.price_change_percentage_24h_in_currency
-                    ).toFixed(1)}
-                    %
-                  </Percent>
+                    value={crypto.price_change_percentage_24h_in_currency}
+                    className="justify-end"
+                  />
                 </td>
 
                 <td>
                   <Percent
-                    data={crypto.price_change_percentage_7d_in_currency}
-                    className="right"
-                  >
-                    {Number(
-                      crypto.price_change_percentage_7d_in_currency
-                    ).toFixed(1)}
-                    %
-                  </Percent>
+                    value={crypto.price_change_percentage_7d_in_currency}
+                    className="justify-end"
+                  />
                 </td>
 
                 <td>
-                  <p className="right">
+                  <p className="text-right">
                     ${crypto.total_volume.toLocaleString()}
                   </p>
                 </td>
 
                 <td>
-                  <p className="right">${crypto.market_cap.toLocaleString()}</p>
+                  <p className="text-right">
+                    ${crypto.market_cap.toLocaleString()}
+                  </p>
                 </td>
 
                 <td className="center">

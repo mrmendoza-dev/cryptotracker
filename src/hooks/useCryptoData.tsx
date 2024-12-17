@@ -3,7 +3,6 @@ import {
   defaultCryptoData,
   defaultGlobalData,
   defaultTrendingData,
-  defaultNewsData,
   defaultCryptoListData,
 } from "../data/defaultData";
 import axios from "axios";
@@ -11,7 +10,7 @@ import axios from "axios";
 
 
 
-function appData() {
+export function useCryptoData() {
 
   const [cryptos, setCryptos] = useState(defaultCryptoData);
   const [globalData, setGlobalData] = useState({
@@ -23,7 +22,6 @@ function appData() {
     market_cap_percentage: { btc: 0, eth: 0 },
   });
   const [trending, setTrending] = useState(defaultTrendingData.coins);
-  const [news, setNews] = useState(defaultNewsData);
   const [cryptoList, setCryptoList] = useState(defaultCryptoListData);
 
   const baseUrl = "https://api.coingecko.com/api/v3/";
@@ -39,13 +37,11 @@ function appData() {
   )}&sparkline=${sparkline}&price_change_percentage=${pricePercentage}`;
   const globalUrl = "https://api.coingecko.com/api/v3/global";
   const trendingUrl = "https://api.coingecko.com/api/v3/search/trending";
-  const cryptoListUrl = `https://api.coingecko.com/api/v3/coins/list?include_platform=false`;
 
   function loadDefault() {
     setCryptos(defaultCryptoData);
     setGlobalData(defaultGlobalData.data);
     setTrending(defaultTrendingData.coins);
-    setNews(defaultNewsData);
     setCryptoList(defaultCryptoListData);
   }
 
@@ -98,7 +94,6 @@ function appData() {
     return () => clearInterval(interval);
   }, []);
 
-  return { cryptos, globalData, trending, news, cryptoList };
+  return { cryptos, globalData, trending, cryptoList };
 }
 
-export default appData;

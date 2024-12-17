@@ -1,11 +1,10 @@
-import logo from "/images/logo.png";
-import "./NavbarOverlay.scss";
-import DarkMode from "../DarkMode/DarkMode";
-import { Link } from "react-router-dom";
-import React, { useState, forwardRef, useImperativeHandle } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { forwardRef, useImperativeHandle, useState } from "react";
+import { Link } from "react-router-dom";
 import { icons } from "../../assets/icons";
-import CurrencySelector from "../CurrencySelector/CurrencySelector";
+import DarkMode from "../DarkMode/DarkMode";
+import "./NavbarOverlay.scss";
+import logo from "/images/logo.png";
 
 function NavbarOverlay(props: any, ref: any) {
   const [isToggled, setIsToggled] = useState(false);
@@ -55,11 +54,6 @@ function NavbarOverlay(props: any, ref: any) {
           <div className="nav-item">
             <Link className="nav-link" to="/portfolio" onClick={toggleOverlay}>
               Portfolio
-            </Link>
-          </div>
-          <div className="nav-item">
-            <Link className="nav-link" to="/news" onClick={toggleOverlay}>
-              News
             </Link>
           </div>
           <div className="nav-item">
@@ -132,5 +126,3 @@ function NavbarOverlay(props: any, ref: any) {
 }
 
 export default forwardRef(NavbarOverlay);
-
-

@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { nanoid } from "nanoid";
 import "./Dominance.scss";
-import { Pie } from "react-chartjs-2";
-import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
-ChartJS.register(ArcElement, Tooltip, Legend);
+// import { Pie } from "react-chartjs-2";
+// import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
+// ChartJS.register(ArcElement, Tooltip, Legend);
 
 export default function Dominance(props: any) {
   let data = props.cryptos;
@@ -56,7 +56,7 @@ export default function Dominance(props: any) {
         })}
       </div>
 
-      <Pie data={chartData} />
+      {/* <Pie data={chartData} /> */}
     </div>
   );
 }
