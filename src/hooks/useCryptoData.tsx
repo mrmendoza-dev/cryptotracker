@@ -1,17 +1,13 @@
-import { useState, useEffect, useRef } from "react";
 import {
   defaultCryptoData,
+  defaultCryptoListData,
   defaultGlobalData,
   defaultTrendingData,
-  defaultCryptoListData,
-} from "../data/defaultData";
+} from "@/data/defaultData";
 import axios from "axios";
-
-
-
+import { useEffect, useState } from "react";
 
 export function useCryptoData() {
-
   const [cryptos, setCryptos] = useState(defaultCryptoData);
   const [globalData, setGlobalData] = useState({
     active_cryptocurrencies: 0,
@@ -74,10 +70,10 @@ export function useCryptoData() {
       });
 
     // axios.get(cryptoListUrl)
-      // .then((response: any) => {
+    // .then((response: any) => {
     //     setTrending(response.data.coins);
     //   })
-      // .catch((error: any) => {
+    // .catch((error: any) => {
     //     console.error("Error fetching crypto list data: ", error);
     //   });
   }
@@ -96,4 +92,3 @@ export function useCryptoData() {
 
   return { cryptos, globalData, trending, cryptoList };
 }
-

@@ -1,0 +1,46 @@
+/* Base Theme Colors */
+--clr-loss: #ea3943      /* Red for negative values */
+--clr-gain: #16c784      /* Green for positive values */
+--clr-accent: #fc8e06    /* Orange accent */
+--clr-primary: #3459e7   /* Primary blue */
+--clr-secondary: #6188ff /* Secondary lighter blue */
+
+/* Light Theme */
+--clr-font: #111827      /* Main text color */
+--clr-bg: #ffffff        /* Background color */
+--clr-fontAccent: #6B7280/* Secondary text color */
+--clr-shadow: #999       /* Shadow color */
+--clr-row: #F9FAFB      /* Row background */
+--clr-hr: #F3F4F6       /* Horizontal rule */
+
+/* Dark Theme */
+--clr-font: #EEEEEE      /* Main text color */
+--clr-bg: #121212        /* Background color */
+--clr-fontAccent: #A0A0A0/* Secondary text color */
+--clr-shadow: #333       /* Shadow color */
+--clr-row: #1E1E1E      /* Row background */
+--clr-hr: #2F2F2F       /* Horizontal rule */
+
+
+/* Status Colors */
+Loss/Red:     text-red-500     /* #ef4444 */
+Gain/Green:   text-emerald-500 /* #10b981 */
+Accent:       text-orange-500  /* #f97316 */
+Primary:      text-blue-600    /* #2563eb */
+Secondary:    text-blue-400    /* #60a5fa */
+
+/* Light Theme */
+Font:         text-gray-900    /* #111827 */
+Background:   bg-white         /* #ffffff */
+Font Accent:  text-gray-500    /* #6b7280 */
+Shadow:       shadow-gray-400  /* #9ca3af */
+Row:          bg-gray-50       /* #f9fafb */
+HR:           bg-gray-100      /* #f3f4f6 */
+
+/* Dark Theme */
+Font:         text-gray-100    /* #f3f4f6 */
+Background:   bg-gray-900      /* #111827 */
+Font Accent:  text-gray-400    /* #9ca3af */
+Shadow:       shadow-gray-700  /* #374151 */
+Row:          bg-gray-800      /* #1f2937 */
+HR:           bg-gray-700      /* #374151 */

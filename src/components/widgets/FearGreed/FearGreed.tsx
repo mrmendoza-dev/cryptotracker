@@ -1,4 +1,3 @@
-import { Percent } from "@/components/Percent";
 import { useEffect, useState } from "react";
 
 export default function FearGreed() {
@@ -30,11 +29,11 @@ export default function FearGreed() {
 
   // Function to determine text color based on value
   const getColorClass = (value: number) => {
-    if (value >= 80) return "text-[#4FBA1E]";     // Dark Green
-    if (value >= 60) return "text-[#B7DD16]";     // Light Green
-    if (value >= 40) return "text-[#FDD101]";     // Yellow
-    if (value >= 20) return "text-[#FF8400]";     // Orange
-    return "text-[#F02602]";                      // Red
+    if (value >= 80) return "text-[#4FBA1E]"; // Dark Green
+    if (value >= 60) return "text-[#B7DD16]"; // Light Green
+    if (value >= 40) return "text-[#FDD101]"; // Yellow
+    if (value >= 20) return "text-[#FF8400]"; // Orange
+    return "text-[#F02602]"; // Red
   };
 
   return (
@@ -44,7 +43,6 @@ export default function FearGreed() {
         {index.value}
       </p>
       <p className="text-gray-300 mt-1">{index.value_classification}</p>
-      
 
       <a
         href="https://alternative.me/crypto/fear-and-greed-index/"
@@ -55,6 +53,5 @@ export default function FearGreed() {
         Last Update: {index.timestamp}
       </a>
     </div>
-
   );
 }

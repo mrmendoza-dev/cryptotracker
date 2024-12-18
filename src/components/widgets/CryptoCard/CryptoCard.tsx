@@ -1,5 +1,5 @@
+import { Percent } from "@/components/ui/Percent";
 import { Sparklines, SparklinesLine } from "react-sparklines";
-import { Percent } from "../../Percent";
 import "./CryptoCard.scss";
 
 export default function CryptoCard(props: any) {

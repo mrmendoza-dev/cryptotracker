@@ -1,21 +1,23 @@
-import Footer from "@/components/ApplicationShell/Footer";
+// import Main from "@/components/ApplicationShell/Main";
+// import Nav from "@/components/ApplicationShell/Nav";
+// import Sidebar from "@/components/ApplicationShell/Sidebar";
 import Nav from "@/components/ApplicationShell/Nav";
-import { ThemeProvider } from "@/contexts/ThemeContext";
+import Footer from "@/components/Footer/Footer";
 import { useCryptoData } from "@/hooks/useCryptoData";
 import Cryptos from "@/pages/CryptosPage";
 import Portfolio from "@/pages/PortfolioPage";
 import Widgets from "@/pages/WidgetsPage";
 import "@/styles/App.scss";
+import "@/styles/crypto-table.scss";
 import { Route, Routes } from "react-router-dom";
 
-function App() {
+function ApplicationShell() {
   const { cryptos, globalData, trending, cryptoList } = useCryptoData();
 
   return (
-    <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
-      <div className="App bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100">
-        <Nav globalData={globalData} cryptoList={cryptoList} />
-
+    <div className="ApplicationShell antialiased flex flex-col w-screen h-screen bg-gray-50 dark:bg-gray-900 text-white">
+      <Nav globalData={globalData} cryptoList={cryptoList} />
+      <div className="flex flex-1 h-full overflow-hidden">
         <Routes>
           <Route path="/" element={<Cryptos cryptos={cryptos} />} />
           <Route path="/portfolio" element={<Portfolio cryptos={cryptos} />} />
@@ -30,11 +32,10 @@ function App() {
             }
           />
         </Routes>
-
-        <Footer />
       </div>
-    </ThemeProvider>
+      <Footer />
+    </div>
   );
 }
 
-export default App;
+export default ApplicationShell;

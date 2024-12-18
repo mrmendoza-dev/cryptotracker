@@ -10,10 +10,10 @@
 
   --clr-loss: #ea3943;
   --clr-gain: #16c784;
-  --clr-logo: #fc8e06;
-  --clr-btn: #3459e7;
-  --clr-link: #6188ff;
-}
+  --clr-accent: #fc8e06;
+  --clr-primary: #3459e7;
+  --clr-secondary: #6188ff;
+ }
 
 $app-width: var(--app-width);
 $clr-font: var(--clr-font);
@@ -28,5 +28,7 @@ $clr-loss: var(--clr-loss);
 $clr-gain: var(--clr-gain);
 $clr-logo: var(--clr-logo);
 $clr-btn: var(--clr-btn);
-$clr-link: var(--clr-link);
-$border-radius: 10px;
+
+
+
+

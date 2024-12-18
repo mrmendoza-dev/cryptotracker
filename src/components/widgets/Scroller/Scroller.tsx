@@ -1,9 +1,7 @@
-import { nanoid } from "nanoid";
+import { Percent } from "@/components/ui/Percent";
 import "@/styles/variables.scss";
+import { nanoid } from "nanoid";
 import "./Scroller.scss";
-import { Percent } from "../../Percent";
-
-
 
 export default function Scroller(props: any) {
   const cgUrl = "https://www.coingecko.com/en/coins/";
