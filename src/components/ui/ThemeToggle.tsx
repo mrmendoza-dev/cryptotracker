@@ -1,4 +1,4 @@
-import { icons } from "@/assets/icons";
+import { faMoon, faSun } from "@/assets/icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useTheme } from "@/contexts/ThemeContext";
 
@@ -18,7 +18,7 @@ const ThemeToggle = () => {
         transition-colors"
     >
       <FontAwesomeIcon
-        icon={theme === "dark" ? icons.faMoon : icons.faSun}
+        icon={theme === "dark" ? faMoon : faSun}
         className="text-xl"
       />
     </button>

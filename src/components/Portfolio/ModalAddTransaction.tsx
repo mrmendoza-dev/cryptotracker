@@ -34,7 +34,6 @@ export function ModalAddTransaction({
     );
     setQuantityInput("");
     setSelectedCrypto(cryptos[0]);
-    // closeDialog();
   }
 
   useEffect(() => {
@@ -93,10 +92,10 @@ export function ModalAddTransaction({
             transition-colors"
           value={selectedCrypto.id}
           onChange={(e) => {
-            setSelectedCrypto(cryptos.find((x) => x.id === e.target.value));
+            setSelectedCrypto(cryptos.find((x: any) => x.id === e.target.value));
           }}
         >
-          {cryptos.map((crypto) => (
+          {cryptos.map((crypto: any) => (
             <option key={nanoid()} value={crypto.id}>
               {crypto.name}
             </option>
@@ -129,7 +128,7 @@ export function ModalAddTransaction({
           <input
             type="number"
             value={pricePerCoin}
-            onChange={(e) => setPricePerCoin(e.target.value)}
+            onChange={(e) => setPricePerCoin(Number(e.target.value))}
             min={0}
             className="px-4 py-2.5 rounded-lg border border-gray-200 dark:border-gray-700 
               bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100

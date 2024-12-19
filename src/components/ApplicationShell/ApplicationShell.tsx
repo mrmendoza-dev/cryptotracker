@@ -2,7 +2,7 @@
 // import Nav from "@/components/ApplicationShell/Nav";
 // import Sidebar from "@/components/ApplicationShell/Sidebar";
 import Nav from "@/components/ApplicationShell/Nav";
-import Footer from "@/components/Footer/Footer";
+import Footer from "@/components/ApplicationShell/Footer";
 import { useCryptoData } from "@/hooks/useCryptoData";
 import Cryptos from "@/pages/CryptosPage";
 import Portfolio from "@/pages/PortfolioPage";

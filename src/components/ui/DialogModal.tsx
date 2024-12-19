@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { icons } from "@/assets/icons";
+import { faXmark } from "@/assets/icons";
 
 export default function DialogModal({
   buttonLabel,
@@ -58,7 +58,7 @@ export default function DialogModal({
             onClick={closeDialog}
             className="outline-none border-none bg-transparent text-gray-500 dark:text-gray-400 text-2xl"
           >
-            <FontAwesomeIcon icon={icons.faXmark} />
+            <FontAwesomeIcon icon={faXmark} />
           </button>
         </div>
         <div>{elements}</div>

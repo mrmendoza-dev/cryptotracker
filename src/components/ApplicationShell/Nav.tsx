@@ -1,6 +1,6 @@
-import { icons } from "@/assets/icons";
+import { faGithub, faBell, faUser, faMagnifyingGlass, faBars } from "@/assets/icons";
 import CryptoSearchbar from "@/components/ui/CryptoSearchbar";
-import NavbarOverlay from "@/components/ApplicationShell/NavbarOverlay/NavbarOverlay";
+import NavbarOverlay from "@/components/ApplicationShell/NavbarOverlay";
 import { Percent } from "@/components/ui/Percent";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useRef } from "react";
@@ -105,7 +105,7 @@ export default function Nav({ globalData, cryptoList }: any) {
           transition-colors"
             >
               <FontAwesomeIcon
-                icon={icons.faGithub}
+                icon={faGithub}
                 title="GitHub"
                 className="text-xl"
               />
@@ -118,7 +118,7 @@ export default function Nav({ globalData, cryptoList }: any) {
           focus:outline-none focus:ring-2 focus:ring-gray-200 dark:focus:ring-gray-700
           transition-colors"
             >
-              <FontAwesomeIcon icon={icons.faBell} className="text-xl" />
+              <FontAwesomeIcon icon={faBell} className="text-xl" />
             </button>
 
             <button
@@ -128,7 +128,7 @@ export default function Nav({ globalData, cryptoList }: any) {
           focus:outline-none focus:ring-2 focus:ring-gray-200 dark:focus:ring-gray-700
           transition-colors"
             >
-              <FontAwesomeIcon icon={icons.faUser} className="text-xl" />
+              <FontAwesomeIcon icon={faUser} className="text-xl" />
             </button>
           </div>
         </div>
@@ -177,10 +177,7 @@ export default function Nav({ globalData, cryptoList }: any) {
     focus:outline-none focus:ring-2 focus:ring-gray-200 dark:focus:ring-gray-700
     transition-colors"
           >
-            <FontAwesomeIcon
-              icon={icons.faMagnifyingGlass}
-              className="text-lg"
-            />
+            <FontAwesomeIcon icon={faMagnifyingGlass} className="text-lg" />
           </button>
 
           {/* ThemeToggle component with smaller size */}
@@ -197,7 +194,7 @@ export default function Nav({ globalData, cryptoList }: any) {
       focus:outline-none focus:ring-2 focus:ring-gray-200 dark:focus:ring-gray-700
       transition-colors"
           >
-            <FontAwesomeIcon icon={icons.faGithub} className="text-lg" />
+            <FontAwesomeIcon icon={faGithub} className="text-lg" />
           </a>
 
           <button
@@ -206,7 +203,7 @@ export default function Nav({ globalData, cryptoList }: any) {
     focus:outline-none focus:ring-2 focus:ring-gray-200 dark:focus:ring-gray-700
     transition-colors"
           >
-            <FontAwesomeIcon icon={icons.faBell} className="text-lg" />
+            <FontAwesomeIcon icon={faBell} className="text-lg" />
           </button>
 
           <button
@@ -216,7 +213,7 @@ export default function Nav({ globalData, cryptoList }: any) {
       focus:outline-none focus:ring-2 focus:ring-gray-200 dark:focus:ring-gray-700
       transition-colors"
           >
-            <FontAwesomeIcon icon={icons.faBars} className="text-lg" />
+            <FontAwesomeIcon icon={faBars} className="text-lg" />
           </button>
         </div>
 

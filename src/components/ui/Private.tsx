@@ -1,5 +1,5 @@
-import { icons } from "@/assets/icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEyeSlash } from "@/assets/icons";
 
 export default function Private({ hidden, element }: any) {
   return (
@@ -8,7 +8,7 @@ export default function Private({ hidden, element }: any) {
         <div className="relative bg-gray-100 dark:bg-gray-800 rounded select-none">
           <div className="invisible">{element}</div>
           <div className="absolute inset-0 flex items-center justify-center text-gray-500 dark:text-gray-400 text-sm opacity-70">
-            <FontAwesomeIcon icon={icons.faEyeSlash} />
+            <FontAwesomeIcon icon={faEyeSlash} />
           </div>
         </div>
       ) : (

@@ -4,8 +4,7 @@ import { useState } from "react";
 import { Sparklines, SparklinesLine } from "react-sparklines";
 import { Percent } from "../components/ui/Percent";
 import useLocalStorage from "../hooks/useLocalStorage";
-// import "./CryptosPage.scss";
-import { icons } from "@/assets/icons";
+import { faStarFilled, faStarEmpty, faAngleLeft, faAngleRight } from "@/assets/icons";
 
 export default function CryptosPage({ cryptos }: any) {
   const coingeckoUrl = "https://www.coingecko.com/en/coins/";
@@ -94,8 +93,8 @@ export default function CryptosPage({ cryptos }: any) {
                       <FontAwesomeIcon
                         icon={
                           favorites.includes(crypto.id)
-                            ? icons.faStarFilled
-                            : icons.faStarEmpty
+                            ? faStarFilled
+                            : faStarEmpty
                         }
                         className={
                           favorites.includes(crypto.id) ? "text-[#ffcc66]" : ""
@@ -191,7 +190,7 @@ export default function CryptosPage({ cryptos }: any) {
             hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-100"
           onClick={prevPage}
         >
-          <FontAwesomeIcon icon={icons.faAngleLeft} className="mr-2" />
+          <FontAwesomeIcon icon={faAngleLeft} className="mr-2" />
           Back
         </button>
 
@@ -204,7 +203,7 @@ export default function CryptosPage({ cryptos }: any) {
           onClick={nextPage}
         >
           Next
-          <FontAwesomeIcon icon={icons.faAngleRight} className="ml-2" />
+          <FontAwesomeIcon icon={faAngleRight} className="ml-2" />
         </button>
       </div>
     </div>

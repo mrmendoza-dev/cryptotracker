@@ -53,7 +53,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 
-export const icons = {
+export {
   faGithub,
   faLinkedin,
   faMedium,

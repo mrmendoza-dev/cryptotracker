@@ -1,4 +1,4 @@
-import { icons } from "@/assets/icons";
+import { faGithub, faLinkedin, faXmark } from "@/assets/icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { forwardRef, useImperativeHandle, useState } from "react";
 import { Link } from "react-router-dom";
@@ -47,7 +47,7 @@ const NavbarOverlay = forwardRef((props, ref) => {
             onClick={toggleOverlay}
             className="outline-none border-none bg-transparent text-base text-gray-500 dark:text-gray-400"
           >
-            <FontAwesomeIcon icon={icons.faXmark} />
+            <FontAwesomeIcon icon={faXmark} />
           </button>
         </div>
 
@@ -175,7 +175,7 @@ const NavbarOverlay = forwardRef((props, ref) => {
             rel="noopener"
             className="hover:text-gray-900 dark:hover:text-gray-100 transition-colors"
           >
-            <FontAwesomeIcon icon={icons.faGithub} />
+            <FontAwesomeIcon icon={faGithub} />
           </a>
           <a
             href="https://www.linkedin.com/in/mrmendoza-dev/"
@@ -183,7 +183,7 @@ const NavbarOverlay = forwardRef((props, ref) => {
             rel="noopener"
             className="hover:text-gray-900 dark:hover:text-gray-100 transition-colors"
           >
-            <FontAwesomeIcon icon={icons.faLinkedin} />
+            <FontAwesomeIcon icon={faLinkedin} />
           </a>
         </div>
       </div>

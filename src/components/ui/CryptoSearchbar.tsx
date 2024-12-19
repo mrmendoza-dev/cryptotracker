@@ -1,7 +1,7 @@
 import React, { useState, useRef } from "react";
 import { nanoid } from "nanoid";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { icons } from "@/assets/icons";
+import { faMagnifyingGlass } from "@/assets/icons";
 
 export default function CryptoSearchbar(props: any) {
   let cryptoList = props.data;
@@ -31,7 +31,7 @@ export default function CryptoSearchbar(props: any) {
       {/* Search Input */}
       <div className="flex items-center text-sm p-3 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-400">
         <label className="flex items-center">
-          <FontAwesomeIcon icon={icons.faMagnifyingGlass} />
+          <FontAwesomeIcon icon={faMagnifyingGlass} />
         </label>
         <input
           className="outline-none border-none bg-transparent pl-2 text-inherit w-[300px] max-h-[300px]"
@@ -59,7 +59,7 @@ export default function CryptoSearchbar(props: any) {
           {/* Search Input in Dropdown */}
           <div className="flex items-center text-sm font-normal">
             <label className="flex items-center text-gray-500 dark:text-gray-400">
-              <FontAwesomeIcon icon={icons.faMagnifyingGlass} />
+              <FontAwesomeIcon icon={faMagnifyingGlass} />
             </label>
             <input
               className="outline-none border-none bg-transparent pl-2 text-gray-500 
@@ -72,7 +72,7 @@ export default function CryptoSearchbar(props: any) {
           </div>
 
           {/* Results */}
-          {filteredData.map((crypto) => (
+          {filteredData.map((crypto: any) => (
             <a
               href={`https://www.coingecko.com/en/coins/${crypto.id}`}
               key={nanoid()}
