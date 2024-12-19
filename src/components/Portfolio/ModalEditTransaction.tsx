@@ -1,8 +1,8 @@
 
-export function ModalEditTransaction({
+export const ModalEditTransaction = ({
   cryptoId,
   deletePortfolioTransactions,
-}: any) {
+}: any) => {
   return (
     <div className="flex flex-col gap-6 p-6 w-full max-w-sm mx-auto">
       {/* Header */}

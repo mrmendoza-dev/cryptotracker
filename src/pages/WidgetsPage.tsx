@@ -1,11 +1,10 @@
-import { useEffect, useState } from "react";
 import { nanoid } from "nanoid";
-import CryptoCard from "@/components/widgets/CryptoCard";
-import Dominance from "@/components/widgets/Dominance";
-import EthGasTracker from "@/components/widgets/EthGasTracker";
-import FearGreed from "@/components/widgets/FearGreed";
-import Scroller from "@/components/widgets/Scroller";
-import Trending from "@/components/widgets/Trending";
+import { CryptoCard } from "@/components/widgets/CryptoCard";
+import { Dominance } from "@/components/widgets/Dominance";
+import { EthGasTracker } from "@/components/widgets/EthGasTracker";
+import { FearGreed } from "@/components/widgets/FearGreed";
+import { Scroller } from "@/components/widgets/Scroller";
+import { Trending } from "@/components/widgets/Trending";
 
 interface WidgetsPageProps {
   cryptos: any[];
@@ -15,7 +14,7 @@ interface WidgetsPageProps {
   trending: any;
 }
 
-const WidgetsPage = ({ cryptos, globalData, trending }: WidgetsPageProps) => {
+export const WidgetsPage = ({ cryptos, globalData, trending }: WidgetsPageProps) => {
   return (
     <div className="w-[100%] mx-auto px-4">
       <Scroller cryptos={cryptos} />

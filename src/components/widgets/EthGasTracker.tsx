@@ -9,7 +9,7 @@ type GasOracle = {
   gasUsedRatio: string;
 };
 
-export default function EthGasTracker() {
+export const EthGasTracker = () => {
   const [oracle, setOracle] = useState<GasOracle>({
     FastGasPrice: "",
     ProposeGasPrice: "",

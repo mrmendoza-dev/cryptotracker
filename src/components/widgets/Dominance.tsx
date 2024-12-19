@@ -4,12 +4,7 @@ type DominanceData = {
   [key: string]: number;
 };
 
-type ChartData = {
-  name: string;
-  value: number;
-};
-
-export default function Dominance({ cryptos }: { cryptos: DominanceData }) {
+export const Dominance = ({ cryptos }: { cryptos: DominanceData }) => {
   const dominanceList = Object.entries(cryptos).map(([id, value]) => ({
     name: id.toUpperCase(),
     value: Number(value),

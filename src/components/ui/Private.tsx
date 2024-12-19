@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEyeSlash } from "@/assets/icons";
 
-export default function Private({ hidden, element }: any) {
+export const Private = ({ hidden, element }: any) => {
   return (
     <div>
       {hidden ? (

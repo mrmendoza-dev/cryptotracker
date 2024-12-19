@@ -3,7 +3,7 @@ import { nanoid } from "nanoid";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@/assets/icons";
 
-export default function CryptoSearchbar(props: any) {
+export const CryptoSearchbar = (props: any) => {
   let cryptoList = props.data;
 
   const [searchTerm, setSearchTerm] = useState("");

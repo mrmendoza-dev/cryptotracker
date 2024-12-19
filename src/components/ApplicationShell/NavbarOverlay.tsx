@@ -2,10 +2,10 @@ import { faGithub, faLinkedin, faXmark } from "@/assets/icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { forwardRef, useImperativeHandle, useState } from "react";
 import { Link } from "react-router-dom";
-import ThemeToggle from "@/components/ui/ThemeToggle";
+import { ThemeToggle } from "@/components/ui/ThemeToggle";
 import logo from "/images/logo.png";
 
-const NavbarOverlay = forwardRef((props, ref) => {
+export const NavbarOverlay = forwardRef((props, ref) => {
   const [isToggled, setIsToggled] = useState(false);
 
   const toggleOverlay = () => {
@@ -194,4 +194,3 @@ const NavbarOverlay = forwardRef((props, ref) => {
 // Add display name for dev tools
 NavbarOverlay.displayName = "NavbarOverlay";
 
-export default NavbarOverlay;

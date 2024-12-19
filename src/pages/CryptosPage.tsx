@@ -6,7 +6,7 @@ import { Percent } from "../components/ui/Percent";
 import useLocalStorage from "../hooks/useLocalStorage";
 import { faStarFilled, faStarEmpty, faAngleLeft, faAngleRight } from "@/assets/icons";
 
-export default function CryptosPage({ cryptos }: any) {
+export const CryptosPage = ({ cryptos }: any) => {
   const coingeckoUrl = "https://www.coingecko.com/en/coins/";
   const [pageNum, setPageNum] = useState(1);
   const [favorites, setFavorites] = useLocalStorage("favorites", []);

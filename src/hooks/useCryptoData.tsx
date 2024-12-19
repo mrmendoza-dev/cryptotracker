@@ -1,9 +1,9 @@
-import {
-  defaultCryptoData,
-  defaultCryptoListData,
-  defaultGlobalData,
-  defaultTrendingData,
-} from "@/data/defaultData";
+
+import defaultCryptoData from "@/data/cryptoData.json";
+import defaultGlobalData from "@/data/globalData.json";
+import defaultTrendingData from "@/data/trendingData.json";
+import defaultCryptoListData from "@/data/cryptoListData.json";
+
 import axios from "axios";
 import { useEffect, useState } from "react";
 

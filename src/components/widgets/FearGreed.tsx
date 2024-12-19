@@ -6,7 +6,7 @@ type IndexData = {
   timestamp: string;
 };
 
-export default function FearGreed() {
+export const FearGreed = () => {
   const [index, setIndex] = useState<IndexData>({
     value: 0,
     value_classification: "",

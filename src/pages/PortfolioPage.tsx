@@ -1,16 +1,16 @@
 import { useEffect, useState, useRef } from "react";
 import { Percent } from "@/components/ui/Percent";
-import Private from "@/components/ui/Private";
+import { Private } from "@/components/ui/Private";
 import { nanoid } from "nanoid";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faWallet, faCirclePlus, faCaretUp, faEyeSlash, faEye, faEllipsis, faPlus, faCaretDown, faEllipsisVertical } from "@/assets/icons";
 import useLocalStorage from "@/hooks/useLocalStorage";
-import DialogModal from "@/components/ui/DialogModal";
+import { DialogModal } from "@/components/ui/DialogModal";
 import { ModalAddTransaction } from "@/components/Portfolio/ModalAddTransaction";
 import { ModalEditTransaction } from "@/components/Portfolio/ModalEditTransaction";
 import { ModalCreatePortfolio } from "@/components/Portfolio/ModalCreatePortfolio";
 
-export default function PortfolioPage({ cryptos }: any) {
+export const PortfolioPage = ({ cryptos }: any) => {
   const [hidden, setHidden] = useLocalStorage("hidden", false);
   const [stats, setStats] = useState({
     total: 1235.67,

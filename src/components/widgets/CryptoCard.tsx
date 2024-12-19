@@ -1,7 +1,7 @@
 import { Percent } from "@/components/ui/Percent";
 import { Sparklines, SparklinesLine } from "react-sparklines";
 
-export default function CryptoCard({ crypto }: { crypto: any }) {
+export const CryptoCard = ({ crypto }: { crypto: any }) => {
   if (!crypto) return null;
 
   const isNegativePrice =

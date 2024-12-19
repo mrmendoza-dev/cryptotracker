@@ -22,7 +22,7 @@ const CURRENCIES = [
   "litecoin",
 ];
 
-export default function Scroller({ cryptos }: { cryptos: CryptoData[] }) {
+export const Scroller = ({ cryptos }: { cryptos: CryptoData[] }) => {
   const cryptoData = cryptos.filter((crypto) => CURRENCIES.includes(crypto.id));
 
   return (

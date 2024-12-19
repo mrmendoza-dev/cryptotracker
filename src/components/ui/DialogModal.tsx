@@ -2,11 +2,11 @@ import React, { useRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@/assets/icons";
 
-export default function DialogModal({
+export const DialogModal = ({
   buttonLabel,
   buttonClass,
   elements,
-}: any) {
+}: any) => {
   const modalRef: any = useRef(null);
 
   const openDialog = () => {

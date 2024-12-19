@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-export default function Footer() {
+export const Footer = () => {
   return (
     <footer
       className="w-full min-h-[300px] border-t border-gray-100 dark:border-gray-700 

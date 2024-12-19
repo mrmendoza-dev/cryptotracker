@@ -2,7 +2,7 @@ import { faMoon, faSun } from "@/assets/icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useTheme } from "@/contexts/ThemeContext";
 
-const ThemeToggle = () => {
+export const ThemeToggle = () => {
   const { theme, setTheme } = useTheme();
 
   const toggleTheme = () => setTheme(theme === "dark" ? "light" : "dark");
@@ -25,4 +25,3 @@ const ThemeToggle = () => {
   );
 };
 
-export default ThemeToggle;

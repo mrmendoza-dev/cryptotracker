@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export function ModalCreatePortfolio() {
+export const ModalCreatePortfolio = () => {
   const [portfolioName, setPortfolioName] = useState("");
 
   return (

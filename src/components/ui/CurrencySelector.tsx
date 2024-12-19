@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 
 
-function CurrencySelector() {
+export const CurrencySelector = () => {
   const defaultCurrency = {
     name: "United States Dollar",
     symbol: "$",
@@ -59,6 +59,3 @@ function CurrencySelector() {
     </div>
   );
 }
-
-
-export default CurrencySelector;

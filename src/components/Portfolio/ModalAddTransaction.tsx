@@ -1,12 +1,12 @@
 import { useState, useEffect, useRef } from "react";
 import { nanoid } from "nanoid";
 
-export function ModalAddTransaction({
+export const ModalAddTransaction = ({
   cryptos,
   cryptoId,
   addPortfolioTransaction,
   closeDialog,
-}: any) {
+}: any) => {
   const [totalCost, setTotalCost] = useState(0);
   const [selectedCrypto, setSelectedCrypto] = useState(initializeCrypto);
   const [quantityInput, setQuantityInput] = useState("");

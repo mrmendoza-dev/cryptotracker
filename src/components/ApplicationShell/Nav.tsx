@@ -1,14 +1,14 @@
 import { faGithub, faBell, faUser, faMagnifyingGlass, faBars } from "@/assets/icons";
-import CryptoSearchbar from "@/components/ui/CryptoSearchbar";
-import NavbarOverlay from "@/components/ApplicationShell/NavbarOverlay";
+import { CryptoSearchbar } from "@/components/ui/CryptoSearchbar";
+import { NavbarOverlay } from "@/components/ApplicationShell/NavbarOverlay";
 import { Percent } from "@/components/ui/Percent";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useRef } from "react";
 import { Link } from "react-router-dom";
+import { ThemeToggle } from "@/components/ui/ThemeToggle";
 import logo from "/images/logo.png";
-import ThemeToggle from "@/components/ui/ThemeToggle";
 
-export default function Nav({ globalData, cryptoList }: any) {
+export const Nav = ({ globalData, cryptoList }: any) => {
   const overlayRef: any = useRef(null);
 
   return (
