@@ -89,7 +89,7 @@ export const CryptosPage = () => {
                   text-sm text-gray-500 dark:text-gray-400 hover:bg-gray-50 
                   dark:hover:bg-gray-800 transition-colors duration-100"
               >
-                <td>
+                <td className="px-1">
                   <div className="flex items-center gap-2.5 h-[4.2em] font-semibold">
                     <button
                       onClick={() => favoriteCrypto(crypto.id)}
@@ -111,7 +111,7 @@ export const CryptosPage = () => {
                   </div>
                 </td>
 
-                <td>
+                <td className="px-1">
                   <a
                     href={`${coingeckoUrl}${crypto.id}`}
                     target="_blank"
@@ -132,43 +132,43 @@ export const CryptosPage = () => {
                   </a>
                 </td>
 
-                <td className="text-right">
+                <td className="text-right px-1">
                   $
                   {crypto.current_price.toLocaleString(undefined, {
                     minimumFractionDigits: 2,
                   })}
                 </td>
 
-                <td>
+                <td className="px-1">
                   <Percent
                     value={crypto.price_change_percentage_1h_in_currency}
                     className="justify-end"
                   />
                 </td>
 
-                <td>
+                <td className="px-1">
                   <Percent
                     value={crypto.price_change_percentage_24h_in_currency}
                     className="justify-end"
                   />
                 </td>
 
-                <td>
+                <td className="px-1">
                   <Percent
                     value={crypto.price_change_percentage_7d_in_currency}
                     className="justify-end"
                   />
                 </td>
 
-                <td className="text-right">
+                <td className="text-right px-1">
                   ${crypto.total_volume.toLocaleString()}
                 </td>
 
-                <td className="text-right">
+                <td className="text-right px-1">
                   ${crypto.market_cap.toLocaleString()}
                 </td>
 
-                <td className="text-center">
+                <td className="text-center px-1">
                   <Sparklines data={crypto.sparkline_in_7d.price} margin={0}>
                     <SparklinesLine
                       color={

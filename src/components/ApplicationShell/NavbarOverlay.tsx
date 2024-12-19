@@ -146,13 +146,14 @@ export const NavbarOverlay = forwardRef((props, ref) => {
             </Link>
           </div>
           <div className="flex items-center gap-2">
-            <Link
+            <a
               className="hover:text-gray-900 dark:hover:text-gray-100"
-              to="/"
-              onClick={toggleOverlay}
+              href="https://github.com/mrmendoza171/cryptotracker"
+              target="_blank"
+              rel="noopener"
             >
               GitHub
-            </Link>
+            </a>
             <span>&middot;</span>
             <Link
               className="hover:text-gray-900 dark:hover:text-gray-100"
