@@ -84,6 +84,11 @@ cryptotracker/
 - [Etherscan Gas Tracker](https://docs.etherscan.io/api-endpoints/gas-tracker)
 - [Crypto Fear & Greed Index](https://alternative.me/crypto/fear-and-greed-index/)
 
+## Legacy Version
+- [CryptoTracker Legacy](https://github.com/mrmendoza-dev/cryptotracker-legacy)
+- Original repository was forked and and can be found in the link above
+- Biggest change was removing most of the CSS to use TailwindCSS for more maintainable code
+
 ## License
 MIT
 
