@@ -4,7 +4,7 @@ import { forwardRef, useImperativeHandle, useState } from "react";
 import { Link } from "react-router-dom";
 import { ThemeToggle } from "@/components/ui/ThemeToggle";
 import logo from "/images/logo.png";
-
+import { createPortal } from "react-dom";
 export const NavbarOverlay = forwardRef((props, ref) => {
   const [isToggled, setIsToggled] = useState(false);
 
@@ -24,7 +24,7 @@ export const NavbarOverlay = forwardRef((props, ref) => {
     toggleOverlay: toggleOverlay,
   }));
 
-  return (
+  const overlayContent = (
     <div
       className="flex flex-col justify-start text-base h-screen fixed left-0 top-0 z-[999999999] m-0 
         transition-all duration-200 overflow-hidden whitespace-nowrap bg-white dark:bg-gray-900"
@@ -32,7 +32,7 @@ export const NavbarOverlay = forwardRef((props, ref) => {
     >
       <div className="p-6">
         {/* Header */}
-        <div className="flex justify-between -mr-3">
+        <div className="flex justify-between">
           <Link
             to="/"
             className="flex items-center gap-1 select-none"
@@ -47,7 +47,7 @@ export const NavbarOverlay = forwardRef((props, ref) => {
             onClick={toggleOverlay}
             className="outline-none border-none bg-transparent text-base text-gray-500 dark:text-gray-400"
           >
-            <FontAwesomeIcon icon={faXmark} />
+            <FontAwesomeIcon icon={faXmark} className="size-6"/>
           </button>
         </div>
 
@@ -189,8 +189,9 @@ export const NavbarOverlay = forwardRef((props, ref) => {
       </div>
     </div>
   );
-});
 
-// Add display name for dev tools
-NavbarOverlay.displayName = "NavbarOverlay";
+
+    return createPortal(overlayContent, document.body);
+
+});
 

@@ -139,6 +139,7 @@ export const PortfolioPage = () => {
   }
 
   function getPortfolioProportion(cryptoHoldings: any) {
+    if (!cryptoHoldings) return 0;
     let crypto = cryptos.find((x: any) => x.id === cryptoHoldings.id);
     let total = cryptoHoldings.quantity * crypto.current_price;
     return total / stats.total;

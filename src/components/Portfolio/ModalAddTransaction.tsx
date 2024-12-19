@@ -5,7 +5,6 @@ export const ModalAddTransaction = ({
   cryptos,
   cryptoId,
   addPortfolioTransaction,
-  closeDialog,
 }: any) => {
   const [totalCost, setTotalCost] = useState(0);
   const [selectedCrypto, setSelectedCrypto] = useState(initializeCrypto);
@@ -34,7 +33,6 @@ export const ModalAddTransaction = ({
     );
     setQuantityInput("");
     setSelectedCrypto(cryptos[0]);
-    closeDialog();
   }
 
   useEffect(() => {
@@ -167,8 +165,3 @@ export const ModalAddTransaction = ({
     </div>
   );
 }
-
-ModalAddTransaction.defaultProps = {
-  closeDialog: () => {},
-  cryptoId: "bitcoin",
-};
