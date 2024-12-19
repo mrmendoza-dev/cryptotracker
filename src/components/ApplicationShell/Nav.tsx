@@ -7,8 +7,11 @@ import { useRef } from "react";
 import { Link } from "react-router-dom";
 import { ThemeToggle } from "@/components/ui/ThemeToggle";
 import logo from "/images/logo.png";
+import { useCryptoData } from "@/hooks/useCryptoData";
 
-export const Nav = ({ globalData, cryptoList }: any) => {
+export const Nav = () => {
+  const { globalData, cryptoList } = useCryptoData();
+
   const overlayRef: any = useRef(null);
 
   return (

@@ -34,6 +34,7 @@ export const ModalAddTransaction = ({
     );
     setQuantityInput("");
     setSelectedCrypto(cryptos[0]);
+    closeDialog();
   }
 
   useEffect(() => {

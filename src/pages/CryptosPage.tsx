@@ -1,15 +1,17 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { nanoid } from "nanoid";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Sparklines, SparklinesLine } from "react-sparklines";
-import { Percent } from "../components/ui/Percent";
-import useLocalStorage from "../hooks/useLocalStorage";
+import { Percent } from "@/components/ui/Percent";
+import useLocalStorage from "@/hooks/useLocalStorage";
 import { faStarFilled, faStarEmpty, faAngleLeft, faAngleRight } from "@/assets/icons";
+import { useCryptoData } from "@/hooks/useCryptoData";
 
-export const CryptosPage = ({ cryptos }: any) => {
+export const CryptosPage = () => {
   const coingeckoUrl = "https://www.coingecko.com/en/coins/";
   const [pageNum, setPageNum] = useState(1);
   const [favorites, setFavorites] = useLocalStorage("favorites", []);
+  const { cryptos, fetchCryptos } = useCryptoData();
 
   function favoriteCrypto(crypto: any) {
     let fav = favorites.slice();
@@ -32,6 +34,10 @@ export const CryptosPage = ({ cryptos }: any) => {
   function goToPage(page: any) {
     setPageNum(page);
   }
+
+  useEffect(() => {
+    fetchCryptos(pageNum);
+  }, [pageNum]);
 
   const renderPagination = () => {
     let pages = Array.from({ length: 10 }, (x, i) => i + (pageNum - 5));
@@ -78,7 +84,7 @@ export const CryptosPage = ({ cryptos }: any) => {
           <tbody>
             {cryptos.map((crypto: any) => (
               <tr
-                key={nanoid()}
+                key={crypto.id}
                 className="h-[4.2em] border-b border-gray-100 dark:border-gray-700 
                   text-sm text-gray-500 dark:text-gray-400 hover:bg-gray-50 
                   dark:hover:bg-gray-800 transition-colors duration-100"

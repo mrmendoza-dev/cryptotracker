@@ -9,8 +9,8 @@ type CryptoData = {
   price_change_percentage_24h_in_currency: number;
 };
 
-const COINGECKO_URL = "https://www.coingecko.com/en/coins/";
-const CURRENCIES = [
+const coingeckoUrl = "https://www.coingecko.com/en/coins/";
+const currencies = [
   "bitcoin",
   "ethereum",
   "binancecoin",
@@ -23,7 +23,9 @@ const CURRENCIES = [
 ];
 
 export const Scroller = ({ cryptos }: { cryptos: CryptoData[] }) => {
-  const cryptoData = cryptos.filter((crypto) => CURRENCIES.includes(crypto.id));
+  const cryptoData = cryptos.filter((crypto) =>
+    currencies.includes(crypto.id)
+  );
 
   return (
     <div className="w-full bg-white dark:bg-gray-800 py-1 border-t border-b border-gray-100 dark:border-gray-700 overflow-hidden">
@@ -31,7 +33,7 @@ export const Scroller = ({ cryptos }: { cryptos: CryptoData[] }) => {
         {[...cryptoData, ...cryptoData].map((crypto, index) => (
           <a
             key={`${crypto.id}-${index}`}
-            href={`${COINGECKO_URL}${crypto.id}`}
+            href={`${coingeckoUrl}${crypto.id}`}
             target="_blank"
             rel="noopener"
             className="inline-flex items-center min-w-64 max-w-80 px-6 border-x border-gray-100 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors shrink-0"

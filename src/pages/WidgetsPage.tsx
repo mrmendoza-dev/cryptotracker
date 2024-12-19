@@ -5,16 +5,11 @@ import { EthGasTracker } from "@/components/widgets/EthGasTracker";
 import { FearGreed } from "@/components/widgets/FearGreed";
 import { Scroller } from "@/components/widgets/Scroller";
 import { Trending } from "@/components/widgets/Trending";
+import { useCryptoData } from "@/hooks/useCryptoData";
 
-interface WidgetsPageProps {
-  cryptos: any[];
-  globalData: {
-    market_cap_percentage: any;
-  };
-  trending: any;
-}
+export const WidgetsPage = () => {
+  const { cryptos, globalData, trendingData } = useCryptoData();
 
-export const WidgetsPage = ({ cryptos, globalData, trending }: WidgetsPageProps) => {
   return (
     <div className="w-[100%] mx-auto px-4">
       <Scroller cryptos={cryptos} />
@@ -33,7 +28,7 @@ export const WidgetsPage = ({ cryptos, globalData, trending }: WidgetsPageProps)
 
         <div className="flex justify-center flex-wrap gap-4">
           <Dominance cryptos={globalData.market_cap_percentage} />
-          <Trending cryptos={trending} />
+          <Trending cryptos={trendingData} />
         </div>
       </div>
     </div>

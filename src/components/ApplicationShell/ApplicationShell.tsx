@@ -7,28 +7,16 @@ import { WidgetsPage } from "@/pages/WidgetsPage";
 import { Route, Routes } from "react-router-dom";
 
 function ApplicationShell() {
-  const { cryptos, globalData, trending, cryptoList } = useCryptoData();
+  const { cryptos, globalData, trendingData, cryptoList } = useCryptoData();
 
   return (
     <div className="ApplicationShell bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100">
-      <Nav globalData={globalData} cryptoList={cryptoList} />
+      <Nav />
 
       <Routes>
-        <Route path="/" element={<CryptosPage cryptos={cryptos} />} />
-        <Route
-          path="/portfolio"
-          element={<PortfolioPage cryptos={cryptos} />}
-        />
-        <Route
-          path="/widgets"
-          element={
-            <WidgetsPage
-              cryptos={cryptos}
-              globalData={globalData}
-              trending={trending}
-            />
-          }
-        />
+        <Route path="/" element={<CryptosPage />} />
+        <Route path="/portfolio" element={<PortfolioPage />} />
+        <Route path="/widgets" element={<WidgetsPage />} />
       </Routes>
 
       <Footer />

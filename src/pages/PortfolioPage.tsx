@@ -3,14 +3,27 @@ import { Percent } from "@/components/ui/Percent";
 import { Private } from "@/components/ui/Private";
 import { nanoid } from "nanoid";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faWallet, faCirclePlus, faCaretUp, faEyeSlash, faEye, faEllipsis, faPlus, faCaretDown, faEllipsisVertical } from "@/assets/icons";
+import {
+  faWallet,
+  faCirclePlus,
+  faCaretUp,
+  faEyeSlash,
+  faEye,
+  faEllipsis,
+  faPlus,
+  faCaretDown,
+  faEllipsisVertical,
+} from "@/assets/icons";
 import useLocalStorage from "@/hooks/useLocalStorage";
 import { DialogModal } from "@/components/ui/DialogModal";
 import { ModalAddTransaction } from "@/components/Portfolio/ModalAddTransaction";
 import { ModalEditTransaction } from "@/components/Portfolio/ModalEditTransaction";
 import { ModalCreatePortfolio } from "@/components/Portfolio/ModalCreatePortfolio";
+import { useCryptoData } from "@/hooks/useCryptoData";
 
-export const PortfolioPage = ({ cryptos }: any) => {
+export const PortfolioPage = () => {
+  const { cryptos } = useCryptoData() as any;
+
   const [hidden, setHidden] = useLocalStorage("hidden", false);
   const [stats, setStats] = useState({
     total: 1235.67,
@@ -254,10 +267,7 @@ export const PortfolioPage = ({ cryptos }: any) => {
                 }
               />
               <div className="flex items-center text-white bg-emerald-500 font-bold rounded-lg px-3 py-1.5">
-                <FontAwesomeIcon
-                  icon={faCaretUp}
-                  className="text-sm mr-1"
-                />
+                <FontAwesomeIcon icon={faCaretUp} className="text-sm mr-1" />
                 {stats.percentChange}%
               </div>
               <button
@@ -531,9 +541,7 @@ export const PortfolioPage = ({ cryptos }: any) => {
                       <td className="text-center">
                         <div className="flex justify-center items-center gap-2">
                           <DialogModal
-                            buttonLabel={
-                              <FontAwesomeIcon icon={faPlus} />
-                            }
+                            buttonLabel={<FontAwesomeIcon icon={faPlus} />}
                             buttonClass="text-lg text-gray-500 hover:text-gray-700"
                             elements={
                               <ModalAddTransaction
@@ -548,14 +556,12 @@ export const PortfolioPage = ({ cryptos }: any) => {
 
                           <DialogModal
                             buttonLabel={
-                              <FontAwesomeIcon
-                                icon={faEllipsisVertical}
-                              />
+                              <FontAwesomeIcon icon={faEllipsisVertical} />
                             }
                             buttonClass="text-lg text-gray-500 hover:text-gray-700"
                             elements={
                               <ModalEditTransaction
-                                deletePortfolioTransactions={   
+                                deletePortfolioTransactions={
                                   deletePortfolioTransactions
                                 }
                                 cryptoId={crypto.id}
@@ -574,5 +580,4 @@ export const PortfolioPage = ({ cryptos }: any) => {
       </div>
     </div>
   );
-}
-
+};
