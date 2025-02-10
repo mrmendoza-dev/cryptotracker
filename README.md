@@ -27,10 +27,6 @@ Cryptocurrency data for over 10,000 cryptocurrencies, Modeled after CoinMarketCa
    * Etherscan API account
      * [Etherscan API](https://docs.etherscan.io/getting-started/viewing-api-usage-statistics) 
 
-> 🎉 SPECIAL OFFER: Get 20% off ANY CoinGecko API Plan!\
-> Valid on any monthly or annual plan: [View Plans](https://www.coingecko.com/en/api/pricing)\
-> Use code `MENDOZA20` at checkout
-
 ## Setup
 1. Clone the repository
    ```bash
